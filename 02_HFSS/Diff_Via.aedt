@@ -1,0 +1,5712 @@
+$begin 'AnsoftProject'
+	Created='Fri Jul 22 13:35:35 2011'
+	Product='ElectronicsDesktop'
+	FileOwnedByWorkbench=false
+	$begin 'Desktop'
+		Version(2022, 2)
+		InfrastructureVersion(1, 0)
+		$begin 'FactoryHeader'
+		$end 'FactoryHeader'
+	$end 'Desktop'
+	UsesAdvancedFeatures=false
+	NextUniqueID=0
+	MoveBackwards=false
+	$begin 'HFSSEnvironment'
+		Version(1, 0)
+	$end 'HFSSEnvironment'
+	$begin 'PlanarEMEnvironment'
+		Version(1, 0)
+	$end 'PlanarEMEnvironment'
+	$begin 'Q3DEnvironment'
+		Version(1, 0)
+	$end 'Q3DEnvironment'
+	$begin '2DExtractorEnvironment'
+		Version(1, 0)
+	$end '2DExtractorEnvironment'
+	$begin 'NexximEnvironment'
+		Version(1, 0)
+	$end 'NexximEnvironment'
+	$begin 'NexximNetlistEnvironment'
+		Version(1, 0)
+	$end 'NexximNetlistEnvironment'
+	$begin 'EmitEnvironment'
+		Version(1, 0)
+	$end 'EmitEnvironment'
+	$begin 'Maxwell3DEnvironment'
+		Version(1, 0)
+	$end 'Maxwell3DEnvironment'
+	$begin 'Maxwell2DEnvironment'
+		Version(1, 0)
+	$end 'Maxwell2DEnvironment'
+	$begin 'RMxprtEnvironment'
+		Version(1, 0)
+	$end 'RMxprtEnvironment'
+	$begin 'MaxCirEnvironment'
+		Version(1, 0)
+	$end 'MaxCirEnvironment'
+	$begin 'SimplorerEnvironment'
+		Version(1, 0)
+	$end 'SimplorerEnvironment'
+	$begin 'IcepakEnvironment'
+		Version(1, 0)
+	$end 'IcepakEnvironment'
+	$begin 'MechanicalEnvironment'
+		Version(1, 0)
+	$end 'MechanicalEnvironment'
+	$begin 'FilterDesignEnvironment'
+	$end 'FilterDesignEnvironment'
+	$begin 'SchematicEnvironment'
+		Version(1, 0)
+	$end 'SchematicEnvironment'
+	$begin 'geometry3deditor'
+		Version(1, 0)
+	$end 'geometry3deditor'
+	ReadVersion=10
+	$begin 'EDB'
+		Path=''
+		LastUpdateTimeStamp=1742002644
+	$end 'EDB'
+	$begin 'DesignMgrEnvironment'
+		CompInstCounter=14
+		GPortCounter=0
+		NetCounter=19
+		Alias('Ieee;Simplorer Elements\\Ieee', 'Std;Simplorer Elements\\Std', 'Basic_VHDLAMS;Simplorer Elements\\Basic Elements VHDLAMS\\Basic Elements VHDLAMS', 'Digital_Elements;Simplorer Elements\\Digital Elements\\Digital Elements', 'Transformations;Simplorer Elements\\Tools\\Transformations\\Transformations', 'HEV_VHDLAMS;Simplorer Elements\\HEV VHDLAMS\\HEV VHDLAMS', 'automotive_vda;Simplorer Elements\\VDALibs VHDLAMS\\automotive_vda', 'example_boardnet;Simplorer Elements\\VDALibs VHDLAMS\\example_boardnet', 'example_ecar;Simplorer Elements\\VDALibs VHDLAMS\\example_ecar', 'fundamentals_vda;Simplorer Elements\\VDALibs VHDLAMS\\fundamentals_vda', 'hybrid_emc_vda;Simplorer Elements\\VDALibs VHDLAMS\\hybrid_emc_vda', 'megma;Simplorer Elements\\VDALibs VHDLAMS\\megma', 'modelica_rotational;Simplorer Elements\\VDALibs VHDLAMS\\modelica_rotational', 'modelica_thermal;Simplorer Elements\\VDALibs VHDLAMS\\modelica_thermal', 'modelica_translational;Simplorer Elements\\VDALibs VHDLAMS\\modelica_translational', 'spice2vhd;Simplorer Elements\\VDALibs VHDLAMS\\spice2vhd', 'spice2vhd_devices;Simplorer Elements\\VDALibs VHDLAMS\\spice2vhd_devices', 'aircraft_electrical_vhdlams;Simplorer Elements\\Aircraft Electrical VHDLAMS\\Aircraft Electrical VHDLAMS', 'power_system_vhdlams;Simplorer Elements\\Power System VHDLAMS')
+	$end 'DesignMgrEnvironment'
+	$begin 'ProjectDatasets'
+		NextUniqueID=0
+		MoveBackwards=false
+		DatasetType='ProjectDatasetType'
+		$begin 'DatasetDefinitions'
+		$end 'DatasetDefinitions'
+	$end 'ProjectDatasets'
+	$begin 'GlobalVariables'
+		VariableProp('$antiPad', 'UD', 'Signal via antipad diameter.', '770um', oa(i=true, int=false, Min='650um', Max='800um', MinStep='7um', MaxStep='70um', MinFocus='650um', MaxFocus='800um', UseManufacturableValues='false', Level='[650: 800] um'))
+	$end 'GlobalVariables'
+	VariableOrders[1: '$antiPad']
+	$begin 'Definitions'
+		$begin 'Folders'
+			Definitions(1604, 10000, 1, 1, 0, false, false)
+			Materials(1604, 9500, 9, 2, 1, false, false)
+			'Surface Materials'(1604, 9501, 33503, 3, 1, false, false)
+			Scripts(1604, 9502, 33500, 4, 1, false, false)
+			Padstacks(1604, 9003, 12, 105, 1, false, false)
+			Symbols(1604, 9001, 10, 103, 1, false, false)
+			Footprints(1604, 9002, 11, 104, 1, false, false)
+			Bondwires(1604, 9006, 12, 108, 1, false, false)
+			Components(1604, 9000, 8, 102, 1, false, false)
+			Models(1604, 9004, 13, 106, 1, false, false)
+			Packages(1604, 9005, 33502, 107, 1, false, false)
+		$end 'Folders'
+		$begin 'Materials'
+			$begin 'copper'
+				CoordinateSystemType='Cartesian'
+				BulkOrSurfaceType=1
+				$begin 'PhysicsTypes'
+					set('Electromagnetic', 'Thermal', 'Structural')
+				$end 'PhysicsTypes'
+				$begin 'AttachedData'
+					$begin 'MatAppearanceData'
+						property_data='appearance_data'
+						Red=242
+						Green=140
+						Blue=102
+					$end 'MatAppearanceData'
+				$end 'AttachedData'
+				permeability='0.999991'
+				conductivity='58000000'
+				thermal_conductivity='400'
+				mass_density='8933'
+				specific_heat='385'
+				youngs_modulus='120000000000'
+				poissons_ratio='0.38'
+				thermal_expansion_coefficient='1.77e-05'
+				ModTime=1499970477
+				Library='Materials'
+				LibLocation='Project'
+				ModSinceLib=true
+			$end 'copper'
+			$begin 'FR4_epoxy'
+				CoordinateSystemType='Cartesian'
+				BulkOrSurfaceType=1
+				$begin 'PhysicsTypes'
+					set('Electromagnetic', 'Thermal', 'Structural')
+				$end 'PhysicsTypes'
+				$begin 'AttachedData'
+					$begin 'MatAppearanceData'
+						property_data='appearance_data'
+						Red=27
+						Green=110
+						Blue=76
+					$end 'MatAppearanceData'
+				$end 'AttachedData'
+				permittivity='4.4'
+				dielectric_loss_tangent='0.02'
+				thermal_conductivity='0.294'
+				mass_density='1900'
+				specific_heat='1150'
+				youngs_modulus='11000000000'
+				poissons_ratio='0.28'
+				thermal_expansion_coefficient='1.5e-05'
+				ModTime=1499970477
+				Library='Materials'
+				LibLocation='Project'
+				ModSinceLib=true
+			$end 'FR4_epoxy'
+			$begin 'pec'
+				CoordinateSystemType='Cartesian'
+				BulkOrSurfaceType=1
+				$begin 'PhysicsTypes'
+					set('Electromagnetic')
+				$end 'PhysicsTypes'
+				$begin 'AttachedData'
+					$begin 'MatAppearanceData'
+						property_data='appearance_data'
+						Red=247
+						Green=242
+						Blue=232
+					$end 'MatAppearanceData'
+				$end 'AttachedData'
+				conductivity='1e+30'
+				ModTime=1499970477
+				Library='Materials'
+				LibLocation='Project'
+				ModSinceLib=true
+			$end 'pec'
+		$end 'Materials'
+		$begin 'SurfaceMaterials'
+		$end 'SurfaceMaterials'
+		$begin 'Scripts'
+		$end 'Scripts'
+		$begin 'Symbols'
+			$begin 'diffViaNominal'
+				ModTime=1311334270
+				Library=''
+				ModSinceLib=false
+				LibLocation='Project'
+				HighestLevel=1
+				Normalize=true
+				InitialLevels(0, 1)
+				$begin 'PinDef'
+					Pin('Port1:T1', -0.00508, 0, 0, 'N', 0, 0.00254, false, 0, true, '', true, false, 'Port1:T1', true)
+					$begin 'PropDisplayMap'
+						PinName(2, 5, 0, Text(-0.00508, 0.000635, 0, 4, 5, false, 'Arial', 0, 'Port1:T1', false, false, ExtentRect(0, 0, 0, 0, -0.00508, 0.00113792000000018, 0.00486156000000177, 0.00167640000000061, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'PinDef'
+				$begin 'PinDef'
+					Pin('Port1:T2', 0.00508, 0, 3.14159265358979, 'N', 0, 0.00254, false, 0, true, '', true, false, 'Port1:T2', true)
+					$begin 'PropDisplayMap'
+						PinName(2, 5, 0, Text(0.00508, 0.000635, 0, 4, 5, false, 'Arial', 0, 'Port1:T2', false, false, ExtentRect(0, 0, 0, 0, 0.00508, 0.00113792000000018, 0.00486156000000177, 0.00167640000000061, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'PinDef'
+				$begin 'PinDef'
+					Pin('Port3:T1', -0.00508, -0.00254, 0, 'N', 0, 0.00254, false, 0, true, '', true, false, 'Port3:T1', true)
+					$begin 'PropDisplayMap'
+						PinName(2, 5, 0, Text(-0.00508, -0.001905, 0, 4, 5, false, 'Arial', 0, 'Port3:T1', false, false, ExtentRect(0, 0, 0, 0, -0.00508, -0.00140207999999982, 0.00486156000000177, 0.00167640000000061, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'PinDef'
+				$begin 'PinDef'
+					Pin('Port3:T2', 0.00508, -0.00254, 3.14159265358979, 'N', 0, 0.00254, false, 0, true, '', true, false, 'Port3:T2', true)
+					$begin 'PropDisplayMap'
+						PinName(2, 5, 0, Text(0.00508, -0.001905, 0, 4, 5, false, 'Arial', 0, 'Port3:T2', false, false, ExtentRect(0, 0, 0, 0, 0.00508, -0.00140207999999982, 0.00486156000000177, 0.00167640000000061, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'PinDef'
+				$begin 'Graphics'
+					Rect(0, 1, 0, 0, -0.00211666666666667, 0, 0.000423333333333333, 0.000423333333333333, 0, 0, 0)
+					Rect(0, 0, 0, 0, 0, -0.00127, 0.00508, 0.00762, 0, 0, 0)
+					Rect(0, 1, 0, 0, -0.00211666666666667, 0, 0.000423333333333333, 0.000423333333333333, 0, 0, 0)
+				$end 'Graphics'
+			$end 'diffViaNominal'
+		$end 'Symbols'
+		$begin 'Bondwires'
+			$begin 'J4_LH10'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.254mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH10'
+			$begin 'J4_LH11'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.2794mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH11'
+			$begin 'J4_LH12'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.3048mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH12'
+			$begin 'J4_LH13'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.3302mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH13'
+			$begin 'J4_LH14'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.3556mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH14'
+			$begin 'J4_LH15'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.381mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH15'
+			$begin 'J4_LH3'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0762mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH3'
+			$begin 'J4_LH4'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.1016mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH4'
+			$begin 'J4_LH5'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH5'
+			$begin 'J4_LH6'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.1524mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH6'
+			$begin 'J4_LH7'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.1778mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH7'
+			$begin 'J4_LH8'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.2032mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH8'
+			$begin 'J4_LH9'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.2286mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J4_LH9'
+			$begin 'J5_LH10_ALPH45_BETA15'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Angle'
+						HorizontalValue='2578.3100780887deg'
+						VerticalType='Length'
+						VerticalValue='0.254mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Switch'
+						HorizontalValue='0'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='50.000000 %'
+						VerticalType='Angle'
+						VerticalValue='859.436692696235deg'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J5_LH10_ALPH45_BETA15'
+			$begin 'J5_LH15_ALPH45_BETA15'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Angle'
+						HorizontalValue='2578.3100780887deg'
+						VerticalType='Length'
+						VerticalValue='0.381mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Switch'
+						HorizontalValue='0'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='50.000000 %'
+						VerticalType='Angle'
+						VerticalValue='859.436692696235deg'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J5_LH15_ALPH45_BETA15'
+			$begin 'J5_LH5_ALPH45_BETA15'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Angle'
+						HorizontalValue='2578.3100780887deg'
+						VerticalType='Length'
+						VerticalValue='0.127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Switch'
+						HorizontalValue='0'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='50.000000 %'
+						VerticalType='Angle'
+						VerticalValue='859.436692696235deg'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'J5_LH5_ALPH45_BETA15'
+			$begin 'JEDEC4'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=false
+				IsForward=true
+				Material='GOLD'
+				Color=255
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.1mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'JEDEC4'
+			$begin 'JEDEC5'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=false
+				IsForward=true
+				Material='GOLD'
+				Color=255
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Angle'
+						HorizontalValue='4583.66236104659deg'
+						VerticalType='Length'
+						VerticalValue='0.1mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='12.500000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Switch'
+						HorizontalValue='0'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='50.000000 %'
+						VerticalType='Angle'
+						VerticalValue='286.478897565412deg'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'JEDEC5'
+			$begin 'SL_LH10'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.139192mm'
+						VerticalType='Length'
+						VerticalValue='0.2413mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH10'
+			$begin 'SL_LH11'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.071374mm'
+						VerticalType='Length'
+						VerticalValue='0.2667mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH11'
+			$begin 'SL_LH12'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.078232mm'
+						VerticalType='Length'
+						VerticalValue='0.2921mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH12'
+			$begin 'SL_LH13'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.08509mm'
+						VerticalType='Length'
+						VerticalValue='0.3175mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH13'
+			$begin 'SL_LH14'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.091948mm'
+						VerticalType='Length'
+						VerticalValue='0.3429mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH14'
+			$begin 'SL_LH15'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.098806mm'
+						VerticalType='Length'
+						VerticalValue='0.3683mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH15'
+			$begin 'SL_LH3'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0635mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH3'
+			$begin 'SL_LH4'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0889mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH4'
+			$begin 'SL_LH5'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1143mm'
+						VerticalType='Length'
+						VerticalValue='0.1143mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH5'
+			$begin 'SL_LH6'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1397mm'
+						VerticalType='Length'
+						VerticalValue='0.1397mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH6'
+			$begin 'SL_LH7'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1651mm'
+						VerticalType='Length'
+						VerticalValue='0.1651mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH7'
+			$begin 'SL_LH8'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.109982mm'
+						VerticalType='Length'
+						VerticalValue='0.1905mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH8'
+			$begin 'SL_LH9'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.124714mm'
+						VerticalType='Length'
+						VerticalValue='0.2159mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SL_LH9'
+			$begin 'SSB_LH1_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='80.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH1_SP20'
+			$begin 'SSB_LH1_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH1_SP40'
+			$begin 'SSB_LH1_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH1_SP60'
+			$begin 'SSB_LH1_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='30.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH1_SP70'
+			$begin 'SSB_LH1_SP85'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='15.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='85.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH1_SP85'
+			$begin 'SSB_LH2_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='80.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0381mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH2_SP20'
+			$begin 'SSB_LH2_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0381mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH2_SP40'
+			$begin 'SSB_LH2_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0381mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH2_SP60'
+			$begin 'SSB_LH2_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='30.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0381mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH2_SP70'
+			$begin 'SSB_LH2_SP85'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='15.000000 %'
+						VerticalType='Length'
+						VerticalValue='0.0381mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='85.000000 %'
+						VerticalType='Percent'
+						VerticalValue='-50.000000 %'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'SSB_LH2_SP85'
+			$begin 'WL_LH10_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.139192mm'
+						VerticalType='Length'
+						VerticalValue='0.2413mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH10_SP00'
+			$begin 'WL_LH10_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.139192mm'
+						VerticalType='Length'
+						VerticalValue='0.2413mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH10_SP20'
+			$begin 'WL_LH10_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.139192mm'
+						VerticalType='Length'
+						VerticalValue='0.2413mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH10_SP40'
+			$begin 'WL_LH10_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.139192mm'
+						VerticalType='Length'
+						VerticalValue='0.2413mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH10_SP60'
+			$begin 'WL_LH10_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.139192mm'
+						VerticalType='Length'
+						VerticalValue='0.2413mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH10_SP70'
+			$begin 'WL_LH11_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.071374mm'
+						VerticalType='Length'
+						VerticalValue='0.2667mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH11_SP00'
+			$begin 'WL_LH11_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.071374mm'
+						VerticalType='Length'
+						VerticalValue='0.2667mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH11_SP20'
+			$begin 'WL_LH11_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.071374mm'
+						VerticalType='Length'
+						VerticalValue='0.2667mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH11_SP40'
+			$begin 'WL_LH11_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.071374mm'
+						VerticalType='Length'
+						VerticalValue='0.2667mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH11_SP60'
+			$begin 'WL_LH11_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.071374mm'
+						VerticalType='Length'
+						VerticalValue='0.2667mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH11_SP70'
+			$begin 'WL_LH12_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.078232mm'
+						VerticalType='Length'
+						VerticalValue='0.2921mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH12_SP00'
+			$begin 'WL_LH12_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.078232mm'
+						VerticalType='Length'
+						VerticalValue='0.2921mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH12_SP20'
+			$begin 'WL_LH12_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.078232mm'
+						VerticalType='Length'
+						VerticalValue='0.2921mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH12_SP40'
+			$begin 'WL_LH12_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.078232mm'
+						VerticalType='Length'
+						VerticalValue='0.2921mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH12_SP60'
+			$begin 'WL_LH12_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.078232mm'
+						VerticalType='Length'
+						VerticalValue='0.2921mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH12_SP70'
+			$begin 'WL_LH13_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.08509mm'
+						VerticalType='Length'
+						VerticalValue='0.3175mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH13_SP00'
+			$begin 'WL_LH13_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.08509mm'
+						VerticalType='Length'
+						VerticalValue='0.3175mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH13_SP20'
+			$begin 'WL_LH13_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.08509mm'
+						VerticalType='Length'
+						VerticalValue='0.3175mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH13_SP40'
+			$begin 'WL_LH13_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.08509mm'
+						VerticalType='Length'
+						VerticalValue='0.3175mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH13_SP60'
+			$begin 'WL_LH13_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.08509mm'
+						VerticalType='Length'
+						VerticalValue='0.3175mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH13_SP70'
+			$begin 'WL_LH14_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.091948mm'
+						VerticalType='Length'
+						VerticalValue='0.3429mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH14_SP00'
+			$begin 'WL_LH14_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.091948mm'
+						VerticalType='Length'
+						VerticalValue='0.3429mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH14_SP20'
+			$begin 'WL_LH14_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.091948mm'
+						VerticalType='Length'
+						VerticalValue='0.3429mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH14_SP40'
+			$begin 'WL_LH14_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.091948mm'
+						VerticalType='Length'
+						VerticalValue='0.3429mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH14_SP60'
+			$begin 'WL_LH14_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.091948mm'
+						VerticalType='Length'
+						VerticalValue='0.3429mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH14_SP70'
+			$begin 'WL_LH15_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.098806mm'
+						VerticalType='Length'
+						VerticalValue='0.3683mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH15_SP00'
+			$begin 'WL_LH15_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.098806mm'
+						VerticalType='Length'
+						VerticalValue='0.3683mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH15_SP20'
+			$begin 'WL_LH15_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.098806mm'
+						VerticalType='Length'
+						VerticalValue='0.3683mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH15_SP40'
+			$begin 'WL_LH15_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.098806mm'
+						VerticalType='Length'
+						VerticalValue='0.3683mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH15_SP60'
+			$begin 'WL_LH15_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.098806mm'
+						VerticalType='Length'
+						VerticalValue='0.3683mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH15_SP70'
+			$begin 'WL_LH3_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0635mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH3_SP00'
+			$begin 'WL_LH3_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0635mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH3_SP20'
+			$begin 'WL_LH3_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0635mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH3_SP40'
+			$begin 'WL_LH3_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0635mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH3_SP60'
+			$begin 'WL_LH3_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0635mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH3_SP70'
+			$begin 'WL_LH4_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0889mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH4_SP00'
+			$begin 'WL_LH4_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0889mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH4_SP20'
+			$begin 'WL_LH4_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0889mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH4_SP40'
+			$begin 'WL_LH4_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0889mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH4_SP60'
+			$begin 'WL_LH4_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0889mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH4_SP70'
+			$begin 'WL_LH5_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1143mm'
+						VerticalType='Length'
+						VerticalValue='0.1143mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH5_SP00'
+			$begin 'WL_LH5_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1143mm'
+						VerticalType='Length'
+						VerticalValue='0.1143mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH5_SP20'
+			$begin 'WL_LH5_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1143mm'
+						VerticalType='Length'
+						VerticalValue='0.1143mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH5_SP40'
+			$begin 'WL_LH5_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1143mm'
+						VerticalType='Length'
+						VerticalValue='0.1143mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH5_SP60'
+			$begin 'WL_LH5_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1143mm'
+						VerticalType='Length'
+						VerticalValue='0.1143mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH5_SP70'
+			$begin 'WL_LH6_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1397mm'
+						VerticalType='Length'
+						VerticalValue='0.1397mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH6_SP00'
+			$begin 'WL_LH6_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1397mm'
+						VerticalType='Length'
+						VerticalValue='0.1397mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH6_SP20'
+			$begin 'WL_LH6_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1397mm'
+						VerticalType='Length'
+						VerticalValue='0.1397mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH6_SP40'
+			$begin 'WL_LH6_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1397mm'
+						VerticalType='Length'
+						VerticalValue='0.1397mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH6_SP60'
+			$begin 'WL_LH6_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1397mm'
+						VerticalType='Length'
+						VerticalValue='0.1397mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH6_SP70'
+			$begin 'WL_LH7_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1651mm'
+						VerticalType='Length'
+						VerticalValue='0.1651mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH7_SP00'
+			$begin 'WL_LH7_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1651mm'
+						VerticalType='Length'
+						VerticalValue='0.1651mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH7_SP20'
+			$begin 'WL_LH7_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1651mm'
+						VerticalType='Length'
+						VerticalValue='0.1651mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH7_SP40'
+			$begin 'WL_LH7_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1651mm'
+						VerticalType='Length'
+						VerticalValue='0.1651mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH7_SP60'
+			$begin 'WL_LH7_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.1651mm'
+						VerticalType='Length'
+						VerticalValue='0.1651mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH7_SP70'
+			$begin 'WL_LH8_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.109982mm'
+						VerticalType='Length'
+						VerticalValue='0.1905mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH8_SP00'
+			$begin 'WL_LH8_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.109982mm'
+						VerticalType='Length'
+						VerticalValue='0.1905mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH8_SP20'
+			$begin 'WL_LH8_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.109982mm'
+						VerticalType='Length'
+						VerticalValue='0.1905mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH8_SP40'
+			$begin 'WL_LH8_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.109982mm'
+						VerticalType='Length'
+						VerticalValue='0.1905mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH8_SP60'
+			$begin 'WL_LH8_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.109982mm'
+						VerticalType='Length'
+						VerticalValue='0.1905mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH8_SP70'
+			$begin 'WL_LH9_SP00'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.124714mm'
+						VerticalType='Length'
+						VerticalValue='0.2159mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH9_SP00'
+			$begin 'WL_LH9_SP20'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.124714mm'
+						VerticalType='Length'
+						VerticalValue='0.2159mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='20.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH9_SP20'
+			$begin 'WL_LH9_SP40'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.124714mm'
+						VerticalType='Length'
+						VerticalValue='0.2159mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='40.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH9_SP40'
+			$begin 'WL_LH9_SP60'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.124714mm'
+						VerticalType='Length'
+						VerticalValue='0.2159mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='60.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH9_SP60'
+			$begin 'WL_LH9_SP70'
+				Type=0
+				ModifiedOn=1616780460
+				Library=''
+				FromVendor=true
+				IsForward=true
+				Material='GOLD'
+				Color=0
+				IsVisible=true
+				Diameter('1mil')
+				$begin 'Segments'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0mm'
+						VerticalType='Length'
+						VerticalValue='0.0127mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Length'
+						HorizontalValue='0.124714mm'
+						VerticalType='Length'
+						VerticalValue='0.2159mm'
+					$end 'Segment'
+					$begin 'Segment'
+						HorizontalType='Percent'
+						HorizontalValue='70.000000 %'
+						VerticalType='Length'
+						VerticalValue='0mm'
+					$end 'Segment'
+				$end 'Segments'
+			$end 'WL_LH9_SP70'
+		$end 'Bondwires'
+		$begin 'DefInfo'
+			diffViaNominal(1002, 0, 16, 4, '', 1311334270, '', 'diffViaNominal', '', '', '', '', '', 'Design.bmp', '', 'Project', '', '', 1311334270, '', 0, 0)
+		$end 'DefInfo'
+		$begin 'Compdefs'
+			$begin 'diffViaNominal'
+				Library=''
+				CircuitEnv=0
+				Refbase='U'
+				NumParts=1
+				ModSinceLib=false
+				Terminal('Port1:T1', 'Port1:T1', 'A', false, 0, 1, '', 'Electrical', '0')
+				Terminal('Port1:T2', 'Port1:T2', 'A', false, 1, 1, '', 'Electrical', '0')
+				Terminal('Port3:T1', 'Port3:T1', 'A', false, 2, 1, '', 'Electrical', '0')
+				Terminal('Port3:T2', 'Port3:T2', 'A', false, 3, 1, '', 'Electrical', '0')
+				$begin 'Properties'
+					TextProp('Representation', 'SRD', '', 'diffViaNominal')
+					TextProp('Owner', 'SRD', '', 'HFSS 3D Layout Design')
+				$end 'Properties'
+				CompExtID=6
+				$begin 'Parameters'
+					TextProp('ModelName', 'SHD', '', 'FieldSolver')
+					ButtonProp('CosimDefinition', 'D', '', '', 'Edit', 40501, ButtonPropClientData())
+					MenuProp('CoSimulator', 'D', '', 'DefaultNetlist', 0)
+				$end 'Parameters'
+				$begin 'CosimDefinitions'
+					$begin 'CosimDefinition'
+						CosimulatorType=4
+						CosimDefName='DefaultNetlist'
+						IsDefinition=true
+						Connect=true
+						Data()
+						GRef()
+					$end 'CosimDefinition'
+					DefaultCosim='DefaultNetlist'
+				$end 'CosimDefinitions'
+			$end 'diffViaNominal'
+		$end 'Compdefs'
+	$end 'Definitions'
+	DesignIDServer=15
+	MoveBackwards=false
+	$begin 'PlanarEMCircuit'
+		RepRewriteV2=true
+		Name='diffViaNominal'
+		DesignID=0
+		$begin 'Circuit'
+			ComponentName='diffViaNominal'
+			AutoFP=''
+			$begin 'DesignDatasets'
+				NextUniqueID=0
+				MoveBackwards=false
+				DatasetType='DesignDatasetType'
+				$begin 'DatasetDefinitions'
+				$end 'DatasetDefinitions'
+			$end 'DesignDatasets'
+			$begin 'Variables'
+				VariableProp('w1', 'UD', 'Width of top traces', '199.5um', oa(i=true, int=false, Min='198um', Max='208um', MinStep='2.02um', MaxStep='20.2um', MinFocus='198um', MaxFocus='208um', UseManufacturableValues='false', Level='[198: 208] um'))
+				VariableProp('s1', 'UD', 'Spacing between top traces', '150um')
+				VariableProp('w2', 'UD', 'Width of stripline signal traces.', '210um', oa(i=true, int=false, Min='210um', Max='230um', MinStep='2.2um', MaxStep='22um', MinFocus='210um', MaxFocus='230um', UseManufacturableValues='false', Level='[210: 230] um'))
+				VariableProp('s2', 'UD', 'Spacing between stripline traces.', '120um')
+				VariableProp('viaSpacing', 'UD', 'Spacing between signal vias.', '1.26mm', oa(i=true, int=false, Min='0.9mm', Max='1.4mm', MinStep='0.012mm', MaxStep='0.12mm', MinFocus='0.9mm', MaxFocus='1.4mm', UseManufacturableValues='false', Level='[0.9: 1.4] mm'))
+				VariableProp('gndViaDist', 'UD', 'Distance from signal via to ground via.', '0.89mm', oa(i=true, int=false, Min='0.75mm', Max='1.2mm', MinStep='0.008mm', MaxStep='0.08mm', MinFocus='0.75mm', MaxFocus='1.2mm', UseManufacturableValues='false', Level='[0.75: 1.2] mm'))
+				VariableProp('bufferLen', 'UHD', 'Padding distance of ground metal from ground vias.', '3mm')
+				VariableProp('len', 'UHD', 'Length extension of signal traces after bend.', '1.5mm')
+			$end 'Variables'
+			VariableOrders[8: 'w1', 's1', 'w2', 's2', 'viaSpacing', 'gndViaDist', 'bufferLen', 'len']
+			$begin 'IPort'
+				PortName='Port1:T1'
+				Public=true
+				Connectible=true
+				UnconnectedAction=1
+				PortValue=''
+				Domain(0, -1, 2, '')
+			$end 'IPort'
+			$begin 'IPort'
+				PortName='Port1:T2'
+				Public=true
+				Connectible=true
+				UnconnectedAction=1
+				PortValue=''
+				Domain(0, -1, 2, '')
+			$end 'IPort'
+			$begin 'IPort'
+				PortName='Port3:T1'
+				Public=true
+				Connectible=true
+				UnconnectedAction=1
+				PortValue=''
+				Domain(0, -1, 2, '')
+			$end 'IPort'
+			$begin 'IPort'
+				PortName='Port3:T2'
+				Public=true
+				Connectible=true
+				UnconnectedAction=1
+				PortValue=''
+				Domain(0, -1, 2, '')
+			$end 'IPort'
+			$begin 'Net'
+				NetName='GND'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+			$end 'Net'
+			$begin 'Net'
+				NetName='neg'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+			$end 'Net'
+			$begin 'Net'
+				NetName='Port1'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetInterfacePorts='Port1:T1'
+			$end 'Net'
+			$begin 'Net'
+				NetName='Port2'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetInterfacePorts='Port1:T2'
+			$end 'Net'
+			$begin 'Net'
+				NetName='Port3'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetInterfacePorts='Port3:T1'
+			$end 'Net'
+			$begin 'Net'
+				NetName='Port4'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetInterfacePorts='Port3:T2'
+			$end 'Net'
+			$begin 'Net'
+				NetName='pos'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+			$end 'Net'
+			$begin 'Net'
+				NetName='VCC'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+			$end 'Net'
+		$end 'Circuit'
+		$begin 'Schematic'
+			PPortCounter=0
+			BusEntryCounter=0
+			ShowVariableBlock=true
+			$begin 'Page'
+				PageSize('A')
+				PageData(Origin(x='0mm', y='0mm'), PageSize(x='0', y='0'), Margins(x='0', y='0'), 0, 0, 0)
+				PageNumber=1
+				$begin 'SchIPort'
+					SchPortInst('defaultinterfaceport', '0', 'Port1:T1', 1, 0, 0, 0, false, 'defaultinterfaceport', 4294967295)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.00127, 0, 0, 1, 5, false, 'Arial', 0, 'Port1:T1', false, false, ExtentRect(0, 0, 0, 0, 0.0041479239766197, 0.000881944444447972, 0.0057558479532394, 0.00176388888889594, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchIPort'
+				$begin 'SchIPort'
+					SchPortInst('defaultinterfaceport', '2', 'Port1:T2', 5, 0, -0.0254, 0, false, 'defaultinterfaceport', 4294967295)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.00127, -0.0254, 0, 1, 5, false, 'Arial', 0, 'Port1:T2', false, false, ExtentRect(0, 0, 0, 0, 0.0041479239766197, -0.024518055555552, 0.0057558479532394, 0.00176388888889594, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchIPort'
+				$begin 'SchIPort'
+					SchPortInst('defaultinterfaceport', '4', 'Port3:T1', 9, -0.01524, -0.0254, 0, false, 'defaultinterfaceport', 4294967295)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(-0.01397, -0.0254, 0, 1, 5, false, 'Arial', 0, 'Port3:T1', false, false, ExtentRect(0, 0, 0, 0, -0.0110920760233803, -0.024518055555552, 0.0057558479532394, 0.00176388888889594, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchIPort'
+				$begin 'SchIPort'
+					SchPortInst('defaultinterfaceport', '6', 'Port3:T2', 13, -0.01524, 0, 0, false, 'defaultinterfaceport', 4294967295)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(-0.01397, 0, 0, 1, 5, false, 'Arial', 0, 'Port3:T2', false, false, ExtentRect(0, 0, 0, 0, -0.0110920760233803, 0.000881944444447972, 0.0057558479532394, 0.00176388888889594, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchIPort'
+				$begin 'PageNet'
+					NetName='Port1'
+					ID=20
+					Interface('Port1:T1', 1)
+					Color=16711680
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='Port2'
+					ID=24
+					Interface('Port1:T2', 5)
+					Color=16711680
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='Port3'
+					ID=27
+					Interface('Port3:T1', 9)
+					Color=16711680
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='Port4'
+					ID=30
+					Interface('Port3:T2', 13)
+					Color=16711680
+				$end 'PageNet'
+				$begin 'Graphics'
+					ID=23
+					Color=4294967295
+					Animated=false
+					SnapshotSignal=''
+					UseManualyEnteredPath=false
+					ManualyEnteredPath=''
+					UseImageAnimationFolder=false
+					SnapshotFolder=''
+					RelWritingLocation=0
+					TextBox(-0.018288000000002, -0.0264160000000041, 0, 6, 8, false, 'Arial', 0, 'Design Properties\
+w1 = 199.5um\
+s1 = 150um\
+w2 = 210um\
+s2 = 120um\
+viaSpacing = 1.26mm\
+gndViaDist = 0.89mm\
+bufferLen = 3mm\
+len = 1.5mm', true, true, ExtentRect(0, 0, 0, 0, -0.0300225029240256, -0.0391160000000549, 0.0234690058480471, 0.0254000000001016, 0, 0, 0), DisplayRect(0, 0, 0, 0, -0.0300225029240256, -0.0391160000000549, 0.0293362573100589, 0.031750000000127, 0, 0, 8192))
+				$end 'Graphics'
+				$begin 'Properties'
+					TextProp('Title', 'SD', '', '<Page Title>')
+					TextProp('Author', 'SD', '', '')
+				$end 'Properties'
+			$end 'Page'
+			GridSetup('1000mil', '100mil', '100mil', 16772075, 16774645, true, true, 16777215, Origin(x='0mm', y='0mm'), PageSize(x='0mm', y='0mm'), Margins(x='0mm', y='0mm'), 0, 0, 0)
+			hasWindowBeenOpened=false
+			NextUniqueID=0
+			MoveBackwards=false
+		$end 'Schematic'
+		$begin 'Layout'
+			BlackBox=false
+			DefUnits='mm'
+			NIdx=192
+			ActLyr='GND_1_L2'
+			Tol(2e-09, 1e-08, 1e-12)
+			$begin 'HfssExportInfo'
+				ScriptFileName=''
+				HfssFileName=''
+				Version=1
+				ExtentType='BboxExtent'
+				BasePolygon=''
+				BasePolygonEDBUId=-1
+				DielExtentType='BboxExtent'
+				DielBasePolygon=''
+				DielBasePolygonEDBUId=-1
+				DielExt(Ext='0.1', Dim=false)
+				HonorUserDiel=true
+				TruncAtGnd=false
+				AirHorExt(Ext='0.4', Dim=false)
+				AirPosZExt(Ext='0.5', Dim=false)
+				AirNegZExt(Ext='0.5', Dim=false)
+				SyncZExt=true
+				OpenRegionType='Radiation'
+				UseRadBound=true
+				PMLVisible=false
+				OperFreq='5GHz'
+				RadLvl=0
+				UseStackupForZExtFact=false
+				Smooth=true
+			$end 'HfssExportInfo'
+		$end 'Layout'
+		$begin 'Rule Set'
+			$begin 'Data'
+			$end 'Data'
+			$begin 'DRCSolutionMgr'
+			$end 'DRCSolutionMgr'
+		$end 'Rule Set'
+		$begin 'Workflow'
+			WorkflowName=''
+			SpecName=''
+			TemplateName=''
+			LibLoc=1223664
+		$end 'Workflow'
+		$begin 'Port'
+			$begin 'Data'
+				$begin 'Port1:T1'
+					DataId='Port0'
+					$begin 'Properties'
+						'Boundary Type'='Port'
+						Reference='GND_1_L2:GND:rect_6'
+						'Override Impedance'='false'
+						Impedance='50ohm'
+						Magnitude='1V'
+						Phase='0deg'
+						'Renormalize Impedence'='50ohm + 0i ohm'
+						Renormalize='true'
+						'Deembed Distance'='0mm'
+						Deembed='true'
+						DeembedParasiticPortInductance='false'
+						PlanarEM=''
+						Type='Coupled Strips Gap Source'
+						PortSolver='true'
+						Theta='0rad'
+						Phi='0rad'
+						MagnitudeV='1V'
+						PhaseV='0deg'
+						'Ignore Reference'='false'
+						HFSS=''
+						'HFSS Type'='Wave'
+						Orientation='Vertical'
+						'Layer Alignment'='Upper'
+						'Horizontal Extent Factor'='2'
+						'Vertical Extent Factor'='3'
+						'PEC Launch Width'='0.03mm'
+						'Radial Extent Factor'='0'
+						Terminated='false'
+						TermResistance='50ohm'
+						TermReactance='0ohm'
+						SIwave=''
+						'Reference Net'=''
+					$end 'Properties'
+					Type='EdgePortCoupledStrip'
+					UseRefFromHierarchy=2
+					HFSSPortType='Wave'
+					Arms=2
+					IsGapSource=true
+					HFSSPIType='Default'
+					UpperProbe=false
+					LayoutObject='Port1:T1'
+					Pin=''
+					CircuitPort=false
+					AutoPort=false
+					$begin 'RLCBnd'
+						LoadType='NoLoad'
+						$begin 'Properties'
+							Parallel='true'
+							'R Enabled'='false'
+							'L Enabled'='false'
+							'C Enabled'='false'
+							R='0ohm'
+							L='0nH'
+							C='0pF'
+							Real='0ohm'
+							Imag='0ohm'
+							Magnitude='1V'
+							Phase='0deg'
+							Impedance='50ohm'
+						$end 'Properties'
+					$end 'RLCBnd'
+					ValidateReference=false
+					ZReferences(R('GND_1_L2', 'GND', 'rect_6', false, 0, 0, true))
+				$end 'Port1:T1'
+				$begin 'Port1:T2'
+					DataId='Port1'
+					$begin 'Properties'
+						'Boundary Type'='Port'
+						Reference='GND_1_L2:GND:rect_6'
+						'Override Impedance'='false'
+						Impedance='50ohm'
+						Magnitude='1V'
+						Phase='0deg'
+						'Renormalize Impedence'='50ohm + 0i ohm'
+						Renormalize='true'
+						'Deembed Distance'='0mm'
+						Deembed='true'
+						DeembedParasiticPortInductance='false'
+						PlanarEM=''
+						Type='Coupled Strips Gap Source'
+						PortSolver='true'
+						Theta='0rad'
+						Phi='0rad'
+						MagnitudeV='1V'
+						PhaseV='0deg'
+						'Ignore Reference'='false'
+						HFSS=''
+						'HFSS Type'='Wave'
+						Orientation='Vertical'
+						'Layer Alignment'='Upper'
+						'Horizontal Extent Factor'='2'
+						'Vertical Extent Factor'='3'
+						'PEC Launch Width'='0.03mm'
+						'Radial Extent Factor'='0'
+						Terminated='false'
+						TermResistance='50ohm'
+						TermReactance='0ohm'
+						SIwave=''
+						'Reference Net'=''
+					$end 'Properties'
+					Type='EdgePortCoupledStrip'
+					UseRefFromHierarchy=2
+					HFSSPortType='Wave'
+					Arms=2
+					IsGapSource=true
+					HFSSPIType='Default'
+					UpperProbe=false
+					LayoutObject='Port1:T2'
+					Pin=''
+					CircuitPort=false
+					AutoPort=false
+					$begin 'RLCBnd'
+						LoadType='NoLoad'
+						$begin 'Properties'
+							Parallel='true'
+							'R Enabled'='false'
+							'L Enabled'='false'
+							'C Enabled'='false'
+							R='0ohm'
+							L='0nH'
+							C='0pF'
+							Real='0ohm'
+							Imag='0ohm'
+							Magnitude='1V'
+							Phase='0deg'
+							Impedance='50ohm'
+						$end 'Properties'
+					$end 'RLCBnd'
+					ValidateReference=false
+					ZReferences(R('GND_1_L2', 'GND', 'rect_6', false, 0, 0, true))
+				$end 'Port1:T2'
+				$begin 'Port3:T1'
+					DataId='Port2'
+					$begin 'Properties'
+						'Boundary Type'='Port'
+						Reference='GND_4_L9:GND:rect_19'
+						'Override Impedance'='false'
+						Impedance='50ohm'
+						Magnitude='1V'
+						Phase='0deg'
+						'Renormalize Impedence'='50ohm + 0i ohm'
+						Renormalize='true'
+						'Deembed Distance'='0mm'
+						Deembed='true'
+						DeembedParasiticPortInductance='false'
+						PlanarEM=''
+						Type='Coupled Strips Gap Source'
+						PortSolver='true'
+						Theta='0rad'
+						Phi='0rad'
+						MagnitudeV='1V'
+						PhaseV='0deg'
+						'Ignore Reference'='false'
+						HFSS=''
+						'HFSS Type'='Wave'
+						Orientation='Vertical'
+						'Layer Alignment'='Lower'
+						'Horizontal Extent Factor'='2'
+						'Vertical Extent Factor'='3'
+						'PEC Launch Width'='0.03mm'
+						'Radial Extent Factor'='0'
+						Terminated='false'
+						TermResistance='50ohm'
+						TermReactance='0ohm'
+						SIwave=''
+						'Reference Net'=''
+					$end 'Properties'
+					Type='EdgePortCoupledStrip'
+					UseRefFromHierarchy=2
+					HFSSPortType='Wave'
+					Arms=2
+					IsGapSource=true
+					HFSSPIType='Default'
+					UpperProbe=false
+					LayoutObject='Port3:T1'
+					Pin=''
+					CircuitPort=false
+					AutoPort=false
+					$begin 'RLCBnd'
+						LoadType='NoLoad'
+						$begin 'Properties'
+							Parallel='true'
+							'R Enabled'='false'
+							'L Enabled'='false'
+							'C Enabled'='false'
+							R='0ohm'
+							L='0nH'
+							C='0pF'
+							Real='0ohm'
+							Imag='0ohm'
+							Magnitude='1V'
+							Phase='0deg'
+							Impedance='50ohm'
+						$end 'Properties'
+					$end 'RLCBnd'
+					ValidateReference=false
+					ZReferences(R('GND_5_L11', 'GND', 'rect_20', false, 0, 0, true), R('GND_4_L9', 'GND', 'rect_19', false, 0, 0, true))
+				$end 'Port3:T1'
+				$begin 'Port3:T2'
+					DataId='Port3'
+					$begin 'Properties'
+						'Boundary Type'='Port'
+						Reference='GND_4_L9:GND:rect_19'
+						'Override Impedance'='false'
+						Impedance='50ohm'
+						Magnitude='1V'
+						Phase='0deg'
+						'Renormalize Impedence'='50ohm + 0i ohm'
+						Renormalize='true'
+						'Deembed Distance'='0mm'
+						Deembed='true'
+						DeembedParasiticPortInductance='false'
+						PlanarEM=''
+						Type='Coupled Strips Gap Source'
+						PortSolver='true'
+						Theta='0rad'
+						Phi='0rad'
+						MagnitudeV='1V'
+						PhaseV='0deg'
+						'Ignore Reference'='false'
+						HFSS=''
+						'HFSS Type'='Wave'
+						Orientation='Vertical'
+						'Layer Alignment'='Lower'
+						'Horizontal Extent Factor'='2'
+						'Vertical Extent Factor'='3'
+						'PEC Launch Width'='0.03mm'
+						'Radial Extent Factor'='0'
+						Terminated='false'
+						TermResistance='50ohm'
+						TermReactance='0ohm'
+						SIwave=''
+						'Reference Net'=''
+					$end 'Properties'
+					Type='EdgePortCoupledStrip'
+					UseRefFromHierarchy=2
+					HFSSPortType='Wave'
+					Arms=2
+					IsGapSource=true
+					HFSSPIType='Default'
+					UpperProbe=false
+					LayoutObject='Port3:T2'
+					Pin=''
+					CircuitPort=false
+					AutoPort=false
+					$begin 'RLCBnd'
+						LoadType='NoLoad'
+						$begin 'Properties'
+							Parallel='true'
+							'R Enabled'='false'
+							'L Enabled'='false'
+							'C Enabled'='false'
+							R='0ohm'
+							L='0nH'
+							C='0pF'
+							Real='0ohm'
+							Imag='0ohm'
+							Magnitude='1V'
+							Phase='0deg'
+							Impedance='50ohm'
+						$end 'Properties'
+					$end 'RLCBnd'
+					ValidateReference=false
+					ZReferences(R('GND_5_L11', 'GND', 'rect_20', false, 0, 0, true), R('GND_4_L9', 'GND', 'rect_19', false, 0, 0, true))
+				$end 'Port3:T2'
+			$end 'Data'
+			$begin 'CoupledPortsList'
+				CouplePorts('Port1:T1', 'Port1:T2')
+				CouplePorts('Port3:T1', 'Port3:T2')
+			$end 'CoupledPortsList'
+			$begin 'DiffPairs'
+				Pair(Pos='Port1:T1', Neg='Port1:T2', On=true, matched=false, Dif='Diff1', DfZ(100, 0), Com='Comm1', CmZ(25, 0))
+				Pair(Pos='Port3:T1', Neg='Port3:T2', On=true, matched=false, Dif='Diff2', DfZ(100, 0), Com='Comm2', CmZ(25, 0))
+			$end 'DiffPairs'
+			TotalVoltage=false
+			IncludePortPostProcess=true
+			$begin 'SortOrder'
+				Port[4: 'Port1:T1', 'Port1:T2', 'Port3:T1', 'Port3:T2']
+			$end 'SortOrder'
+			LegacySolverPinOrdering=true
+		$end 'Port'
+		$begin 'Boundary'
+			$begin 'Data'
+			$end 'Data'
+			$begin 'CoupledPortsList'
+			$end 'CoupledPortsList'
+			$begin 'DiffPairs'
+			$end 'DiffPairs'
+			TotalVoltage=false
+			IncludePortPostProcess=true
+			$begin 'SortOrder'
+				Port[0:]
+			$end 'SortOrder'
+			LegacySolverPinOrdering=true
+		$end 'Boundary'
+		$begin 'Cavity'
+			$begin 'Data'
+			$end 'Data'
+		$end 'Cavity'
+		$begin 'Via'
+			$begin 'Data'
+			$end 'Data'
+		$end 'Via'
+		$begin 'LayoutVia'
+			$begin 'Data'
+			$end 'Data'
+		$end 'LayoutVia'
+		$begin 'Source'
+			$begin 'Data'
+			$end 'Data'
+		$end 'Source'
+		$begin 'Voltage Probe'
+			$begin 'Data'
+			$end 'Data'
+		$end 'Voltage Probe'
+		$begin 'DC Terminal'
+			$begin 'Data'
+			$end 'Data'
+		$end 'DC Terminal'
+		$begin 'CircuitSources'
+			$begin 'Data'
+			$end 'Data'
+		$end 'CircuitSources'
+		$begin 'NexximPorts'
+			$begin 'Data'
+			$end 'Data'
+			$begin 'DiffPairs'
+			$end 'DiffPairs'
+		$end 'NexximPorts'
+		$begin 'SortOrder'
+		$end 'SortOrder'
+		$begin 'NexximMultiComponentContainers'
+			$begin 'Data'
+			$end 'Data'
+		$end 'NexximMultiComponentContainers'
+		$begin 'ComponentConfigurationData'
+			$begin 'EnabledPorts'
+			$end 'EnabledPorts'
+			$begin 'EnabledMultipleComponents'
+			$end 'EnabledMultipleComponents'
+			$begin 'EnabledAnalyses'
+			$end 'EnabledAnalyses'
+		$end 'ComponentConfigurationData'
+		$begin 'Properties'
+		$end 'Properties'
+		$begin 'CustomSimSetups'
+			$begin 'Data'
+			$end 'Data'
+		$end 'CustomSimSetups'
+		$begin 'RadSetup'
+			$begin 'Data'
+			$end 'Data'
+		$end 'RadSetup'
+		$begin 'Setup'
+			$begin 'Data'
+				$begin 'HFSS Setup 1'
+					DataId='Setup0'
+					$begin 'Properties'
+						Enable='true'
+					$end 'Properties'
+					CustomSetup=false
+					SimSetupID=41
+					AutoSetup=false
+					SliderType='Balanced'
+					SolveSetupType='HFSS'
+					PercentRefinementPerPass=30
+					MinNumberOfPasses=1
+					MinNumberOfConvergedPasses=1
+					UseDefaultLambda=true
+					UseMaxRefinement=false
+					MaxRefinement=1000000
+					SaveAdaptiveCurrents=false
+					SaveLastAdaptiveRadFields=false
+					UseConvergenceMatrix=false
+					AllEntries=false
+					AllDiagEntries=false
+					AllOffDiagEntries=false
+					MagMinThreshold=0.01
+					ProdMajVerID=-1
+					ProjDesignSetup=''
+					ProdMinVerID=-1
+					Refine=false
+					Frequency='10GHz'
+					LambdaRefine=true
+					MeshSizeFactor=1.5
+					QualityRefine=true
+					MinAngle='15deg'
+					UniformityRefine=false
+					MaxRatio=2
+					Smooth=false
+					SmoothingPasses=5
+					UseEdgeMesh=false
+					UseEdgeMeshAbsLength=false
+					EdgeMeshRatio=0.1
+					EdgeMeshAbsLength='1000mm'
+					LayerProjectThickness='0meter'
+					UseDefeature=true
+					UseDefeatureAbsLength=false
+					DefeatureRatio=1e-06
+					DefeatureAbsLength='0mm'
+					InfArrayDimX=0
+					InfArrayDimY=0
+					InfArrayOrigX=0
+					InfArrayOrigY=0
+					InfArraySkew=0
+					ViaNumSides=6
+					ViaMaterial='copper'
+					Style25DVia='Mesh'
+					Replace3DTriangles=true
+					LayerSnapTol='0'
+					ViaDensity=0
+					HfssMesh=true
+					Q3dPostProc=false
+					UnitFactor=1000
+					Verbose=false
+					NumberOfProcessors=0
+					SmallVoidArea=0
+					RemoveFloatingGeometry=false
+					HealingOption=1
+					InclBBoxOption=1
+					ModelType=0
+					ICModeAuto=1
+					ICModeLength='50nm'
+					$begin 'AuxBlock'
+					$end 'AuxBlock'
+					DoAdaptive=true
+					Color(R=0, G=0, B=0)
+					$begin 'AdvancedSettings'
+						AccuracyLevel=2
+						GapPortCalibration=true
+						ReferenceLengthRatio=0.25
+						RefineAreaRatio=4
+						DRCOn=false
+						FastSolverOn=false
+						StartFastSolverAt=3000
+						LoopTreeOn=true
+						SingularElementsOn=false
+						UseStaticPortSolver=false
+						UseThinMetalPortSolver=false
+						ComputeBothEvenAndOddCPWModes=false
+						ZeroMetalLayerThickness=0
+						ThinDielectric=0
+						UseShellElements=false
+						SVDHighCompression=false
+						NumProcessors=8
+						SolverType='Direct Solver'
+						UseHfssMUMPSSolver=true
+						RelativeResidual=0.0001
+						EnhancedLowFreqAccuracy=false
+						OrderBasis=-1
+						MaxDeltaZo=2
+						UseRadBoundaryOnPorts=false
+						SetTrianglesForWavePort=false
+						MinTrianglesForWavePort=100
+						MaxTrianglesForWavePort=500
+						numprocessorsdistrib=2
+						CausalMaterials=true
+						enabledsoforopti=true
+						usehfsssolvelicense=false
+						CircuitSparamDefinition=false
+						CircuitIntegrationType='FFT'
+						DesignType='Generic'
+						MeshingMethod='Phi'
+						EnableDesignIntersectionCheck=true
+						UseAlternativeMeshMethodsAsFallBack=true
+						ModeOption='General mode'
+						BroadbandFreqOption='AutoMaxFreq'
+						BroadbandMaxNumFreq=5
+						SaveADP=true
+						UseAdvancedDCExtrap=false
+					$end 'AdvancedSettings'
+					$begin 'CurveApproximation'
+						ArcAngle='30deg'
+						StartAzimuth='0deg'
+						UseError=false
+						Error='0meter'
+						MaxPoints=8
+						UnionPolys=true
+						Replace3DTriangles=true
+					$end 'CurveApproximation'
+					$begin 'Q3D_DCSettings'
+						SolveResOnly=false
+						$begin 'Cond'
+							MaxPass=10
+							MinPass=1
+							MinConvPass=1
+							PerError=1
+							PerRefine=30
+						$end 'Cond'
+						$begin 'Mult'
+							MaxPass=1
+							MinPass=1
+							MinConvPass=1
+							PerError=1
+							PerRefine=30
+						$end 'Mult'
+						'Solution Order'='Normal'
+					$end 'Q3D_DCSettings'
+					$begin 'Data'
+						$begin 'Sweep 1'
+							DataId='Sweep0'
+							$begin 'Properties'
+								Enable='true'
+							$end 'Properties'
+							Frequencies('0GHz', '0.05GHz', '0.1GHz', '0.15GHz', '0.2GHz', '0.25GHz', '0.3GHz', '0.35GHz', '0.4GHz', '0.45GHz', '0.5GHz', '0.55GHz', '0.6GHz', '0.65GHz', '0.7GHz', '0.75GHz', '0.8GHz', '0.85GHz', '0.9GHz', '0.95GHz', '1GHz', '1.05GHz', '1.1GHz', '1.15GHz', '1.2GHz', '1.25GHz', '1.3GHz', '1.35GHz', '1.4GHz', '1.45GHz', '1.5GHz', '1.55GHz', '1.6GHz', '1.65GHz', '1.7GHz', '1.75GHz', '1.8GHz', '1.85GHz', '1.9GHz', '1.95GHz', '2GHz', '2.05GHz', '2.1GHz', '2.15GHz', '2.2GHz', '2.25GHz', '2.3GHz', '2.35GHz', '2.4GHz', '2.45GHz', '2.5GHz', '2.55GHz', '2.6GHz', '2.65GHz', '2.7GHz', '2.75GHz', '2.8GHz', '2.85GHz', '2.9GHz', '2.95GHz', '3GHz', '3.05GHz', '3.1GHz', '3.15GHz', '3.2GHz', '3.25GHz', '3.3GHz', '3.35GHz', '3.4GHz', '3.45GHz', '3.5GHz', '3.55GHz', '3.6GHz', '3.65GHz', '3.7GHz', '3.75GHz', '3.8GHz', '3.85GHz', '3.9GHz', '3.95GHz', '4GHz', '4.05GHz', '4.1GHz', '4.15GHz', '4.2GHz', '4.25GHz', '4.3GHz', '4.35GHz', '4.4GHz', '4.45GHz', '4.5GHz', '4.55GHz', '4.6GHz', '4.65GHz', '4.7GHz', '4.75GHz', '4.8GHz', '4.85GHz', '4.9GHz', '4.95GHz', '5GHz', '5.05GHz', '5.1GHz', '5.15GHz', '5.2GHz', '5.25GHz', '5.3GHz', '5.35GHz', '5.4GHz', '5.45GHz', '5.5GHz', '5.55GHz', '5.6GHz', '5.65GHz', '5.7GHz', '5.75GHz', '5.8GHz', '5.85GHz', '5.9GHz', '5.95GHz', '6GHz', '6.05GHz', '6.1GHz', '6.15GHz', '6.2GHz', '6.25GHz', '6.3GHz', '6.35GHz', '6.4GHz', '6.45GHz', '6.5GHz', '6.55GHz', '6.6GHz', '6.65GHz', '6.7GHz', '6.75GHz', '6.8GHz', '6.85GHz', '6.9GHz', '6.95GHz', '7GHz', '7.05GHz', '7.1GHz', '7.15GHz', '7.2GHz', '7.25GHz', '7.3GHz', '7.35GHz', '7.4GHz', '7.45GHz', '7.5GHz', '7.55GHz', '7.6GHz', '7.65GHz', '7.7GHz', '7.75GHz', '7.8GHz', '7.85GHz', '7.9GHz', '7.95GHz', '8GHz', '8.05GHz', '8.1GHz', '8.15GHz', '8.2GHz', '8.25GHz', '8.3GHz', '8.35GHz', '8.4GHz', '8.45GHz', '8.5GHz', '8.55GHz', '8.6GHz', '8.65GHz', '8.7GHz', '8.75GHz', '8.8GHz', '8.85GHz', '8.9GHz', '8.95GHz', '9GHz', '9.05GHz', '9.1GHz', '9.15GHz', '9.2GHz', '9.25GHz', '9.3GHz', '9.35GHz', '9.4GHz', '9.45GHz', '9.5GHz', '9.55GHz', '9.6GHz', '9.65GHz', '9.7GHz', '9.75GHz', '9.8GHz', '9.85GHz', '9.9GHz', '9.95GHz', '10GHz')
+							$begin 'Sweeps'
+								Variable='Sweep 1'
+								Data='LIN 0GHz 10GHz 0.05GHz'
+								OffsetF1=false
+								Synchronize=0
+							$end 'Sweeps'
+							SolutionID=43
+							GenerateSurfaceCurrent=false
+							SaveRadFieldsOnly=false
+							ZoSelected=false
+							SAbsError=0.005
+							ZoPercentError=1
+							GenerateStateSpace=false
+							EnforcePassivity=true
+							PassivityTolerance=0.0001
+							UseQ3DForDC=false
+							ResimulateDC=false
+							MaxSolutions=250
+							InterpUseSMatrix=true
+							InterpUsePortImpedance=true
+							InterpUsePropConst=true
+							InterpUseFullBasis=true
+							AdvDCExtrapolation=false
+							MinSolvedFreq='0.01GHz'
+							AutoSMatOnlySolve=true
+							MinFreqSMatrixOnlySolve='1MHz'
+							CustomFrequencyString=''
+							AllEntries=false
+							AllDiagEntries=false
+							AllOffDiagEntries=false
+							MagMinThreshold=0.01
+							FreqSweepType='kInterpolating'
+						$end 'Sweep 1'
+					$end 'Data'
+					$begin 'MeshOps'
+					$end 'MeshOps'
+				$end 'HFSS Setup 1'
+			$end 'Data'
+		$end 'Setup'
+		$begin 'AnalysisOptionBlocks'
+		$end 'AnalysisOptionBlocks'
+		$begin 'EM properties'
+			$begin 'Data'
+			$end 'Data'
+		$end 'EM properties'
+		$begin 'OutputVariable'
+			NextUniqueID=0
+			MoveBackwards=false
+		$end 'OutputVariable'
+		$begin 'Optimetrics'
+			$begin 'OptimetricsSetups'
+				NextUniqueID=1
+				MoveBackwards=false
+			$end 'OptimetricsSetups'
+		$end 'Optimetrics'
+		$begin 'FieldsReporter'
+			$begin 'FieldsCalculator'
+				Line_Discretization=1000
+			$end 'FieldsCalculator'
+			$begin 'PlotDefaults'
+				Default_SolutionId=42
+				Default_PlotFolder='Automatic'
+				Default_Phase='0deg'
+				Default_Freq='8GHz'
+			$end 'PlotDefaults'
+			$begin 'FieldsPlotManagerID'
+				NextUniqueID=0
+				MoveBackwards=false
+				NumQuantityType=0
+				NumPlots=0
+			$end 'FieldsPlotManagerID'
+			$begin 'Report3dInGeomWnd'
+				Report3dNum=0
+			$end 'Report3dInGeomWnd'
+			$begin 'Report2dInGeomWnd'
+				Report2dNum=0
+			$end 'Report2dInGeomWnd'
+			$begin 'AntennaParametersInGeomWnd'
+				AntennaParametersNum=0
+			$end 'AntennaParametersInGeomWnd'
+			AntennaParametersPlotTablesOrder()
+			$begin 'EntitySelectionCache'
+			$end 'EntitySelectionCache'
+		$end 'FieldsReporter'
+		$begin 'SolutionManager'
+			$begin 'SimDataExtractors'
+				$begin 'SimSetup'
+					TypeName='BaseSetup'
+					ID=41
+					Name='HFSS Setup 1'
+					$begin 'Solution'
+						ID=42
+						Name='Last Adaptive'
+						ImportedType=0
+						$begin 'SimDataExtractor'
+							$begin 'EnsSweeps'
+								$begin 'PhiSweep'
+									Variable='Phi'
+									RegularSweep=1
+									Units='deg'
+									Minimum=-3.14159265358979
+									Maximum=3.14159265358979
+									Increment=0.261799387799149
+									CreateIndexedSubsweepFlag=false
+								$end 'PhiSweep'
+								$begin 'ThetaSweep'
+									Variable='Theta'
+									RegularSweep=1
+									Units='deg'
+									Minimum=-3.14159265358979
+									Maximum=3.14159265358979
+									Increment=0.174532925199433
+									CreateIndexedSubsweepFlag=false
+								$end 'ThetaSweep'
+							$end 'EnsSweeps'
+							$begin 'QuantityIDs'
+								NextUniqueID=0
+								MoveBackwards=false
+								IDMap()
+							$end 'QuantityIDs'
+							$begin 'Sweeps'
+								$begin 'PostprocessSweep'
+									Variable='Theta'
+									RegularSweep=1
+									Units='deg'
+									Minimum=-3.14159265358979
+									Maximum=3.14159265358979
+									Increment=0.174532925199433
+									CreateIndexedSubsweepFlag=false
+								$end 'PostprocessSweep'
+								$begin 'PostprocessSweep'
+									Variable='Phi'
+									RegularSweep=1
+									Units='deg'
+									Minimum=-3.14159265358979
+									Maximum=3.14159265358979
+									Increment=0.261799387799149
+									CreateIndexedSubsweepFlag=false
+								$end 'PostprocessSweep'
+								$begin 'Sweep'
+									Variable='Freq'
+									Column='8GHz'
+									Units='GHz'
+								$end 'Sweep'
+							$end 'Sweeps'
+						$end 'SimDataExtractor'
+					$end 'Solution'
+					$begin 'Solution'
+						ID=43
+						Name='Sweep 1'
+						ImportedType=0
+						$begin 'SimDataExtractor'
+							$begin 'EnsSweeps'
+								$begin 'PhiSweep'
+									Variable='Phi'
+									RegularSweep=1
+									Units='deg'
+									Minimum=-3.14159265358979
+									Maximum=3.14159265358979
+									Increment=0.261799387799149
+									CreateIndexedSubsweepFlag=false
+								$end 'PhiSweep'
+								$begin 'ThetaSweep'
+									Variable='Theta'
+									RegularSweep=1
+									Units='deg'
+									Minimum=-3.14159265358979
+									Maximum=3.14159265358979
+									Increment=0.174532925199433
+									CreateIndexedSubsweepFlag=false
+								$end 'ThetaSweep'
+								$begin 'PhaseSweep'
+									Variable='Phase'
+									RegularSweep=1
+									Units='deg'
+									Minimum=0
+									Maximum=2.96705972839036
+									Increment=0.174532925199433
+									CreateIndexedSubsweepFlag=false
+								$end 'PhaseSweep'
+							$end 'EnsSweeps'
+							$begin 'QuantityIDs'
+								NextUniqueID=3
+								MoveBackwards=false
+								IDMap(0, 'S(Diff1,Diff1)', 1, 'S(Diff1,Diff2)', 2, 'S(Diff2,Diff1)')
+							$end 'QuantityIDs'
+							$begin 'Sweeps'
+								$begin 'PostprocessSweep'
+									Variable='Theta'
+									RegularSweep=1
+									Units='deg'
+									Minimum=-3.14159265358979
+									Maximum=3.14159265358979
+									Increment=0.174532925199433
+									CreateIndexedSubsweepFlag=false
+								$end 'PostprocessSweep'
+								$begin 'PostprocessSweep'
+									Variable='Phi'
+									RegularSweep=1
+									Units='deg'
+									Minimum=-3.14159265358979
+									Maximum=3.14159265358979
+									Increment=0.261799387799149
+									CreateIndexedSubsweepFlag=false
+								$end 'PostprocessSweep'
+								$begin 'PostprocessSweep'
+									Variable='Freq'
+									RegularSweep=1
+									Units='GHz'
+									Minimum=0
+									Maximum=10000000000
+									Increment=50000000
+									CreateIndexedSubsweepFlag=false
+								$end 'PostprocessSweep'
+								$begin 'PostprocessSweep'
+									Variable='Time'
+									RegularSweep=1
+									Units='s'
+									Minimum=0
+									Maximum=1.00000000000002e-08
+									Increment=5.0000000000001e-11
+									CreateIndexedSubsweepFlag=false
+								$end 'PostprocessSweep'
+							$end 'Sweeps'
+						$end 'SimDataExtractor'
+					$end 'Solution'
+					$begin 'Solution'
+						ID=44
+						Name='Adaptive Pass'
+						ImportedType=0
+						$begin 'SimDataExtractor'
+							$begin 'QuantityIDs'
+								NextUniqueID=0
+								MoveBackwards=false
+								IDMap()
+							$end 'QuantityIDs'
+						$end 'SimDataExtractor'
+					$end 'Solution'
+				$end 'SimSetup'
+				$begin 'Version ID Map'
+					V=0
+					$begin 'Setup'
+						N='HFSS Setup 1'
+						V=0
+						Soln(N='Last Adaptive', V=0)
+						Soln(N='Sweep 1', V=0)
+						Soln(N='Adaptive Pass', V=0)
+					$end 'Setup'
+				$end 'Version ID Map'
+			$end 'SimDataExtractors'
+		$end 'SolutionManager'
+		$begin 'InterfaceOptions'
+			SchematicEnabled=true
+			SaveBeforeSolving=true
+		$end 'InterfaceOptions'
+		$begin 'AdvancedSettings'
+			ComputeBothEvenAndOddCPWModes=false
+			CausalMaterials=true
+			MeshingMethod='Phi'
+			EnableDesignIntersectionCheck=true
+			UseAlternativeMeshMethodsAsFallBack=true
+			CircuitSparamDefinition=false
+			CircuitIntegrationType='FFT'
+			BroadbandFreqOption='AutoMaxFreq'
+			BroadbandMaxNumFreq=5
+			SaveADP=true
+			UseAdvancedDCExtrap=false
+			ModeOption='General mode'
+			SpiceType='TouchStone1.0'
+			EnforcePassivity=false
+			EnforceCausality=false
+			UseCommonGround=true
+			ShowGammaComments=false
+			Renormalize=true
+			RenormImpedance=50
+			FittingError=0.5
+			MaxPoles=10000
+			PassivityType='IteratedFittingOfPV'
+			ColumnFittingType='Matrix'
+			SSFittingType='FastFit'
+			RelativeErrorToleranc=false
+			EnsureAccurateZfit=true
+			TouchstoneFormat='MA'
+			TouchstoneUnits='GHz'
+			TouchStonePrecision=15
+			ExportAfterSolve=false
+			ExportDir=''
+		$end 'AdvancedSettings'
+		$begin 'CoSimOptions'
+			Override=false
+			Setup=''
+			OverrideSweep=false
+			Sweep=''
+			SweepType=4
+			Interpolate=false
+			YMatrix=true
+			AutoAlignPorts=false
+			Simulator=0
+			InterpAlg='auto'
+			Renormalize=true
+			RenormImpedance=50
+		$end 'CoSimOptions'
+		$begin 'TemperatureData'
+			IncludeTempDependence=false
+			EnableFeedback=false
+			Temperature='22cel'
+		$end 'TemperatureData'
+		$begin 'UserDefinedSolutionMgr'
+			NextUniqueID=1000000
+			MoveBackwards=false
+		$end 'UserDefinedSolutionMgr'
+		$begin 'DatasetSolutionMgr'
+			NextUniqueID=2000000
+			MoveBackwards=false
+		$end 'DatasetSolutionMgr'
+		Notes=$begin_cdata$(23-July-2011)
+
+This project uses HFSS "Solver on Demand" to 
+run full-wave electromagnetic analysis and calculate
+differential s-parameters from the via transition in the
+frequency range 0-10 GHz.
+
+The antipad diameter can be changed by modifying
+the project variable $antiPad. $end_cdata$
+		$begin 'AnimationSetups'
+		$end 'AnimationSetups'
+	$end 'PlanarEMCircuit'
+	$begin 'DataInstances'
+		DesignEditor='TopLevel'
+		Refdes('0', 'U1')
+		$begin 'CompInstances'
+			$begin 'Compinst'
+				ID='0'
+				Status='Status'
+				CompName='diffViaNominal'
+				GatesInUse()
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '0')
+				$end 'Properties'
+				$begin 'Parameters'
+					ButtonProp('CosimDefinition', 'OHD', '', '', 'Edit', 40501, ButtonPropClientData())
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+		$end 'CompInstances'
+		$begin 'Instance'
+			DesignEditor='diffViaNominal'
+			ID='0'
+			$begin 'PlanarEMItem'
+				Editor3D=true
+				$begin 'PostProcessing'
+					$begin 'Fields'
+						$begin 'Items'
+						$end 'Items'
+					$end 'Fields'
+					DesignInstanceID=1
+					$begin 'WindowPosition'
+						$begin 'EditorWindow'
+							Circuit(Schematic(), Layout(View(WindowPos(3, -1, -1, -8, -31, 0, 0, 252, 333), Extent(-2.43108510971069, -1, 2.43108510971069, 1, 93185.864138748, 93155.2840314846, -0.0155401192605495, 0.00781852100044489, 0.0320649910718203, 0.0161880031228065, 1), ViewingXfm(-0.015348557382822, 0.0167163535952568, -0.00781098753213882, 0.00837701745331287, -1, 1, 0.334273755550385, -0.406199514865875, 0.850445747375488, 0, 0.931983411312103, 0.00819177739322186, -0.362408578395844, 0, 0.140243589878082, 0.913748264312744, 0.381307542324066, 0, 0.00019152311142534, 0.000558495696168393, -0.000479050766443834, 1))), Layout())
+						$end 'EditorWindow'
+					$end 'WindowPosition'
+					$begin 'ReportSetup'
+						$begin 'ReportManager'
+							$begin 'Reports'
+								$begin 'XY Plot 1'
+									ReportID=8
+									ReportName='XY Plot 1'
+									$begin 'TraceDef'
+										TraceDefinitionType='TraceDefinition'
+										$begin 'DesignSolnDefn'
+											$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+												DesignID=0
+												SolutionID=43
+												$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+													ReportType=0
+													SimValueContext(3, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'EnsDiffPairKey', false, '1', 'IDIID', false, '1')
+												$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+											$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+										$end 'DesignSolnDefn'
+										ID=6
+										VersionID=140
+										Name='dB(S(Diff1,Diff1))'
+										TieNameToExpr=true
+										$begin 'Components'
+											$begin 'TraceComponentDefinition'
+												Expr='Freq'
+											$end 'TraceComponentDefinition'
+											$begin 'TraceComponentDefinition'
+												Expr='dB(S(Diff1,Diff1))'
+											$end 'TraceComponentDefinition'
+										$end 'Components'
+										$begin 'ExtendedTraceInfo'
+											NumPoints=0
+											TraceType=0
+											Offset=0
+											XLabel=''
+											SamplingPeriod='0'
+											SamplingPeriodOffset='0'
+											AutoDelay=true
+											DelayValue='0ps'
+											AutoCompCrossAmplitude=true
+											CrossingAmplitude='0mV'
+											YAxis=1
+											AutoCompEyeMeasurementPoint=true
+											EyeMeasurementPoint='0ps'
+											EyePamLow()
+											EyePamVRef()
+											EyePamHigh()
+											EyePamNames()
+											EyePamStrictVRef=false
+										$end 'ExtendedTraceInfo'
+										$begin 'TraceFamiliesDisplayDefinition'
+											DisplayFamiliesType='DisplayAll'
+										$end 'TraceFamiliesDisplayDefinition'
+										$begin 'PointsetDefinition'
+											$begin 'SubsweepDefParamsContainer'
+												$begin '0'
+													SubsweepType='Specifiable'
+													SubsweepChoiceType='All'
+													SweepVariableName='Freq'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '0'
+												$begin '1'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='w1'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '1'
+												$begin '2'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='s1'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '2'
+												$begin '3'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='w2'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '3'
+												$begin '4'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='s2'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '4'
+												$begin '5'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='viaSpacing'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '5'
+												$begin '6'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='gndViaDist'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '6'
+												$begin '7'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='bufferLen'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '7'
+												$begin '8'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='len'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '8'
+												$begin '9'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='$antiPad'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '9'
+											$end 'SubsweepDefParamsContainer'
+											FamilyBlock()
+										$end 'PointsetDefinition'
+										DesignInstanceID=1
+									$end 'TraceDef'
+									$begin 'TraceDef'
+										TraceDefinitionType='TraceDefinition'
+										$begin 'DesignSolnDefn'
+											$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+												DesignID=0
+												SolutionID=43
+												$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+													ReportType=0
+													SimValueContext(3, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'EnsDiffPairKey', false, '1', 'IDIID', false, '1')
+												$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+											$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+										$end 'DesignSolnDefn'
+										ID=7
+										VersionID=143
+										Name='dB(S(Diff2,Diff1))'
+										TieNameToExpr=true
+										$begin 'Components'
+											$begin 'TraceComponentDefinition'
+												Expr='Freq'
+											$end 'TraceComponentDefinition'
+											$begin 'TraceComponentDefinition'
+												Expr='dB(S(Diff2,Diff1))'
+											$end 'TraceComponentDefinition'
+										$end 'Components'
+										$begin 'ExtendedTraceInfo'
+											NumPoints=0
+											TraceType=0
+											Offset=0
+											XLabel=''
+											SamplingPeriod='0'
+											SamplingPeriodOffset='0'
+											AutoDelay=true
+											DelayValue='0ps'
+											AutoCompCrossAmplitude=true
+											CrossingAmplitude='0mV'
+											YAxis=2
+											AutoCompEyeMeasurementPoint=true
+											EyeMeasurementPoint='0ps'
+											EyePamLow()
+											EyePamVRef()
+											EyePamHigh()
+											EyePamNames()
+											EyePamStrictVRef=false
+										$end 'ExtendedTraceInfo'
+										$begin 'TraceFamiliesDisplayDefinition'
+											DisplayFamiliesType='DisplayAll'
+										$end 'TraceFamiliesDisplayDefinition'
+										$begin 'PointsetDefinition'
+											$begin 'SubsweepDefParamsContainer'
+												$begin '0'
+													SubsweepType='Specifiable'
+													SubsweepChoiceType='All'
+													SweepVariableName='Freq'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '0'
+												$begin '1'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='w1'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '1'
+												$begin '2'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='s1'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '2'
+												$begin '3'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='w2'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '3'
+												$begin '4'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='s2'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '4'
+												$begin '5'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='viaSpacing'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '5'
+												$begin '6'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='gndViaDist'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '6'
+												$begin '7'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='bufferLen'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '7'
+												$begin '8'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='len'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '8'
+												$begin '9'
+													SubsweepType='Regular'
+													SubsweepChoiceType='Nominal'
+													SweepVariableName='$antiPad'
+													AllowSelecteValues=true
+													SweepHasConsistentValues=true
+												$end '9'
+											$end 'SubsweepDefParamsContainer'
+											FamilyBlock()
+										$end 'PointsetDefinition'
+										DesignInstanceID=1
+									$end 'TraceDef'
+								$end 'XY Plot 1'
+							$end 'Reports'
+							NextUniqueID=9
+							MoveBackwards=false
+							$begin 'NextVersID'
+								NextUniqueID=144
+								MoveBackwards=false
+							$end 'NextVersID'
+						$end 'ReportManager'
+						$begin 'Reports'
+							$begin 'XY Plot 1'
+								ReportID=8
+								$begin 'Report2D'
+									name='XY Plot 1'
+									ReportID=8
+									ReportType=0
+									DisplayType=1
+									Title=''
+									Domain=''
+									$begin 'Migration'
+										MigVersion(1, 0, '2021R1 mig(1.0)')
+									$end 'Migration'
+									$begin 'Graph2DsV2'
+										$begin 'Graph2D'
+											TraceDefID=6
+											Type='Continuous'
+											Axis='Y1'
+										$end 'Graph2D'
+										$begin 'Graph2D'
+											TraceDefID=7
+											Type='Continuous'
+											Axis='Y1'
+										$end 'Graph2D'
+									$end 'Graph2DsV2'
+									$begin 'PlotDisplayDataManager'
+										NextUniqueID=26
+										MoveBackwards=false
+										$begin 'PlotHeaderDataSource'
+											CompanyName=''
+											ShowDesignName=true
+											ProjectFileName=''
+										$end 'PlotHeaderDataSource'
+										StockNameIDMap(AxisX=1, AxisY1=2, AxisY2=8, AxisY3=9, AxisY4=10, Grid=11, Header=0, Legend=5, XYHorizScroller=7)
+										$begin 'SourceList'
+										$end 'SourceList'
+										Version='17.0:20150830'
+										$begin 'DocAttributes'
+											$begin 'PlotAttributeStoreMap'
+												$begin 'MainMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=11
+														$begin 'CartesianGridDescAttribute'
+															ShowXMinor=true
+															ShowYMinor=true
+															ShowXMajor=true
+															ShowYMajor=true
+															ShowBorder=true
+														$end 'CartesianGridDescAttribute'
+													$end 'SubMapItem'
+												$end 'MainMapItem'
+												$begin 'MainMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=21
+														$begin 'CurveCartesianAttribute'
+															YAxis='Y1'
+														$end 'CurveCartesianAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=23
+														$begin 'CurveCartesianAttribute'
+															YAxis='Y2'
+														$end 'CurveCartesianAttribute'
+													$end 'SubMapItem'
+												$end 'MainMapItem'
+												$begin 'MainMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=21
+														$begin 'CurveRenderAttribute'
+															$begin 'LineRenderAttribute'
+																LineStyle='Solid'
+																LineWidth=3
+																LineColor(R=255, G=0, B=0)
+															$end 'LineRenderAttribute'
+															TraceType='Continuous'
+															SymbolType='HorizontalLeftTriangle'
+															SymbolColor(R=0, G=25, B=185)
+															ShowSymbols=false
+															SymbolFrequency=15
+															ShowArrows=false
+														$end 'CurveRenderAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=23
+														$begin 'CurveRenderAttribute'
+															$begin 'LineRenderAttribute'
+																LineStyle='Solid'
+																LineWidth=3
+																LineColor(R=0, G=0, B=255)
+															$end 'LineRenderAttribute'
+															TraceType='Continuous'
+															SymbolType='HollowCircle'
+															SymbolColor(R=128, G=0, B=128)
+															ShowSymbols=false
+															SymbolFrequency=15
+															ShowArrows=false
+														$end 'CurveRenderAttribute'
+													$end 'SubMapItem'
+												$end 'MainMapItem'
+												$begin 'MainMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=0
+														$begin 'HeaderRenderAttribute'
+															$begin 'TitleFont'
+																$begin 'FontAttribute'
+																	$begin 'Font'
+																		HeightInPts=14
+																		Width=0
+																		Escapement=0
+																		Orientation=0
+																		Weight=400
+																		Italic=0
+																		Underline=0
+																		StrikeOut=0
+																		CharSet=0
+																		OutPrecision=7
+																		ClipPrecision=48
+																		Quality=6
+																		PitchAndFamily=0
+																		FaceName='Arial'
+																	$end 'Font'
+																	Color(R=0, G=0, B=0)
+																$end 'FontAttribute'
+															$end 'TitleFont'
+															$begin 'SubtitleFont'
+																$begin 'FontAttribute'
+																	$begin 'Font'
+																		HeightInPts=10
+																		Width=0
+																		Escapement=0
+																		Orientation=0
+																		Weight=400
+																		Italic=0
+																		Underline=0
+																		StrikeOut=0
+																		CharSet=0
+																		OutPrecision=7
+																		ClipPrecision=48
+																		Quality=6
+																		PitchAndFamily=0
+																		FaceName='Arial'
+																	$end 'Font'
+																	Color(R=0, G=0, B=0)
+																$end 'FontAttribute'
+															$end 'SubtitleFont'
+														$end 'HeaderRenderAttribute'
+													$end 'SubMapItem'
+												$end 'MainMapItem'
+												$begin 'MainMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=5
+														$begin 'LegendRenderAttribute'
+															$begin 'LegendTableAttrib'
+																$begin 'TableRenderAttribute'
+																	$begin 'TableFontAttrib'
+																		$begin 'FontAttribute'
+																			$begin 'Font'
+																				HeightInPts=8
+																				Width=0
+																				Escapement=0
+																				Orientation=0
+																				Weight=400
+																				Italic=0
+																				Underline=0
+																				StrikeOut=0
+																				CharSet=0
+																				OutPrecision=7
+																				ClipPrecision=48
+																				Quality=6
+																				PitchAndFamily=0
+																				FaceName='Arial'
+																			$end 'Font'
+																			Color(R=0, G=0, B=0)
+																		$end 'FontAttribute'
+																	$end 'TableFontAttrib'
+																	$begin 'TableTitleFontAttrib'
+																		$begin 'FontAttribute'
+																			$begin 'Font'
+																				HeightInPts=8
+																				Width=0
+																				Escapement=0
+																				Orientation=0
+																				Weight=400
+																				Italic=0
+																				Underline=0
+																				StrikeOut=0
+																				CharSet=0
+																				OutPrecision=7
+																				ClipPrecision=48
+																				Quality=6
+																				PitchAndFamily=0
+																				FaceName='Arial'
+																			$end 'Font'
+																			Color(R=0, G=0, B=0)
+																		$end 'FontAttribute'
+																	$end 'TableTitleFontAttrib'
+																	TableBorderLineWidth=1
+																	TableBorderLineColor=0
+																	TableGridLineWidth=1
+																	TableGridLineColor=12632256
+																	TableBackgroundColor=16777215
+																	TableHeaderBackgroundColor=14408667
+																$end 'TableRenderAttribute'
+															$end 'LegendTableAttrib'
+															LegendName=''
+															ShowTraceName=true
+															ShowSolutionName=false
+															ShowVariationKey=false
+															FileNameDisplayModeInVariationKey=0
+															DockMode='None'
+														$end 'LegendRenderAttribute'
+													$end 'SubMapItem'
+												$end 'MainMapItem'
+												$begin 'MainMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=1
+														$begin 'LineAxisRenderAttribute'
+															DecimalFieldWidth=3
+															DecimalFieldPrecision=2
+															ManualTitle=''
+															AxisColor(R=0, G=0, B=0)
+															MinScale=0
+															MaxScale=1
+															TickSpacing=1
+															ManualUnits=false
+															Units='mm'
+															AxisScale='Linear'
+															NumberFormat='Auto'
+															$begin 'TextFont'
+																$begin 'FontAttribute'
+																	$begin 'Font'
+																		HeightInPts=9
+																		Width=0
+																		Escapement=0
+																		Orientation=0
+																		Weight=400
+																		Italic=0
+																		Underline=0
+																		StrikeOut=0
+																		CharSet=0
+																		OutPrecision=7
+																		ClipPrecision=48
+																		Quality=6
+																		PitchAndFamily=0
+																		FaceName='Arial'
+																	$end 'Font'
+																	Color(R=0, G=0, B=0)
+																$end 'FontAttribute'
+															$end 'TextFont'
+															InfMapMode=false
+															InfMapValue=1.79769313486232e+306
+															AutoRangeMin=true
+															AutoRangeMax=true
+															AutoSpacing=true
+															kNumMinorDivisions=5
+															ShowAxisTitle=true
+															ShowAxisUnits=true
+															vwm='FullWnd'
+															viewWndWd=#nan
+															ActivateMargins=true
+															MarginPercent=0
+															NeverCollapse=false
+															AxisStripes=true
+														$end 'LineAxisRenderAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=2
+														$begin 'LineAxisRenderAttribute'
+															DecimalFieldWidth=4
+															DecimalFieldPrecision=2
+															ManualTitle=''
+															AxisColor(R=0, G=0, B=0)
+															MinScale=-40
+															MaxScale=-5
+															TickSpacing=5
+															ManualUnits=false
+															Units=''
+															AxisScale='Linear'
+															NumberFormat='Auto'
+															$begin 'TextFont'
+																$begin 'FontAttribute'
+																	$begin 'Font'
+																		HeightInPts=9
+																		Width=0
+																		Escapement=0
+																		Orientation=0
+																		Weight=400
+																		Italic=0
+																		Underline=0
+																		StrikeOut=0
+																		CharSet=0
+																		OutPrecision=7
+																		ClipPrecision=48
+																		Quality=6
+																		PitchAndFamily=0
+																		FaceName='Arial'
+																	$end 'Font'
+																	Color(R=0, G=0, B=0)
+																$end 'FontAttribute'
+															$end 'TextFont'
+															InfMapMode=false
+															InfMapValue=80
+															AutoRangeMin=false
+															AutoRangeMax=true
+															AutoSpacing=true
+															kNumMinorDivisions=5
+															ShowAxisTitle=true
+															ShowAxisUnits=true
+															vwm='FullWnd'
+															viewWndWd=#nan
+															ActivateMargins=true
+															MarginPercent=0
+															NeverCollapse=false
+															AxisStripes=true
+														$end 'LineAxisRenderAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=8
+														$begin 'LineAxisRenderAttribute'
+															DecimalFieldWidth=3
+															DecimalFieldPrecision=2
+															ManualTitle=''
+															AxisColor(R=0, G=0, B=0)
+															MinScale=0
+															MaxScale=1
+															TickSpacing=1
+															ManualUnits=false
+															Units='mm'
+															AxisScale='Linear'
+															NumberFormat='Auto'
+															$begin 'TextFont'
+																$begin 'FontAttribute'
+																	$begin 'Font'
+																		HeightInPts=9
+																		Width=0
+																		Escapement=0
+																		Orientation=0
+																		Weight=400
+																		Italic=0
+																		Underline=0
+																		StrikeOut=0
+																		CharSet=0
+																		OutPrecision=7
+																		ClipPrecision=48
+																		Quality=6
+																		PitchAndFamily=0
+																		FaceName='Arial'
+																	$end 'Font'
+																	Color(R=0, G=0, B=0)
+																$end 'FontAttribute'
+															$end 'TextFont'
+															InfMapMode=false
+															InfMapValue=1.79769313486232e+306
+															AutoRangeMin=true
+															AutoRangeMax=true
+															AutoSpacing=true
+															kNumMinorDivisions=5
+															ShowAxisTitle=true
+															ShowAxisUnits=true
+															vwm='FullWnd'
+															viewWndWd=#nan
+															ActivateMargins=true
+															MarginPercent=0
+															NeverCollapse=false
+															AxisStripes=true
+														$end 'LineAxisRenderAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=9
+														$begin 'LineAxisRenderAttribute'
+															DecimalFieldWidth=3
+															DecimalFieldPrecision=2
+															ManualTitle=''
+															AxisColor(R=0, G=0, B=0)
+															MinScale=0
+															MaxScale=1
+															TickSpacing=1
+															ManualUnits=false
+															Units='mm'
+															AxisScale='Linear'
+															NumberFormat='Auto'
+															$begin 'TextFont'
+																$begin 'FontAttribute'
+																	$begin 'Font'
+																		HeightInPts=9
+																		Width=0
+																		Escapement=0
+																		Orientation=0
+																		Weight=400
+																		Italic=0
+																		Underline=0
+																		StrikeOut=0
+																		CharSet=0
+																		OutPrecision=7
+																		ClipPrecision=48
+																		Quality=6
+																		PitchAndFamily=0
+																		FaceName='Arial'
+																	$end 'Font'
+																	Color(R=0, G=0, B=0)
+																$end 'FontAttribute'
+															$end 'TextFont'
+															InfMapMode=false
+															InfMapValue=1.79769313486232e+306
+															AutoRangeMin=true
+															AutoRangeMax=true
+															AutoSpacing=true
+															kNumMinorDivisions=5
+															ShowAxisTitle=true
+															ShowAxisUnits=true
+															vwm='FullWnd'
+															viewWndWd=#nan
+															ActivateMargins=true
+															MarginPercent=0
+															NeverCollapse=false
+															AxisStripes=true
+														$end 'LineAxisRenderAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=10
+														$begin 'LineAxisRenderAttribute'
+															DecimalFieldWidth=3
+															DecimalFieldPrecision=2
+															ManualTitle=''
+															AxisColor(R=0, G=0, B=0)
+															MinScale=0
+															MaxScale=1
+															TickSpacing=1
+															ManualUnits=false
+															Units='mm'
+															AxisScale='Linear'
+															NumberFormat='Auto'
+															$begin 'TextFont'
+																$begin 'FontAttribute'
+																	$begin 'Font'
+																		HeightInPts=9
+																		Width=0
+																		Escapement=0
+																		Orientation=0
+																		Weight=400
+																		Italic=0
+																		Underline=0
+																		StrikeOut=0
+																		CharSet=0
+																		OutPrecision=7
+																		ClipPrecision=48
+																		Quality=6
+																		PitchAndFamily=0
+																		FaceName='Arial'
+																	$end 'Font'
+																	Color(R=0, G=0, B=0)
+																$end 'FontAttribute'
+															$end 'TextFont'
+															InfMapMode=false
+															InfMapValue=1.79769313486232e+306
+															AutoRangeMin=true
+															AutoRangeMax=true
+															AutoSpacing=true
+															kNumMinorDivisions=5
+															ShowAxisTitle=true
+															ShowAxisUnits=true
+															vwm='FullWnd'
+															viewWndWd=#nan
+															ActivateMargins=true
+															MarginPercent=0
+															NeverCollapse=false
+															AxisStripes=true
+														$end 'LineAxisRenderAttribute'
+													$end 'SubMapItem'
+												$end 'MainMapItem'
+											$end 'PlotAttributeStoreMap'
+										$end 'DocAttributes'
+										$begin 'DisplayTypeAttributes'
+											$begin 'PlotAttributeStoreMap'
+											$end 'PlotAttributeStoreMap'
+										$end 'DisplayTypeAttributes'
+										$begin 'DocDefaultAttributes'
+											$begin 'PlotAttributeStoreMap'
+											$end 'PlotAttributeStoreMap'
+										$end 'DocDefaultAttributes'
+										$begin 'PerViewPlotAttributeStoreMap'
+											$begin 'MapItem'
+												ItemID=-1
+												$begin 'PlotAttributeStoreMap'
+													$begin 'MainMapItem'
+														$begin 'SubMapItem'
+															DataSourceID=4
+															$begin 'BasicLayoutAttribute'
+																$begin 'LayoutRect'
+																	Top=1370
+																	Left=566
+																	Bottom=8789
+																	Right=9242
+																$end 'LayoutRect'
+															$end 'BasicLayoutAttribute'
+														$end 'SubMapItem'
+														$begin 'SubMapItem'
+															DataSourceID=12
+															$begin 'BasicLayoutAttribute'
+																$begin 'LayoutRect'
+																	Top=1370
+																	Left=566
+																	Bottom=8789
+																	Right=9242
+																$end 'LayoutRect'
+															$end 'BasicLayoutAttribute'
+														$end 'SubMapItem'
+														$begin 'SubMapItem'
+															DataSourceID=19
+															$begin 'BasicLayoutAttribute'
+																$begin 'LayoutRect'
+																	Top=75
+																	Left=75
+																	Bottom=9925
+																	Right=430
+																$end 'LayoutRect'
+															$end 'BasicLayoutAttribute'
+														$end 'SubMapItem'
+													$end 'MainMapItem'
+													$begin 'MainMapItem'
+														$begin 'SubMapItem'
+															DataSourceID=15
+															$begin 'CartesianAxisLayoutAttribute'
+																$begin 'AxisRect'
+																	Top=75
+																	Left=9242
+																	Bottom=9925
+																	Right=9925
+																$end 'AxisRect'
+																$begin 'GridRect'
+																	Top=1370
+																	Left=566
+																	Bottom=8789
+																	Right=9242
+																$end 'GridRect'
+																AxisCollapsed=false
+																AxisExpandCollapseByUser=false
+															$end 'CartesianAxisLayoutAttribute'
+														$end 'SubMapItem'
+														$begin 'SubMapItem'
+															DataSourceID=16
+															$begin 'CartesianAxisLayoutAttribute'
+																$begin 'AxisRect'
+																	Top=75
+																	Left=455
+																	Bottom=1369
+																	Right=9242
+																$end 'AxisRect'
+																$begin 'GridRect'
+																	Top=1370
+																	Left=566
+																	Bottom=8789
+																	Right=9242
+																$end 'GridRect'
+																AxisCollapsed=false
+																AxisExpandCollapseByUser=false
+															$end 'CartesianAxisLayoutAttribute'
+														$end 'SubMapItem'
+														$begin 'SubMapItem'
+															DataSourceID=25
+															$begin 'CartesianAxisLayoutAttribute'
+																$begin 'AxisRect'
+																	Top=8789
+																	Left=455
+																	Bottom=9925
+																	Right=9242
+																$end 'AxisRect'
+																$begin 'GridRect'
+																	Top=1370
+																	Left=566
+																	Bottom=8789
+																	Right=9242
+																$end 'GridRect'
+																AxisCollapsed=false
+																AxisExpandCollapseByUser=false
+															$end 'CartesianAxisLayoutAttribute'
+														$end 'SubMapItem'
+													$end 'MainMapItem'
+													$begin 'MainMapItem'
+														$begin 'SubMapItem'
+															DataSourceID=4
+															$begin 'CartesianCurveGroupLayoutAttribute'
+																X_spc=2000000000
+																X_fwd=4
+																X_fpr=2
+																Y1_spc=5
+																Y1_fwd=4
+																Y1_fpr=2
+																Y2_spc=0.2
+																Y2_fwd=3
+																Y2_fpr=2
+															$end 'CartesianCurveGroupLayoutAttribute'
+														$end 'SubMapItem'
+													$end 'MainMapItem'
+													$begin 'MainMapItem'
+														$begin 'SubMapItem'
+															DataSourceID=6
+															$begin 'DockableOverlayLayoutAttribute'
+																$begin 'Dock_0'
+																	$begin 'OverlayLayoutAttribute'
+																		$begin 'BoundingRect'
+																			Top=5779
+																			Left=2474
+																			Bottom=7215
+																			Right=9974
+																		$end 'BoundingRect'
+																		ModifySize=false
+																		ModifyPosition=true
+																	$end 'OverlayLayoutAttribute'
+																$end 'Dock_0'
+																$begin 'Dock_1'
+																	$begin 'OverlayLayoutAttribute'
+																		$begin 'BoundingRect'
+																			Top=8564
+																			Left=0
+																			Bottom=10000
+																			Right=10000
+																		$end 'BoundingRect'
+																		ModifySize=false
+																		ModifyPosition=true
+																	$end 'OverlayLayoutAttribute'
+																$end 'Dock_1'
+																$begin 'Dock_2'
+																	$begin 'OverlayLayoutAttribute'
+																		$begin 'BoundingRect'
+																			Top=0
+																			Left=0
+																			Bottom=1436
+																			Right=10000
+																		$end 'BoundingRect'
+																		ModifySize=false
+																		ModifyPosition=true
+																	$end 'OverlayLayoutAttribute'
+																$end 'Dock_2'
+															$end 'DockableOverlayLayoutAttribute'
+														$end 'SubMapItem'
+													$end 'MainMapItem'
+												$end 'PlotAttributeStoreMap'
+												PlotType=1
+											$end 'MapItem'
+										$end 'PerViewPlotAttributeStoreMap'
+										IsViewAttribServer=false
+										ViewID=-1
+										$begin 'SourceIDMap'
+											IDMapItem(6, 0, -1, 21)
+											IDMapItem(7, 0, -1, 23)
+										$end 'SourceIDMap'
+										$begin 'TraceCharacteristicsMgr'
+										$end 'TraceCharacteristicsMgr'
+										$begin 'CartesianXMarkerManager'
+											RefMarkerID=-1
+											CurrentMarkerID=-1
+											$begin 'ReferenceCurves'
+											$end 'ReferenceCurves'
+										$end 'CartesianXMarkerManager'
+										$begin 'CartesianYMarkerManager'
+										$end 'CartesianYMarkerManager'
+										$begin 'ViewRecordExpansion'
+											ExpMap(21, true, 23, true)
+											ViewID=20
+										$end 'ViewRecordExpansion'
+										XAxisStackID=-1
+										$begin 'AllTransSrcDwg'
+											$begin 'PT'
+												ID=1
+												TransSrcDwg(-1, 0, 19, 1, 15, 2, 16, 5, 6, 8, 25, 11, 12, 21, 22, 23, 24)
+											$end 'PT'
+										$end 'AllTransSrcDwg'
+										$begin 'AllPtSVID'
+											PtID(1, -1, 4)
+										$end 'AllPtSVID'
+									$end 'PlotDisplayDataManager'
+								$end 'Report2D'
+							$end 'XY Plot 1'
+						$end 'Reports'
+						$begin 'ReportsWindowInfoList'
+							$begin 'XY Plot 1'
+								ReportID=8
+								$begin 'WindowInfoList'
+									$begin 'Report2D'
+									$end 'Report2D'
+								$end 'WindowInfoList'
+							$end 'XY Plot 1'
+						$end 'ReportsWindowInfoList'
+					$end 'ReportSetup'
+				$end 'PostProcessing'
+				$begin 'Properties'
+				$end 'Properties'
+				$begin 'UserDefinedDocument'
+					$begin 'Data'
+					$end 'Data'
+				$end 'UserDefinedDocument'
+			$end 'PlanarEMItem'
+			$begin 'TopLayout'
+				DefaultUnits='mm'
+				DefaultAngleUnits='deg'
+				MajorSize='20um'
+				MinorSize='2um'
+				PixelSnapTolerance=20
+				SnapAcrossHierarchy=true
+				SnapTargetVertex_on=false
+				SnapTargetEdgeCenter_on=false
+				SnapTargetObjCenter_on=false
+				SnapTargetEdge_on=false
+				SnapTargetElecConnection_on=false
+				SnapTargetIntersection_on=false
+				SnapTargetGrid_on=true
+				SnapSourceVertex_on=true
+				SnapSourceEdgeCenter_on=true
+				SnapSourceObjCenter_on=true
+				SnapSourceEdge_on=false
+				SnapSourceElecConnection_on=true
+				ConstrainToGrid=false
+				DirectionConstraint=0
+				defaultholesize='25mil'
+				anglesnap='5deg'
+				$begin 'TextStyles'
+					TextStyle(N='<DefaultAnnotation>', F='Arial', Hght=12, Scale=false)
+					TextStyle(N='<DefaultPlotter>', Plot=true, F='RomanSimplex', Hght=5, HghtUnt='um')
+					TextStyle(N='<DefaultMeasure>', Plot=true, F='RomanSimplex', Hght=1, HghtUnt='mm')
+				$end 'TextStyles'
+				$begin 'TraceStyles'
+					TraceStyle(name='Half Grid', size='500um', bendStyle=0, capStyle=1, capStyle=1)
+					TraceStyle(name='1 Grid', size='1000um', bendStyle=1, capStyle=0, capStyle=0)
+					TraceStyle(name='2 Grids', size='2000um', bendStyle=1, capStyle=1, capStyle=1)
+					TraceStyle(name='5 Grids', size='5000um', bendStyle=0, capStyle=2, capStyle=2)
+				$end 'TraceStyles'
+				'current via style'='PlanarEMVia'
+				'current pin style'='Padstacks:NoPad SMT East'
+				MajorColor=16772075
+				MinorColor=16774645
+				ShowGrid=true
+				PageExtent(-0.1, -0.1, 0.1, 0.1)
+				'background color'=16777215
+				DefaultToSketchMode=false
+				fillMode=false
+				DocVisibilityFlag=1986
+				FastViewTransforms=false
+				StartingHierarchyLevel=0
+				EndingHierarchyLevel=-1
+				SingleLevelView=false
+				'show connection points'=false
+				'draw rats'=true
+				'display vertex labels'=false
+				ColorByNet=false
+				'display package graphics'=false
+				'rectangle description'=0
+				snaptoport=true
+				autoplacecomp=false
+				'sym footprint scaling'=0.20705
+				AutoScale=true
+				'measure display digits'=3
+				'display measure units'=false
+				SuppressPads=false
+				AntiPadsAlwaysOn=false
+				TextIsVisible=true
+				'primary selection color'=255
+				'secondary selection color'=3289780
+				'preview selection'=false
+				AllowDragOnFirstClick=false
+				PinConnectivityPopup=true
+				CreatePortsOnComp=false
+				OptionUseNamingConvention_PadPort=false
+				OptionNamingConvention_PadPort='$REFDES_$PINNAME_$NETNAME'
+				useFixedDrawingResolution=false
+				DrawingResolution='0.002mm'
+				$begin 'ViewConfigs'
+					ViewConfigsCurrent=''
+				$end 'ViewConfigs'
+				currentTextStyle=1
+				currentTraceStyle=0
+				prevBounds(-2.43108510971069, -1, 2.43108510971069, 1)
+				prevMapFactor(93185.864138748, 93155.2840314846)
+				prevOrigin(-0.0155401192605495, 0.00781852100044489)
+				prevViewExtent(0.0320649910718203, 0.0161880031228065)
+				prevZoomScale=1
+				$begin 'Animation'
+					LabelColor(R=230, G=230, B=230)
+					FontName='Arial'
+					FontHeight=24
+					FontWeight=400
+				$end 'Animation'
+			$end 'TopLayout'
+		$end 'Instance'
+		$begin 'SODInfo'
+			$begin 'diffViaNominal'
+				$begin 'CosimDefinition'
+					CosimDefName='DefaultNetlist'
+					$begin 'SODInstanceMap'
+					$end 'SODInstanceMap'
+					SODComponentList()
+				$end 'CosimDefinition'
+			$end 'diffViaNominal'
+		$end 'SODInfo'
+	$end 'DataInstances'
+	$begin 'WBSystemIDToDesignInstanceIDMap'
+	$end 'WBSystemIDToDesignInstanceIDMap'
+	$begin 'WBSysIDSysDetails'
+	$end 'WBSysIDSysDetails'
+	$begin 'WBConnIDConnDetails'
+	$end 'WBConnIDConnDetails'
+	$begin 'WBMaterialGuidDetails'
+		WBMaterialGuidMap()
+	$end 'WBMaterialGuidDetails'
+	$begin 'MinervaProjectSettingsBlk'
+		MinervaRemoteFilePath=''
+		FolderContainerString=''
+	$end 'MinervaProjectSettingsBlk'
+$end 'AnsoftProject'
+$begin 'AllReferencedFilesForProject'
+$end 'AllReferencedFilesForProject'
+$begin 'ProjectPreview'
+	IsEncrypted=false
+	Thumbnail64='/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE\
+BAQICAQECAQEBAgICAgICAgICAQICAgICAgICAgL/2wBDAQEBAQEBAQEBAQECAQEBAgICAgICAgICAg\
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgL/wAARCABgAGADASIAAhEBAxEB/\
+8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQR\
+BRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUp\
+TVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5us\
+LDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAA\
+AECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHB\
+CSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ\
+3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4u\
+Pk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iiiigAooooAKKKKACiiigAooooAKKKKACiii\
+gAooooAKKKKACiiigAorJ1/W7Pw1oWt+I9Rh1e50/QNI1LW7630DQNd8V67PZ6VZzX11Donhbwtpt5q\
+fiXV2ggdbbT9Os7q/vJmS3s7ae4kjib/ADcfgn8bP2Lh8Vfj18YPib+zr+0fqP7JXxM8cQSeAfEmifs\
+mfDWfUPhV8X7zVd3ijwdfeC9R1r7L8PvhZf6H4j8FXVsZtY0DTNCu2txpfhDSdD8SWH2TtweGhjHHDw\
+jUqY/FV8NhsLTjVyulTq4nEupGhhp1cwzXL5Uq2KlTlSwFqVWhi8Z7PLPrFLNMdlGCzL6fhTKsgzzHY\
+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'
+	$begin 'DesignInfo'
+		DesignName='diffViaNominal'
+		Notes='(23-July-2011)\
+\
+This project uses HFSS "Solver on Demand" to \
+run full-wave electromagnetic analysis and calculate\
+differential s-parameters from the via transition in the\
+frequency range 0-10 GHz.\
+\
+The antipad diameter can be changed by modifying\
+the project variable $antiPad.'
+		Factory='HFSS 3D Layout Design'
+		IsSolved=false
+		'Nominal Setups'[1: 'HFSS Setup 1']
+		'Nominal Setup Types'[1: 'HFSS']
+		'Optimetrics Setups'[0:]
+		'Optimetrics Experiment Types'[0:]
+		Image64='/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE\
+BAQICAQECAQEBAgICAgICAgICAQICAgICAgICAgL/2wBDAQEBAQEBAQEBAQECAQEBAgICAgICAgICAg\
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgL/wAARCADIAMgDASIAAhEBAxEB/\
+8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQR\
+BRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUp\
+TVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5us\
+LDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAA\
+AECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHB\
+CSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ\
+3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4u\
+Pk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iiiigAooooAKKKKACiiigAooooAKKKKACiii\
+gAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii\
+igAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACi\
+iigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACv56fgD+0l8U9f+Mn\
+xD+C/x7/b1/bI0bVvF/wAQvHniH9ivxh8M/wBlr4CX3gL9pH9nXQLSznlt/DesXv7AuoXXiP49eD7iH\
+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\
+ooAKKKKACiiigAooooAKKKKACiiigD/9k='
+	$end 'DesignInfo'
+$end 'ProjectPreview'
