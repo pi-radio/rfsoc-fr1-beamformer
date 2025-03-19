@@ -30,3 +30,4 @@ Outputs
 *.tmp
 *.bak
 /02_HFSS/Diff_Via.aedtresults
+/02_HFSS/Stacked_Antennas_RFSoC.aedtresults
