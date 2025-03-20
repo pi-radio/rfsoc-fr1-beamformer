@@ -31,3 +31,4 @@ Outputs
 *.bak
 /02_HFSS/Diff_Via.aedtresults
 /02_HFSS/Stacked_Antennas_RFSoC.aedtresults
+02_HFSS/Wilkinson.aedt.lock
