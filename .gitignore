@@ -1,35 +1,13 @@
-# Various Altium files
-*.PrjPCBStructure
-*.SchDocPreview
-*.PcbDocPreview
-__Previews
-*.PrjPcbStructure
-*.Dat
-*.REP 
-*.TLT
-*.LOG
-*.log
-*.htm
-*.$$$
-*.zip
-*.Zip
-
-#useless dirs
-Project\ Outputs
-Project\ Logs
-Project Outputs for*
-
-#History
-History
-Outputs
 /02_HFSS/PCB_Ansys_2022R2.aedtresults
 /02_HFSS/PCB_Ansys_2024R1.aedtresults
+/02_HFSS/Stacked_Antennas_RFSoC.aedtresults
+/02_HFSS/Wilkinson.aedtresults/Directional_Coupler_v1.results
 /02_HFSS/Wilkinson.aedtresults
 /02_HFSS/Wilkinson_Power_Divider.aedtresults
 /02_HFSS/Wilkinson_Power_Divider_Wilkinson_No_Resistor_Setup2.aedtresults
-*.tmp
-*.bak
+/03_Altium_Antenna/History
+/__Previews
 /02_HFSS/Diff_Via.aedtresults
-/02_HFSS/Stacked_Antennas_RFSoC.aedtresults
-02_HFSS/Wilkinson.aedt.lock
-02_HFSS/Stacked_Antennas_RFSoC.aedt.lock
+/02_HFSS/PCB_Ansys_2022R2 - EXPORTONLY.aedtresults
+/03_Altium_Antenna/__Previews
+/03_Altium_Antenna/Project Logs for FR1_Antenna_Array
