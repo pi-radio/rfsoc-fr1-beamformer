@@ -67,7 +67,7 @@ GenerateClassCluster=0
 DocumentUniqueId=XCLMVNBO
 
 [Document2]
-DocumentPath=..\AltiumLibraries\Connectors.PcbLib
+DocumentPath=..\..\AltiumLibraries\Connectors.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -81,7 +81,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=BADDFJHG
+DocumentUniqueId=
 
 [Document3]
 DocumentPath=..\AltiumLibraries\Connectors.SchLib
@@ -135,7 +135,7 @@ GenerateClassCluster=0
 DocumentUniqueId=CWAVERSP
 
 [Document6]
-DocumentPath=..\AltiumLibraries\LCR.PcbLib
+DocumentPath=..\..\AltiumLibraries\LCR.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -149,7 +149,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=XMFCBDKI
 
 [Document7]
 DocumentPath=..\AltiumLibraries\LCR.SchLib
