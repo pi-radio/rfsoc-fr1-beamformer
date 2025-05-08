@@ -81,10 +81,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=BADDFJHG
 
 [Document3]
-DocumentPath=..\AltiumLibraries\Connectors.SchLib
+DocumentPath=..\..\AltiumLibraries\Connectors.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -98,10 +98,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=YCMVPXGX
+DocumentUniqueId=
 
 [Document4]
-DocumentPath=..\AltiumLibraries\FullyDigital.PcbLib
+DocumentPath=..\..\AltiumLibraries\FullyDigital.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -118,7 +118,7 @@ GenerateClassCluster=0
 DocumentUniqueId=MASCLBHA
 
 [Document5]
-DocumentPath=..\AltiumLibraries\FullyDigital.SchLib
+DocumentPath=..\..\AltiumLibraries\FullyDigital.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -355,8 +355,343 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VQCOUGYN
 
+[Document19]
+DocumentPath=rfsoc-fr1-beamformer.BomDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document20]
+DocumentPath=Main.PCBDwf
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=XMHSZNPR
+
+[Document21]
+DocumentPath=Job1.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Test Points\Assembly Testpoint Report for Main.csv
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\BOM\Bill of Materials-rfsoc-fr1-beamformer.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\comp_+_bot\components
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument6]
 DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Design Rule Check - Main.html
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Test Points\Fabrication Testpoint Report for Main.csv
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\bottom_designator\features
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\bottom_overlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\bottom_paste\features
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\bottom_solder\features
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\comp_+_bot\features
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\dielectric_1\features
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\dielectric_2\features
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\dielectric_3\features
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_blind_vias_l1-top-l2-gnd\features
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_blind_vias_l3-power-l4-bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_drawing_l1-top-l2-gnd\features
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_drawing_l1-top-l4-bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_drawing_l3-power-l4-bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_guide_l1-top-l2-gnd\features
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_guide_l1-top-l4-bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_guide_l3-power-l4-bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_non-plated_l4-bottom-l1-top\features
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_plated_l4-bottom-l1-top\features
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\l1-top\features
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\l2-gnd\features
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\l3-power\features
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\l4-bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\top_designator\features
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\top_overlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\top_paste\features
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\top_solder\features
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\NC Drill\Main.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.G1
+DItemRevisionGUID=
+
+[GeneratedDocument38]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.G2
+DItemRevisionGUID=
+
+[GeneratedDocument39]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument40]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument41]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument42]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument43]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument44]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GD2
+DItemRevisionGUID=
+
+[GeneratedDocument45]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GD3
+DItemRevisionGUID=
+
+[GeneratedDocument46]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument47]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GG2
+DItemRevisionGUID=
+
+[GeneratedDocument48]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GG3
+DItemRevisionGUID=
+
+[GeneratedDocument49]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GM
+DItemRevisionGUID=
+
+[GeneratedDocument50]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument51]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GM3
+DItemRevisionGUID=
+
+[GeneratedDocument52]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument53]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument54]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument55]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument56]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\NC Drill\Main.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument57]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Gerber\Main.REP
+DItemRevisionGUID=
+
+[GeneratedDocument58]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\NC Drill\Main.TX1
+DItemRevisionGUID=
+
+[GeneratedDocument59]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\NC Drill\Main.TX2
+DItemRevisionGUID=
+
+[GeneratedDocument60]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\NC Drill\Main.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument61]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Report Board Stack\Main.xls
+DItemRevisionGUID=
+
+[GeneratedDocument62]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\Main.zip
+DItemRevisionGUID=
+
+[GeneratedDocument63]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument64]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument65]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Pick Place\Pick Place for Main.txt
+DItemRevisionGUID=
+
+[GeneratedDocument66]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument67]
+DocumentPath=..\..\..\..\..\ADITYA~1\AppData\Local\Temp\Qjz7276.xls
+DItemRevisionGUID=
+
+[GeneratedDocument68]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument69]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_blind_vias_l1-top-l2-gnd\tools
+DItemRevisionGUID=
+
+[GeneratedDocument70]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_blind_vias_l3-power-l4-bottom\tools
+DItemRevisionGUID=
+
+[GeneratedDocument71]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_non-plated_l4-bottom-l1-top\tools
+DItemRevisionGUID=
+
+[GeneratedDocument72]
+DocumentPath=Project Outputs for rfsoc-fr1-beamformer\ODB\odb\steps\pcb\layers\drill_plated_l4-bottom-l1-top\tools
 DItemRevisionGUID=
 
 [Configuration1]
@@ -840,6 +1175,41 @@ OutputName12=Web Review Data
 OutputDocumentPath12=
 OutputVariantName12=
 OutputDefault12=0
+OutputType13=AnsysEDB
+OutputName13=Ansys EDB
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+OutputType14=Ansoft Neutral
+OutputName14=Ansoft Neutral (AutoPCB)
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+OutputType15=HyperLynx
+OutputName15=HyperLynx (AutoPCB)
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
+OutputType16=MathWorks
+OutputName16=MathWorks (AutoPCB)
+OutputDocumentPath16=
+OutputVariantName16=
+OutputDefault16=0
+OutputType17=Orcad v7 Capture Design
+OutputName17=Orcad v7 Capture Design (AutoSCH)
+OutputDocumentPath17=
+OutputVariantName17=
+OutputDefault17=0
+OutputType18=P-CAD ASCII
+OutputName18=P-CAD ASCII (AutoPCB)
+OutputDocumentPath18=
+OutputVariantName18=
+OutputDefault18=0
+OutputType19=P-CAD V16 Schematic Design
+OutputName19=P-CAD V16 Schematic Design (AutoSCH)
+OutputDocumentPath19=
+OutputVariantName19=
+OutputDefault19=0
 
 [OutputGroup10]
 Name=PostProcess Outputs
