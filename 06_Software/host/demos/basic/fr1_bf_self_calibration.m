@@ -6,7 +6,7 @@
 addpath('../../');
 addpath('../../helper');
 
-ip = "192.168.137.50";	% IP Address
+ip = "192.168.137.43";	% IP Address
 isDebug = false;		% print debug messages
 
 sdr0 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, ...
@@ -19,19 +19,17 @@ clear ip isDebug;
 %% Calibrate of the RX array
 
 % Pick a reference TX channel
-txChId = 1;
 
 nFFT = 1024;
 nread = nFFT;
 nskip = 1024*3;	% skip ADC data
-ntimes = 100;	% num of batches to read
+ntimes = 50;	% num of batches to read
 
-
-rxtd = sdr0.recv(nFFT, nskip, ntimes, 1);
+sdr0.recv(nFFT, nskip, ntimes, 1); % Dummy read
 
 % Generate the TX waveform
-scMin = -400;
-scMax = 400;
+scMin = -100;
+scMax = 100;
 niter =  1;
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
@@ -137,7 +135,7 @@ for expType = 1:3
         l = (wrapToPi(l*2*pi))/(2*pi);
         if (expType == 1)
             figure(3);
-            subplot(6,1,1);
+            subplot(7,1,1);
             plot(l, cols(rxIndex));
             title('Pre-Cal: Fractional Timing Offsets');
             xlabel('Iteration (Unsorted)');
@@ -149,7 +147,7 @@ for expType = 1:3
             sdr0.calRxDelay(rxIndex) = (1)*c;
         elseif (expType == 2)
             figure(3);
-            subplot(6,1,2);
+            subplot(7,1,2);
             plot(l, cols(rxIndex));
             title('Post-Cal: Fractional Timing Offsets')
             xlabel('Iteration (Unsorted)');
@@ -165,7 +163,7 @@ for expType = 1:3
         l = sort(l);
         if (expType == 2)
             figure(3);
-            subplot(6,8,16+rxIndex);
+            subplot(7,8,16+rxIndex);
             plot(l, cols(rxIndex));
             title('Pre-Cal: Integer Timing Off.');
             hold on;
@@ -174,7 +172,7 @@ for expType = 1:3
             sdr0.calRxDelay(rxIndex) = sdr0.calRxDelay(rxIndex) + l(medianIndex);
         elseif (expType == 3)
             figure(3);
-            subplot(6,8,32+rxIndex);
+            subplot(7,8,32+rxIndex);
             plot(l, cols(rxIndex));
             title('Post-Cal: Integer Timing Off.');
             hold on;
@@ -186,7 +184,7 @@ for expType = 1:3
         lRx = reshape(lRx, 1, []);
         
         if (expType == 2)
-            subplot(6,1,4);
+            subplot(7,1,4);
             ph = wrapToPi(angle(lRx)); 
             plot(rad2deg(ph), cols(rxIndex)); hold on;
             %ylim([-pi pi]);
@@ -194,7 +192,7 @@ for expType = 1:3
             l = angle(sum(exp(1j*ph)));
             sdr0.calRxPhase(rxIndex) = (-1)*l;
         elseif (expType == 3)
-            subplot(6,1,6);
+            subplot(7,1,6);
             ph = wrapToPi(angle(lRx));
             plot(rad2deg(ph), cols(rxIndex)); hold on;
             %ylim([-pi pi]);
@@ -207,22 +205,106 @@ for expType = 1:3
     end % rxIndex
 end % expType
 
+% How good was the timing and phase calibration? Here are the
+% residual errors printed out.
 meanResidualTimingErrors
 meanResidualPhaseErrors
 
+% Let's flatten the ADCs for a given reference DAC
+
+clearvars -except sdr0
+clc;
+nFFT = 1024;	% number of FFT points
+txPower = 30000; % Do not exceed 30000
+scMin = -100;
+scMax = 100;
+constellation = [1+1j 1-1j -1+1j -1-1j];
+
+sdr0.calNFFT = nFFT;
+sdr0.calSCMin = scMin;
+sdr0.calSCMax = scMax;
+
+txfd_single = zeros(nFFT, 1);
+
+for scIndex = scMin:scMax
+    if scIndex == 0
+        continue;
+    end
+    txfd_single(nFFT/2 + 1 + scIndex) = constellation(randi(4));
+end
+txfd_single = fftshift(txfd_single); % In MATLAB order
+
+txChId = 1; % This is the reference TX Channel to calibrate the RX Array
+
+txtd = zeros(nFFT, sdr0.nch);       
+txtd(:, txChId) = ifft(txfd_single);
+txtd(:, txChId) = txPower*txtd(:, txChId)./max(abs(txtd(:, txChId)));
+sdr0.send(txtd);
+        
+nskip = 1024*3;	% skip ADC data
+nbatch = 500;	% num of batches
+nFFT = 1024;
+
+sdr0.calRxGains = zeros(sdr0.nch, nFFT);
+
+for expType = 4:5
+
+    expType
+    rxtd = sdr0.recv(nFFT, nskip, nbatch, 1);
+
+    for rxChId = 2:8
+
+        fprintf('.');
+        figure(3); subplot(7,8,48+rxChId);
+    
+        rxfd = zeros(nFFT, 1);
+        for ibatch = 1:nbatch
+            rxtd_tmp = squeeze(rxtd(:, ibatch, rxChId));
+            rxfd = rxfd + fft(rxtd_tmp);
+        end
+
+        if (expType == 5)
+            % Apply the Corrections
+            rxfd = rxfd .* squeeze(sdr0.calRxGains(rxChId, :))';
+        end
+
+        txfd_single = fftshift(txfd_single); % Human
+        rxfd = fftshift(rxfd); % Human
+
+        h = zeros(nFFT, 1);
+        for scIndex = scMin:scMax
+            h(nFFT/2 + 1 + scIndex) = rxfd(nFFT/2 + 1 + scIndex) ./  txfd_single(nFFT/2 + 1 + scIndex);
+        end
+
+        txfd_single = fftshift(txfd_single); % MATLAB
+
+        plot(mag2db(abs(h))); hold on;
+        title('Gain Cal (Before Blue, After Red)');
+        ylim([125 140]); grid on;
+        
+        if (expType == 4)
+            for scIndex = scMin:scMax
+                sdr0.calRxGains(rxChId, nFFT/2 + 1 + scIndex) = 1/abs(h(nFFT/2 + 1 + scIndex));
+            end
+            sdr0.calRxGains(rxChId, :) = fftshift(sdr0.calRxGains(rxChId, :));
+
+            if (rxChId == 8)
+                % Scale
+                sdr0.calRxGains = sdr0.calRxGains .* max(abs(h));
+            end
+        end
+    end % rxChId
+end % expType
+
+
+% Stop Transmitting and do a Dummy read
 txtd = zeros(nFFT, sdr0.nch);
 sdr0.send(txtd);
-pause(1);
-sdr0.recv(nread,nskip,ntimes, 1);
+pause(0.1);
+sdr0.recv(nFFT,nskip,nbatch, 1);
 
-% Clear workspace variables
-clear constellation expType iter maxPos maxVal nFFT niter rxtd scIndex;
-clear scMin scMax txfd txIndex txtd m nread nskip nsamp ntimes;
-clear ans corrfd corrtd diff iiter itimes ito nto pos rxfd rxtdShifted;
-clear to tos val cols diffMatrix resTimingErrors toff vec medianIndex;
-clear intPeakPos intpos c lRef lTx pk ar intPos l ph lRx rxIndex;
-clear pdpStore txChId;
-
+clearvars -except sdr0
+fprintf('\nRX Array Calibration Done!\n');
 
 %% Calibrate of the TX array
 % This script calibrates the TX-side timing and phase offsets. The TX under
@@ -234,13 +316,10 @@ nread = nFFT; % read ADC data for 256 cc (4 samples per cc)
 nskip = nFFT*5;   % skip ADC data for this many cc
 ntimes = 50;    % Number of batches to receive
 % Generate the TX waveform
-scMin = -400;
-scMax = 400;
+scMin = -100;
+scMax = 100;
 niter =  1;
 constellation = [1+1j 1-1j -1+1j -1-1j];
-
-% Ignore scaling factors for self-cal
-sf = ones(sdr0.nch, 1);
 
 % expType = 1: Make initial measurements of the fractional timing offset
 %
@@ -281,8 +360,8 @@ pk     = zeros(sdr0.nch, niter, ntimes);
 iter = 1;
 cols = 'mrgbcykr'; % Colors for the plots
 
-sdr0.calTxDelay = zeros(sdr0.nch, 1);
-sdr0.calTxPhase = zeros(sdr0.nch, 1);
+sdr0.calTxDelay = zeros(1, sdr0.nch);
+sdr0.calTxPhase = zeros(1, sdr0.nch);
 pdpStore = zeros(sdr0.nch, 3, niter, ntimes, nFFT);
 
 meanResidualTimingErrors = zeros(sdr0.nch, 1);
@@ -351,7 +430,7 @@ for expType = 1:3
 
         if expType == 1           
             figure(3);
-            subplot(6,1,1);
+            subplot(7,1,1);
             plot(l, cols(txIndex));
             title('Pre-Cal: Fractional Timing Offsets');
             xlabel('Iteration (Unsorted)');
@@ -363,7 +442,7 @@ for expType = 1:3
             sdr0.calTxDelay(txIndex) = c;
         elseif expType == 2
             figure(3);
-            subplot(6,1,2);
+            subplot(7,1,2);
             plot(l, cols(txIndex)); grid on;
             title('Post-Cal: Fractional Timing Offsets')
             xlabel('Iteration (Unsorted)');
@@ -379,7 +458,7 @@ for expType = 1:3
         l = sort(l);
         if (expType == 2)
             figure(3);
-            subplot(6,8,16+txIndex);
+            subplot(7,8,16+txIndex);
             plot(l, cols(txIndex)); grid on;
             title('Pre-Cal: Integer Timing Offsets');
             hold on;
@@ -387,7 +466,7 @@ for expType = 1:3
             sdr0.calTxDelay(txIndex) = sdr0.calTxDelay(txIndex) + l(medianIndex);
         elseif expType == 3
             figure(3);
-            subplot(6,8,32+txIndex);
+            subplot(7,8,32+txIndex);
             plot(l, cols(txIndex)); grid on;
             title('Post-Cal: Integer Timing Offsets');
             hold on;
@@ -400,7 +479,7 @@ for expType = 1:3
         lTx = reshape(lTx, 1, []);
         
         if (expType == 2)
-            subplot(6,1,4);
+            subplot(7,1,4);
             ph = wrapToPi(angle(lTx)); % - angle(lRef));
             plot(rad2deg(ph), cols(txIndex)); hold on;
             %ylim([-180 180]);
@@ -408,7 +487,7 @@ for expType = 1:3
             l = angle(sum(exp(1j*ph)));
             sdr0.calTxPhase(txIndex) = (-1)*l;
         elseif (expType == 3)            
-            subplot(6,1,6);
+            subplot(7,1,6);
             ph = wrapToPi(angle(lTx)); % - angle(lRef));
             plot(rad2deg(ph), cols(txIndex)); hold on;
             %ylim([-180 180]);
@@ -435,21 +514,104 @@ clear scMin scMax txfd txIndex txtd nread nskip nsamp ntimes;
 clear ans corrfd corrtd diff iiter itimes ito nto pos rxfd ;
 clear to tos cols diffMatrix resTimingErrors toff vec ;
 clear intPeakPos intpos c lRef lTx pk ar intPos l ph medianIndex;
-clear maxVal maxFrac pdpStore val m rxtdShifted;
+clear maxVal maxFrac val m rxtdShifted;
 clear refTxIndex refRxIndex sf txtdSingle val;
+%clear pdpStore
 
-
-
-%% Stop transmitting and do a dummy read on both nodes
+% Flatten the per-channel TX Gain Curves
 nFFT = 1024;
-nread = nFFT;
-nskip = nFFT * 3;
-ntimes = 100;
-txtd = zeros(nFFT, sdr0.nch);
-sdr0.send(txtd);
-sdr0.recv(nread,nskip,ntimes);
+nskip = 1024*3;	% skip ADC data
+nbatch = 4000;	% num of batches
+scMin = -100;
+scMax = 100;
+constellation = [1+1j 1-1j -1+1j -1-1j];
+txPower = 10000;
+sdr0.calNFFT = nFFT;
+sdr0.calSCMin = scMin;
+sdr0.calSCMax = scMax;
 
-clear nFFT nskip ntimes nread txtd;
+txfd_original = zeros(nFFT, 1);
+
+for scIndex = scMin:scMax
+    if scIndex == 0
+        continue;
+    end
+    txfd_original(nFFT/2 + 1 + scIndex) = constellation(randi(4));
+end
+
+txfd_original = fftshift(txfd_original); % We are now in MATLAB order
+txtd_single_original = ifft(txfd_original); % Used only for scaling
+
+h_accum = zeros(sdr0.nch, nFFT);
+figure(3);
+
+sdr0.calTxGains = zeros(sdr0.nch, nFFT);
+
+for expType = 4:5
+    expType
+    for txChId = 2:8
+        fprintf('.');
+        if (expType == 4)
+            txfd = txfd_original;
+        elseif (expType == 5)
+            % Apply the TX Cal
+            txfd = txfd_original .* squeeze(sdr0.calTxGains(txChId, :))';
+        end
+
+        txtd_single = ifft(txfd);
+        txtd_single = txPower*txtd_single./max(abs(txtd_single_original));
+        txtd = zeros(nFFT, sdr0.nch);
+        txtd(:, txChId) = txtd_single;
+        sdr0.send(txtd);
+        pause(0.1);
+
+        rxtd = sdr0.recv(nFFT, nskip, nbatch, 1);
+        rxfd = zeros(nFFT, 1);
+
+        figure(3); subplot(7,8,48+txChId);
+    
+        for ibatch = 1:nbatch
+            rxtd_tmp = squeeze(rxtd(:, ibatch, 1));
+            rxfd = rxfd + fft(rxtd_tmp);
+        end
+    
+        h = rxfd ./ txfd_original;
+        h = fftshift(h); % MATLAB to Human
+        plot(mag2db(abs(h(nFFT/2 + 1 + scMin : nFFT/2 + 1 + scMax)))); hold on;
+        title('TX Gain Curve (Before: Blue; After: Red)');
+        ylim([130 150]);
+        grid on;
+
+        if (expType == 4)
+            m = 0;
+            for scIndex = scMin:scMax
+                if scIndex == 0
+                    continue;
+                end
+                % h is still in Human order
+                m = max(m, abs(h(nFFT/2 + 1 + scIndex)));
+                sdr0.calTxGains(txChId, nFFT/2 + 1 + scIndex) = 1/abs(h(nFFT/2 + 1 + scIndex));
+            end
+    
+            sdr0.calTxGains(txChId, :) = fftshift(sdr0.calTxGains(txChId, :));
+
+            if (txChId == 8)
+                % Do the scaling here
+                sdr0.calTxGains = sdr0.calTxGains * m;
+            end
+        end % expType == 1
+
+    end % txChId
+    
+end % expType
+
+txtd = txtd*0;
+sdr0.send(txtd);
+sdr0.recv(nFFT, nskip, nbatch, 1);
+
+fprintf('\nTX Array Calibration Done!\n');
+
+clearvars -except sdr0
 
 %% Debug by looking at pdpStore
 figure(1); clf; clc;

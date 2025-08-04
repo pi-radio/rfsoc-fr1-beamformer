@@ -2,7 +2,7 @@
 addpath('../../');
 
 % Parameters
-ip = "192.168.137.50";	% IP Address
+ip = "192.168.137.43";	% IP Address
 isDebug = false;		% print debug messages
 
 % Create a Fully Digital SDR
@@ -10,23 +10,22 @@ sdr0 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, ...
     'figNum', 100, 'name', 'v3-revB-0001');
 
 % Configure the RFSoC. Use the file corresponding to the desired frequency
-sdr0.fpga.configure('../../config/rfsoc.cfg');
-
-% A channel ID of 10 refers to "all channels".
-% Otherwise channels are numbered 1 through 8.
-
-txChId = 8;
-rxChId = 8;
-
+sdr0.fpga.configure('../../config/rfsoc_nyquist.cfg');
 
 
  %% Simple TX and RX test with a single channel
 
-txChId = 2;
+ % txChId = 1 refers to the TX channel that's used to self-cal the RX array
+ % txChId = 2..8 refer to the regular TX channels
+ % rxChId = 1 refers to the RX channel that's used to self-cal the TX array
+ % rxChId = 2..8 refer to the regular RX channels
+
+
+txChId = 1;
 
 clc;
 nFFT = 1024;	% number of FFT points
-txPower = 10000; % Do not exceed 30000
+txPower = 30000; % Do not exceed 30000
 scMin = -100;
 scMax = 100;
 constellation = [1+1j 1-1j -1+1j -1-1j];
@@ -54,25 +53,4 @@ nskip = 1024*3;	% skip ADC data
 nbatch = 100;	% num of batches
 
 rxtd = sdr0.recv(nFFT, nskip, nbatch, 1);
-
-%% Channel Sounder
-
-rxtd = sdr0.recv(nFFT, nskip, nbatch);
-rxtd = rxtd(:, 1, rxChId);
-rxfd = fft(rxtd);
-figure(1); clf;
-
-for txChId = 8:8
-    corr_fd = txfd(:, txChId) .* conj(rxfd);
-    corr_td = ifft(corr_fd);
-    
-    p = mag2db(abs(corr_td));
-    subplot(4,2,txChId)
-    plot(p);
-    %ylim([60 120]);
-    grid on;
-    [val, pos] = max(p)
-end
-
-
 

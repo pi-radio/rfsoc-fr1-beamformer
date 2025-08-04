@@ -31,6 +31,12 @@ classdef FullyDigital < matlab.System
         calRxDelay;
         calTxPhase;
         calRxPhase;
+        
+        calTxGains;
+        calRxGains;
+        calNFFT;
+        calSCMin;
+        calSCMax;
     end
     
     methods
@@ -55,6 +61,7 @@ classdef FullyDigital < matlab.System
             obj.calRxDelay = zeros(1, obj.nch);
             obj.calTxPhase = zeros(1, obj.nch);
             obj.calRxPhase = zeros(1, obj.nch);
+
         end
         
         function delete(obj)
