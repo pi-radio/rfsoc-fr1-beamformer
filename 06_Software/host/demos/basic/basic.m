@@ -25,8 +25,8 @@ txChId = 1;
 
 clc;
 nFFT = 1024;	% number of FFT points
-txPower = 30000; % Do not exceed 30000
-scMin = -100;
+txPower = 20000; % Do not exceed 30000
+scMin = 100;
 scMax = 100;
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
@@ -51,6 +51,5 @@ sdr0.send(txtd);
 % Receive data
 nskip = 1024*3;	% skip ADC data
 nbatch = 100;	% num of batches
-
 rxtd = sdr0.recv(nFFT, nskip, nbatch, 1);
 

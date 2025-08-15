@@ -149,6 +149,7 @@ for expType = 1:3
             figure(3);
             subplot(7,1,2);
             plot(l, cols(rxIndex));
+            %ylim([-0.5 0.5])
             title('Post-Cal: Fractional Timing Offsets')
             xlabel('Iteration (Unsorted)');
             hold on;
@@ -187,7 +188,7 @@ for expType = 1:3
             subplot(7,1,4);
             ph = wrapToPi(angle(lRx)); 
             plot(rad2deg(ph), cols(rxIndex)); hold on;
-            %ylim([-pi pi]);
+            %ylim([-180 180]);
             title('Pre-Cal: LO Phase Offsets (Degree)');
             l = angle(sum(exp(1j*ph)));
             sdr0.calRxPhase(rxIndex) = (-1)*l;
@@ -195,7 +196,7 @@ for expType = 1:3
             subplot(7,1,6);
             ph = wrapToPi(angle(lRx));
             plot(rad2deg(ph), cols(rxIndex)); hold on;
-            %ylim([-pi pi]);
+            %ylim([-180 180]);
             title('Post-Cal: LO Phase Offsets (Degree)');
 
             % Print out the average phase error in degree

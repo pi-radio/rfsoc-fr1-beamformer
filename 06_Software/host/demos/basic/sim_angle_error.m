@@ -171,7 +171,7 @@ grid on;
 % This is a simple simulation to show the effect of phase imbalance 
 % and amplitude imbalance on the beams and NULLs. Assume that we have
 % nch TX channels. Each of them has a random error.
-clear;
+clearvars -except sdr0;
 nch = 8 ; % Must be an even number, otherwise the code breaks
 niter = 200;
 nerror_amp = 101; % Simulate 101 amplitude errors
@@ -229,7 +229,7 @@ ax.CLim = [a-1 a+1];
 colorbar;
 title("Beamforming Gain in Boresight (dB relative to single TX channel)");
 
-threshold = 40;
+threshold = 45;
 a = p(1,1) - threshold; % What is the NULL threshold relative to the peak?
 
 for ierror = 1:nerror_amp
@@ -253,3 +253,4 @@ s = sprintf("NULL Forming: %d dB below boresight (Green: Pass)", threshold);
 title(s);
 
 
+clearvars -except sdr0

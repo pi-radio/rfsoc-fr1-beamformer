@@ -9,60 +9,41 @@ ntimes = 50;
 txfd = zeros(nFFT, 1);
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
-sdr0.set_switches('off');
+scMin = 50; scMax = 50;
 
-scMin = 100; scMax = 100;
 for scIndex = scMin:scMax
     txfd(nFFT/2 + 1 + scIndex) = constellation(randi(4));
 end
 txfd = fftshift(txfd);
 txtd = ifft(txfd);
 m = max(abs(txtd));
-txtd = txtd / m * 200;
+txtd = txtd / m * 25000;
 
-naod = 41;
-aods = linspace(-1, 1, naod);
+freq = 3.25e9;
+c = physconst('LightSpeed');
+lam = c/freq;
+nch = 7;
+pos = (0:nch-1)*0.5;
 
-pArray = zeros(1, naod);
+% Direction of the desired Beam, in degrees
+thetad = 0;
+wd = steervec(pos, thetad);
+% Direction of the desired NULL, in degrees
+thetan = 25;
+wn = steervec(pos, thetan);
+rn = wn'*wd/(wn'*wn);
+% Sidelobe canceler - remove the response at null direction
+w = wd-wn*rn;
+%w = wd;
 
-for iaod = 1:naod
-    p = 0;
-    fprintf('.');
-    txtdMod = zeros(nFFT, sdr0.nch);
-    aod = aods(iaod);
-    rad2deg(aod)
-    for txIndex=1:sdr0.nch
-        txtdMod(:, txIndex) = txtd * exp(1j*txIndex*pi*sin(aod)); % Apply BF
-    end
-    txtdMod = sdr0.applyCalTxArray(txtdMod);
-    sdr0.send(txtdMod);
+w = [0; w]; % 
 
-    rxtd = sdr1.recv(nread, nskip, ntimes);
-        
-    for itimes = 1:ntimes
-        refRxIndex = 1;
-        fd = fftshift(fft(rxtd(:, itimes, refRxIndex)));
-        p = p + sum(abs(fd( nFFT/2 + 1 + scMin : nFFT/2 + 1 + scMax)));
-    end %itimes
-    pArray(iaod) = p;
-end % iaoa
-
-% Plot
-pArray = pArray / max(pArray);
-figure(3); clf;
-plot(rad2deg(aods), mag2db(pArray));
-xlabel('Angle of Departure (Deg)');
-ylabel('Power (dB)');
-grid on; grid minor;
-ylim([-20 0])
-
-% Stop transmitting and do a dummy read
+txtdMod = txtd * w';
+txtdMod = sdr0.applyCalTxArray(txtdMod);
+sdr0.send(txtdMod);
+%%
 txtd = zeros(nFFT, sdr0.nch);
 sdr0.send(txtd);
-sdr0.recv(nread, nskip, ntimes);
-sdr0.recv(nread, nskip, ntimes);
 
 % Clear workspace variables
-clear aoa aoas fd iaoa naoa p pArray refTxIndex td tdbf txtdMod;
-clear ans itimes m nFFT nread nskip ntimes rxIndex rxtd;
-clear scIndex txfd txtd constellation scMax scMin;
+clearvars -except sdr0

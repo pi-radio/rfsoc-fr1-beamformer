@@ -1,37 +1,22 @@
-% In this demo, we assume that sdr0 and sdr1 open, and is fully
+% In this demo, we assume that sdr0 is open, and is fully
 % calibrated. Look at the calibration demo to make sure this is done. In
 % the minimum, the timing and phase offsets need to be calibrated.
 
-% Transmit a wideband signal from one channel on the TX. On the RX, capture
+% Transmit a wideband signal from a remote source. On the RX, capture
 % samples, and apply the calibrations. Then, apply BF vectors for a set of
 % AoA values. Plot them out.
 
-nFFT = 1024;
-nread = nFFT;
-nskip = nFFT*3;
-ntimes = 100;
-txfd = zeros(nFFT, 1);
-constellation = [1+1j 1-1j -1+1j -1-1j];
+nread = 1024;
+nFFT = nread;
+nskip = nread * 3;
+ntimes = 10;
+scMin = 50;
+scMax = 50;
 
-sdr0.set_switches('off');
 
-scMin = -400; scMax = 400;
-
-for scIndex = scMin:scMax
-    txfd(nFFT/2 + 1 + scIndex) = constellation(randi(4));
-end
-
-txfd = fftshift(txfd);
-txtd = ifft(txfd);
-m = max(abs(txtd));
-txtd = txtd / m * 5000;
-
-refTxIndex = 1;
-txtdMod = zeros(nFFT, sdr0.nch);
-txtdMod(:, refTxIndex) = txtd;
-sdr1.send(txtdMod);
-
-rxtd = sdr0.recv(nread, nskip, ntimes);
+for iter = 1:100
+    pause(0.1)
+rxtd = sdr0.recv(nread, nskip, ntimes, 1);
 rxtd = sdr0.applyCalRxArray(rxtd);
 
 naoa = 101;
@@ -56,16 +41,12 @@ end % iaoa
 % Plot
 pArray = pArray / max(pArray);
 figure(3); clf;
-plot(rad2deg(aoas), mag2db(pArray));
+plot(rad2deg(aoas), mag2db(pArray)); hold off;
 xlabel('Angle of Arrival (Deg)');
 ylabel('Power (dB)');
 grid on; grid minor;
-ylim([-15 0])
-
-% Stop transmitting and do a dummy read
-txtd = zeros(nFFT, sdr0.nch);
-sdr1.send(txtd);
-sdr0.recv(nread, nskip, ntimes);
+%ylim([-15 0])
+end
 
 % Clear workspace variables
 clear aoa aoas fd iaoa naoa p pArray refTxIndex td tdbf txtdMod;
