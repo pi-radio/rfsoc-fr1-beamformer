@@ -1,4 +1,4 @@
-% In this demo, we assume that sdr0 and sdr1 are open, and are fully
+% In this demo, we assume that sdr1 is open, and are fully
 % calibrated. Look at the calibration demo to make sure this is done. In
 % the minimum, the timing and phase offsets need to be calibrated.
 
@@ -9,7 +9,7 @@ ntimes = 50;
 txfd = zeros(nFFT, 1);
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
-scMin = 50; scMax = 50;
+scMin = -20; scMax = 20;
 
 for scIndex = scMin:scMax
     txfd(nFFT/2 + 1 + scIndex) = constellation(randi(4));
@@ -24,12 +24,13 @@ c = physconst('LightSpeed');
 lam = c/freq;
 nch = 7;
 pos = (0:nch-1)*0.5;
+%%
 
 % Direction of the desired Beam, in degrees
-thetad = 0;
+thetad = 25;
 wd = steervec(pos, thetad);
 % Direction of the desired NULL, in degrees
-thetan = 25;
+thetan = 0;
 wn = steervec(pos, thetan);
 rn = wn'*wd/(wn'*wn);
 % Sidelobe canceler - remove the response at null direction
@@ -39,11 +40,11 @@ w = wd-wn*rn;
 w = [0; w]; % 
 
 txtdMod = txtd * w';
-txtdMod = sdr0.applyCalTxArray(txtdMod);
-sdr0.send(txtdMod);
+txtdMod = sdr1.applyCalTxArray(txtdMod);
+sdr1.send(txtdMod);
 %%
-txtd = zeros(nFFT, sdr0.nch);
-sdr0.send(txtd);
+txtd = zeros(nFFT, sdr1.nch);
+sdr1.send(txtd);
 
 % Clear workspace variables
-clearvars -except sdr0
+clearvars -except sdr1 sdr2

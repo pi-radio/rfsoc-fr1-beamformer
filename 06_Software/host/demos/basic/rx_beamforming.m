@@ -10,16 +10,16 @@ nread = 1024;
 nFFT = nread;
 nskip = nread * 3;
 ntimes = 10;
-scMin = 50;
-scMax = 50;
+scMin = -20;
+scMax = 20;
 
 
-for iter = 1:100
-    pause(0.1)
-rxtd = sdr0.recv(nread, nskip, ntimes, 1);
-rxtd = sdr0.applyCalRxArray(rxtd);
+for iter = 1:1
 
-naoa = 101;
+rxtd = sdr2.recv(nread, nskip, ntimes, 1);
+rxtd = sdr2.applyCalRxArray(rxtd);
+
+naoa = 1001;
 aoas = linspace(-1, 1, naoa);
 pArray = zeros(1, naoa);
 
@@ -28,7 +28,7 @@ for iaoa = 1:naoa
     aoa = aoas(iaoa);
     for itimes = 1:ntimes
         tdbf = zeros(nFFT, 1);
-        for rxIndex=1:sdr0.nch
+        for rxIndex=1:sdr2.nch
             td = rxtd(:,itimes,rxIndex);
             tdbf = tdbf + td * exp(1j*rxIndex*pi*sin(aoa)); % Apply BF Vec
         end % rxIndex
@@ -39,9 +39,9 @@ for iaoa = 1:naoa
 end % iaoa
 
 % Plot
-pArray = pArray / max(pArray);
-figure(3); clf;
-plot(rad2deg(aoas), mag2db(pArray)); hold off;
+%pArray = pArray / max(pArray);
+figure(3);
+plot(rad2deg(aoas), mag2db(pArray), 'LineWidth', 5); hold on;
 xlabel('Angle of Arrival (Deg)');
 ylabel('Power (dB)');
 grid on; grid minor;
@@ -51,4 +51,4 @@ end
 % Clear workspace variables
 clear aoa aoas fd iaoa naoa p pArray refTxIndex td tdbf txtdMod;
 clear ans itimes m nFFT nread nskip ntimes rxIndex rxtd;
-clear scIndex txfd txtd constellation scMax scMin;
+clear scIndex txfd constellation scMax scMin;

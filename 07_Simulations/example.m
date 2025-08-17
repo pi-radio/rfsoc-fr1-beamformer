@@ -30,15 +30,15 @@ for iter = 1:niter
     wsteer = w;
 
     % Calculate the per-channel amplitude error
-    db_range = 0.1;
+    db_range = 0.2;
     a = db2mag(-db_range/2);
     b = db2mag(db_range/2);
     w_amp_errors = (b-a).*rand(nch, 1) + a;
 
     % Calculate the per-channel phase error
-    angle_range = deg2rad(0.5);
-    a = (-angle_range/2);
-    b = (angle_range/2);
+    angle_range = 0.2;
+    a = deg2rad(-angle_range/2);
+    b = deg2rad(angle_range/2);
     w_angle_errors = (b-a).*rand(nch, 1) + a;
     rad2deg(w_angle_errors);
 
@@ -54,15 +54,15 @@ for iter = 1:niter
     
 end
 
-af = af / max(abs(af));
+%af = af / max(abs(af));
 
 figure(1);
-h = plot(ang,mag2db(abs(af))); hold on;
+s = sprintf("Mag: %2.2f dB. Angle: %2.2f degree", db_range, angle_range);
+h = plot(ang,mag2db(abs(af)), 'DisplayName', s); hold on;
+legend;
 set(h,'LineWidth',3)
-%plot([thetan thetan],[-100 0],'r--','LineWidth',2); hold on;
-%plot([thetad thetad],[-100 0],'b--','LineWidth',2); hold on;
 xlabel('Angle (deg)')
 ylabel('Array pattern (dB)')
-ylim([-60 0])
+ylim([-60 20])
 title('Array Factor of Unsteered Uniform Linear Array')
 grid on;
