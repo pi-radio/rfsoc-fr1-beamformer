@@ -440,6 +440,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DVRDNTZW
 
+[Document24]
+DocumentPath=Status_LEDs.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=13
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=BPXDZVJW
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for rfsoc-fr1-beamformer\Test Points\Assembly Testpoint Report for Main.csv
 DItemRevisionGUID=
