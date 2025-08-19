@@ -19,7 +19,7 @@ for iter = 1:1
 rxtd = sdr2.recv(nread, nskip, ntimes, 1);
 rxtd = sdr2.applyCalRxArray(rxtd);
 
-naoa = 1001;
+naoa = 201;
 aoas = linspace(-1, 1, naoa);
 pArray = zeros(1, naoa);
 
@@ -44,6 +44,7 @@ figure(3);
 plot(rad2deg(aoas), mag2db(pArray), 'LineWidth', 5); hold on;
 xlabel('Angle of Arrival (Deg)');
 ylabel('Power (dB)');
+set(gca, 'FontSize', 30);
 grid on; grid minor;
 %ylim([-15 0])
 end

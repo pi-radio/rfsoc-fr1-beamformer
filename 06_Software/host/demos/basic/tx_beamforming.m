@@ -43,6 +43,7 @@ txtdMod = txtd * w';
 txtdMod = sdr1.applyCalTxArray(txtdMod);
 sdr1.send(txtdMod);
 %%
+nFFT = 1024;
 txtd = zeros(nFFT, sdr1.nch);
 sdr1.send(txtd);
 
