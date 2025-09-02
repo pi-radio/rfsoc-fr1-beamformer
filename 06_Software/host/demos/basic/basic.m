@@ -25,13 +25,13 @@ txChId = 1;
 
 clc;
 nFFT = 1024;	% number of FFT points
-txPower = 20000; % Do not exceed 30000
+txPower = 30000; % Do not exceed 30000
 scMin = 100;
 scMax = 100;
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
-txtd = zeros(nFFT, sdr0.nch);       
-txfd = zeros(nFFT, sdr0.nch);
+txtd = zeros(nFFT, sdr1.nch);       
+txfd = zeros(nFFT, sdr1.nch);
 
 for scIndex = scMin:scMax
     if scIndex == 0
@@ -46,10 +46,10 @@ txtd(:, txChId) = txPower*txtd(:, txChId)./max(abs(txtd(:, txChId)));
 
         
 % Send the data to the DACs
-sdr0.send(txtd);
+sdr1.send(txtd);
 
 % Receive data
 nskip = 1024*3;	% skip ADC data
 nbatch = 100;	% num of batches
-rxtd = sdr0.recv(nFFT, nskip, nbatch, 1);
+rxtd = sdr1.recv(nFFT, nskip, nbatch, 1);
 
