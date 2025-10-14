@@ -121,7 +121,7 @@ clearvars -except sdr1 sdr2 scMin scMax nFFT detected_aoa txtd_single;
 % Mode 3: Beamform at AoA + 20, Nullform at AoA
 % Mode 4: Beamform at AoA + 20, no control of NULL
 
-mode = 3;   % Set the mode
+mode = 4;   % Set the mode
 
 freq = 3.25e9;
 c = physconst('LightSpeed');
@@ -141,7 +141,7 @@ elseif (mode == 2)  % Mode 2: Beamform at AoA, no control of NULL
     wd = steervec(pos, thetad);
     w = wd;
 elseif (mode == 3)  % Mode 3: Beamform at AoA + 20, Nullform at AoA
-    thetad = detected_aoa + 20;
+    thetad = detected_aoa - 20;
     thetan = detected_aoa;
     wd = steervec(pos, thetad);
     wn = steervec(pos, thetan);
@@ -163,7 +163,7 @@ txtdMod = sdr1.applyCalTxArray(txtdMod);
 sdr1.send(txtdMod);
 clearvars -except sdr1 sdr2 scMin scMax nFFT detected_aoa txtd_single mode;
 
-%% 5. Now, let the helper measure the received power.
+% 4.B. Now, let the helper measure the received power.
 
 %   p1) Run this block of code. The helper (sdr2) will measure received
 %       power.
@@ -199,7 +199,7 @@ fprintf("Mode %d: Measured power is %2.2f dB\n", mode, a);
 % Clear workspace variables
 clearvars -except sdr1 sdr2 nFFT scMin scMax detected_aoa txtd_single mode;
 
-%% 6. Finally, Make the whole experiment quiet. We are done.
+%% 5. Finally, Make the whole experiment quiet. We are done.
 
 txtd = zeros(nFFT, sdr1.nch);
 sdr1.send(txtd);
