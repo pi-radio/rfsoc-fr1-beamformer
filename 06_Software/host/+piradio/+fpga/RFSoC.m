@@ -149,6 +149,7 @@ classdef RFSoC < matlab.System
         function configure(obj, file)
             % Parse the output file from the RFDC.
             fid = fopen(file,'r');
+            ctr = 0;
             while ~feof(fid)
                 tline = fgetl(fid);
                 % The following lines parse a file generated from the
@@ -160,14 +161,16 @@ classdef RFSoC < matlab.System
                 %
                 % However, we are going to parse a simplified version of
                 % the file with only the necessary commands.
+                ctr = ctr+1;
                 if (tline(1) ~= '%')
-                    fprintf(1, '%s\n', tline);
+                    fprintf(1, '%d: %s\n', ctr, tline);
                     obj.sendCmd(tline)
-                    pause(0.2);
+                    pause(0.1);
+                    
                 else
                     % If there is a comment, then pause. This will be
                     % helpful to let PLLs stabilize, etc.
-                    pause(0.2);
+                    pause(0.1);
                 end
             end
             fclose(fid);
@@ -221,9 +224,9 @@ classdef RFSoC < matlab.System
             
             % Read response and print in debug mode
             rsp = read(obj.sockCtrl);
-            if (obj.isDebug)
+            %if (obj.isDebug)
                 fprintf(1, "%s", rsp);
-            end
+            %end
         end
     end
 end
