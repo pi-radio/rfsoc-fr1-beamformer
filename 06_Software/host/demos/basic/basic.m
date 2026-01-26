@@ -10,6 +10,7 @@ sdr0 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, ...
     'figNum', 100, 'name', 'v3-revB-0001');
 
 % Configure the RFSoC. Use the file corresponding to the desired frequency
+% sdr0.fpga.configure('../../config/rfsoc_test.cfg');
 sdr0.fpga.configure('../../config/rfsoc_nyquist.cfg');
 
 
@@ -21,17 +22,17 @@ sdr0.fpga.configure('../../config/rfsoc_nyquist.cfg');
  % rxChId = 2..8 refer to the regular RX channels
 
 
-txChId = 1;
+txChId = 2;
 
 clc;
 nFFT = 1024;	% number of FFT points
-txPower = 30000; % Do not exceed 30000
-scMin = 100;
+txPower = 0*30000; % Do not exceed 30000
+scMin = -100;
 scMax = 100;
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
-txtd = zeros(nFFT, sdr1.nch);       
-txfd = zeros(nFFT, sdr1.nch);
+txtd = zeros(nFFT, sdr0.nch);       
+txfd = zeros(nFFT, sdr0.nch);
 
 for scIndex = scMin:scMax
     if scIndex == 0
@@ -46,10 +47,9 @@ txtd(:, txChId) = txPower*txtd(:, txChId)./max(abs(txtd(:, txChId)));
 
         
 % Send the data to the DACs
-sdr1.send(txtd);
+sdr0.send(txtd);
 
-% Receive data
+%% Receive data
 nskip = 1024*3;	% skip ADC data
-nbatch = 100;	% num of batches
-rxtd = sdr1.recv(nFFT, nskip, nbatch, 1);
-
+nbatch = 10;	% num of batches
+rxtd = sdr0.recv(nFFT, nskip, nbatch, 1);

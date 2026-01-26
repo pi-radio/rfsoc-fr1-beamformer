@@ -116,91 +116,126 @@ clearvars -except sdr1 sdr2 scMin scMax nFFT detected_aoa txtd_single;
 %% 4. Now, make sdr1 Beamform/Nullform toward the "helper"
 %  (p1, p2, p3): Always run this code.
 
-% Mode 1: Beamform at AoA, Nullform 20 degrees away
-% Mode 2: Beamform at AoA, no control of NULL
-% Mode 3: Beamform at AoA + 20, Nullform at AoA
-% Mode 4: Beamform at AoA + 20, no control of NULL
-
-mode = 3;   % Set the mode
-
-freq = 3.25e9;
-c = physconst('LightSpeed');
-lam = c/freq;
-nch = 7;
-pos = (0:nch-1)*0.5;
-
-if (mode == 1)      % Mode 1: Beamform at AoA, Nullform 20 degrees away
-    thetad = detected_aoa;
-    thetan = detected_aoa + 20;
-    wd = steervec(pos, thetad);
-    wn = steervec(pos, thetan);
-    rn = wn'*wd/(wn'*wn);
-    w = wd-wn*rn;
+for iter = 1:1000
+for mode = [1 2 3 4 5]
+    
+    freq = 3.25e9;
+    c = physconst('LightSpeed');
+    lam = c/freq;
+    nch = 7;
+    pos = (0:nch-1)*0.5;
+    ula = phased.ULA(7,lam/2);
+    
+    if (mode == 1)      % Mode 1: Beamform at AoA, No control of NULL
+        thetad = detected_aoa;
+        wd = steervec(pos, thetad);
+        w = wd;
+        line1 = sprintf('TX Beamform: %2.2f deg', detected_aoa);
+        line2 = sprintf('TX Nullform: No Control');
+    elseif (mode == 2)  % Mode 3: Beamform at AoA + 25, No Control of NULL
+        thetad = detected_aoa - 25;
+        wd = steervec(pos, thetad);
+        w = wd;
+        line1 = sprintf('TX Beamform: %2.2f deg', detected_aoa - 25);
+        line2 = sprintf('TX Nullform: No Control');
+    elseif (mode == 3)  % Mode 4: Beamform at AoA + 25, Nullform at AoA
+        thetad = detected_aoa - 25;
+        thetan = detected_aoa;
+        wd = steervec(pos, thetad);
+        wn = steervec(pos, thetan);
+        rn = wn'*wd/(wn'*wn);
+        w = wd-wn*rn;
+        line1 = sprintf('TX Beamform: %2.2f deg', detected_aoa - 25);
+        line2 = sprintf('TX Nullform: %2.2f deg', detected_aoa);
+    elseif (mode == 4)  % Mode 3: Beamform at AoA - 25, No Control of NULL
+        thetad = detected_aoa + 25;
+        wd = steervec(pos, thetad);
+        w = wd;
+        line1 = sprintf('TX Beamform: %2.2f deg', detected_aoa + 25);
+        line2 = sprintf('TX Nullform: No Control');
+    elseif (mode == 5)  % Mode 4: Beamform at AoA - 25, Nullform at AoA
+        thetad = detected_aoa + 25;
+        thetan = detected_aoa;
+        wd = steervec(pos, thetad);
+        wn = steervec(pos, thetan);
+        rn = wn'*wd/(wn'*wn);
+        w = wd-wn*rn;
+        line1 = sprintf('TX Beamform: %2.2f deg', detected_aoa + 25);
+        line2 = sprintf('TX Nullform: %2.2f deg', detected_aoa);
+    else
+        fprintf("Invalid Mode %d", mode);
+        assert(0);
+    end
 
     figure(4);
-    pattern(w);
-elseif (mode == 2)  % Mode 2: Beamform at AoA, no control of NULL
-    thetad = detected_aoa;
-    wd = steervec(pos, thetad);
-    w = wd;
-elseif (mode == 3)  % Mode 3: Beamform at AoA + 20, Nullform at AoA
-    thetad = detected_aoa - 20;
-    thetan = detected_aoa;
-    wd = steervec(pos, thetad);
-    wn = steervec(pos, thetan);
-    rn = wn'*wd/(wn'*wn);
-    w = wd-wn*rn;
-elseif (mode == 4)  % Mode 4: Beamform at AoA + 20, no control of NULL
-    thetad = detected_aoa + 20;
-    wd = steervec(pos, thetad);
-    w = wd;
-else
-    fprintf("Invalid Mode %d", mode);
-    assert(0);
-end
+    a = pattern(ula,freq,-60:60,0,'PropagationSpeed',c,'Type','powerdb', 'CoordinateSystem','rectangular','Weights', w);
+    size(a);
+    aoas = linspace(-60, 60, 121);
+    subplot(5, 2, mode*2 - 1);
 
-w = [0; w];
-
-txtdMod = txtd_single * w';
-txtdMod = sdr1.applyCalTxArray(txtdMod);
-sdr1.send(txtdMod);
-clearvars -except sdr1 sdr2 scMin scMax nFFT detected_aoa txtd_single mode;
-
-% 4.B. Now, let the helper measure the received power.
-
-%   p1) Run this block of code. The helper (sdr2) will measure received
-%       power.
-%   p2) Tell the operator to measure the incoming power at the reference
-%       antenna. Do not run this block of code.
-%   p3) Measure the input power into the FieldFox. Do not run this block of
-%       code.
-
-nread = nFFT;
-nskip = nread * 3;
-ntimes = 100;
-
-rxtd = sdr2.recv(nread, nskip, ntimes, 1);
-rxtd = sdr2.applyCalRxArray(rxtd);
-
-rxtd_accum = zeros(nFFT, 1); % Look at boresight
-for rxChId = 2:sdr2.nch
-    for itimes = 1:ntimes
-        rxtd_accum = rxtd_accum + rxtd(:, itimes, rxChId);
+    plot(aoas, a, 'LineWidth', 5);
+    xlabel('Angle of Departure (Deg)');
+    ylabel('Power (dB)');
+    set(gca, 'FontSize', 10);
+    ylim([-40 0]);
+    xlim([-60 60]);
+    grid on;
+    
+    w = [0; w];
+    
+    txtdMod = txtd_single * w';
+    txtdMod = sdr1.applyCalTxArray(txtdMod);
+    sdr1.send(txtdMod);
+    clearvars -except sdr1 sdr2 scMin scMax nFFT detected_aoa txtd_single mode line1 line2 ref_a;
+    
+    % 4.B. Now, let the helper measure the received power.
+    
+    %   p1) Run this block of code. The helper (sdr2) will measure received
+    %       power.
+    %   p2) Tell the operator to measure the incoming power at the reference
+    %       antenna. Do not run this block of code.
+    %   p3) Measure the input power into the FieldFox. Do not run this block of
+    %       code.
+    
+    nread = nFFT;
+    nskip = nread * 3;
+    ntimes = 100;
+    
+    rxtd = sdr2.recv(nread, nskip, ntimes, 1);
+    rxtd = sdr2.applyCalRxArray(rxtd);
+    
+    rxtd_accum = zeros(nFFT, 1); % Look at boresight
+    for rxChId = 2:sdr2.nch
+        for itimes = 1:ntimes
+            rxtd_accum = rxtd_accum + rxtd(:, itimes, rxChId);
+        end
     end
-end
-rxfd = fftshift(fft(rxtd_accum));
-a = 0;
-for scIndex = scMin:scMax
-    if scIndex == 0
-        continue;
+    rxfd = fftshift(fft(rxtd_accum));
+    a = 0;
+    for scIndex = scMin:scMax
+        if scIndex == 0
+            continue;
+        end
+        a = a + abs(rxfd(nFFT/2 + 1 + scIndex));
     end
-    a = a + abs(rxfd(nFFT/2 + 1 + scIndex));
-end
-a = mag2db(abs(a));
-fprintf("Mode %d: Measured power is %2.2f dB\n", mode, a);
 
-% Clear workspace variables
-clearvars -except sdr1 sdr2 nFFT scMin scMax detected_aoa txtd_single mode;
+    figure(4);
+    b = subplot(5, 2, mode*2); cla(b);
+    axis off;
+    text(-0.2, 0.7, line1, 'FontSize', 15);
+    text(-0.2, 0.5, line2, 'FontSize', 15);
+    a = mag2db(abs(a));
+    if mode == 1
+        ref_a = a;
+    end
+    line3 = sprintf("RX Power: %2.2f dB", a - ref_a);
+    text(-0.2, 0.3, line3, 'FontSize', 15);
+    
+    
+    % Clear workspace variables
+    clearvars -except sdr1 sdr2 nFFT scMin scMax detected_aoa txtd_single mode ref_a;
+end % mode
+end % iter
 
 %% 5. Finally, Make the whole experiment quiet. We are done.
 
