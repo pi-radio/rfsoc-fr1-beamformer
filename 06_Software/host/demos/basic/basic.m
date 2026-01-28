@@ -22,11 +22,11 @@ sdr0.fpga.configure('../../config/rfsoc_nyquist.cfg');
  % rxChId = 2..8 refer to the regular RX channels
 
 
-txChId = 2;
+txChId = 1;
 
 clc;
 nFFT = 1024;	% number of FFT points
-txPower = 0*30000; % Do not exceed 30000
+txPower = 1*30000; % Do not exceed 30000
 scMin = -100;
 scMax = 100;
 constellation = [1+1j 1-1j -1+1j -1-1j];
