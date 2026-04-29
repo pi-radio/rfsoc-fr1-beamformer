@@ -2,7 +2,7 @@
 addpath('../../');
 
 % Parameters
-ip = "192.168.137.43";	% IP Address
+ip = "192.168.137.44";	% IP Address
 isDebug = false;		% print debug messages
 
 % Create a Fully Digital SDR
@@ -22,12 +22,12 @@ sdr0.fpga.configure('../../config/rfsoc_nyquist.cfg');
  % rxChId = 2..8 refer to the regular RX channels
 
 
-txChId = 1;
+txChId = 6;
 
 clc;
 nFFT = 1024;	% number of FFT points
-txPower = 1*30000; % Do not exceed 30000
-scMin = -100;
+txPower = 10000; % Do not exceed 30000
+scMin = 100;
 scMax = 100;
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
@@ -49,7 +49,9 @@ txtd(:, txChId) = txPower*txtd(:, txChId)./max(abs(txtd(:, txChId)));
 % Send the data to the DACs
 sdr0.send(txtd);
 
-%% Receive data
+% Receive data
 nskip = 1024*3;	% skip ADC data
 nbatch = 10;	% num of batches
-rxtd = sdr0.recv(nFFT, nskip, nbatch, 1);
+for i=1:1
+    rxtd = sdr0.recv(nFFT, nskip, nbatch, 1);
+end

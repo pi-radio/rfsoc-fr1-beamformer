@@ -80,8 +80,20 @@ classdef FullyDigital < matlab.System
             obj.disconnect();
         end
 
+        function set_switches(obj, switch_string)
+            if switch_string == "gnb"
+                write(obj.socket, "e0000001");
+            elseif switch_string == "cal"
+                write(obj.socket, "e0000000");
+            else
+                fprintf("Error. Unrecognized switch_string\n");
+            end
+        end
+
         function calRxArray(obj)
             % Pick a reference TX channel
+
+            txPower = 20000;
 
             nFFT = 1024;
             nread = nFFT;
@@ -145,7 +157,7 @@ classdef FullyDigital < matlab.System
                     m = max(abs(txtd(:,1)));
                    
                     % Scale and send the signal
-                    txtd = txtd/m*30000;
+                    txtd = txtd/m*txPower;
                     obj.send(txtd);
                     
                     % Receive the signal
@@ -279,10 +291,9 @@ classdef FullyDigital < matlab.System
             
             % Let's flatten the ADCs for a given reference DAC
             
-            clearvars -except obj
-            clc;
+            clearvars -except obj txPower;
+            %clc;
             nFFT = 1024;	% number of FFT points
-            txPower = 30000; % Do not exceed 30000
             scMin = -100;
             scMax = 100;
             constellation = [1+1j 1-1j -1+1j -1-1j];
@@ -348,12 +359,12 @@ classdef FullyDigital < matlab.System
                     if expType == 4
                         subplot(8,7,42+rxChId - 1);
                         plot(mag2db(abs(h))); hold on;
-                        ylim([125 140]); grid on;
+                        ylim([125 175]); grid on;
                         title('Pre Cal: Gain Curve');
                     else
                         subplot(8,7,49+rxChId - 1);
                         plot(mag2db(abs(h))); hold on;
-                        ylim([125 140]); grid on;
+                        ylim([125 175]); grid on;
                         title('Post Cal: Gain Curve');
                     end
 
@@ -399,6 +410,7 @@ classdef FullyDigital < matlab.System
             scMax = 100;
             niter =  1;
             constellation = [1+1j 1-1j -1+1j -1-1j];
+            txPower = 15000; % As long as RX_ref doesn't saturate, it doesn't matter if the other RX channels saturate.
             
             % expType = 1: Make initial measurements of the fractional timing offset
             %
@@ -433,7 +445,7 @@ classdef FullyDigital < matlab.System
             txtdSingle = ifft(txfd);
             
             m = max(abs(txtdSingle));
-            txtdSingle = txtdSingle ./m*30000;
+            txtdSingle = txtdSingle ./m*txPower;
             
             maxFrac = zeros(obj.nch, niter, ntimes);
             maxVal = zeros(obj.nch, niter, ntimes);
@@ -607,7 +619,7 @@ classdef FullyDigital < matlab.System
             scMin = -100;
             scMax = 100;
             constellation = [1+1j 1-1j -1+1j -1-1j];
-            txPower = 10000;
+            txPower = 2000; % Do not use a large number. After correction, this waveform can be scaled to become quite large.
             obj.calNFFT = nFFT;
             obj.calSCMin = scMin;
             obj.calSCMax = scMax;
@@ -663,13 +675,13 @@ classdef FullyDigital < matlab.System
                         subplot(8,7, 42+txChId-1)
                         plot(mag2db(abs(h(nFFT/2 + 1 + scMin : nFFT/2 + 1 + scMax)))); hold on;
                         title('Pre-Cal: TX Gain Curve');
-                        ylim([130 150]);
+                        ylim([120 190]);
                         grid on;
                     else
                         subplot(8,7, 49+txChId-1)
                         plot(mag2db(abs(h(nFFT/2 + 1 + scMin : nFFT/2 + 1 + scMax)))); hold on;
                         title('Post-Cal: TX Gain Curve');
-                        ylim([130 150]);
+                        ylim([120 190]);
                         grid on;
                     end
             
@@ -834,6 +846,7 @@ classdef FullyDigital < matlab.System
         function status = disable_realtime(obj)
             % Disable realtime correction filters
             write(obj.socket, "RTCTRL 0 00000000"); % calibration mode
+            obj.set_switches('cal');
         end
     
         function status = configure_realtime(obj, is_debug)
@@ -843,12 +856,12 @@ classdef FullyDigital < matlab.System
             % - FIR 1 (51 taps, linear-phase): gain equalization from cal{Rx,Tx}Gains
             % - Complex phase multiply from cal{Rx,Tx}Phase
 
+            obj.set_switches('gnb');
             status = -1;
 
             % this is written for odd number of taps for now
             
-            %% Fractional Timing Offsets
-            % TX Config
+            % Fractional Timing Offsets: TX Config
             figure(1); clf;
             for ch = 2:obj.nch % ch1 is used for self calib
                 fprintf("----step 1: tx: channel %d----\n", ch);
@@ -868,16 +881,16 @@ classdef FullyDigital < matlab.System
                     taps = taps / (1*acc);
                 end
 
-                figure(1); plot(taps); hold on; grid on;
+                if(is_debug)
+                    taps = zeros(1,51);
+                    taps(1) = 1;
+                end
 
-                % if(is_debug)
-                %     taps = zeros(1,51);
-                %     taps(1) = 1;
-                % end
+                figure(1); plot(taps, '*-'); hold on; grid on;
 
                 % Convert to Q1.15 and pack: reverse tap order, 8 hex chars/coeff
                 q15 = int16(round(max(min(taps, 0.999969482421875), -1) * 2^15));
-                
+
                 blob = '';
                 for idx = obj.ntaps_fir0-1:-1:0
                     word = uint32(typecast(q15(idx+1), 'uint16'));
@@ -888,8 +901,9 @@ classdef FullyDigital < matlab.System
                 write(obj.socket, sprintf("FIRCOEFF %d %s\n", fir_index, blob));
                 pause(0.1);
             end
+            % End: Fractional Timing Offsets: TX Config
 
-            % RX config
+            % Fractional Timing Offsets: RX Config
             for ch = 2:obj.nch % ch1 is used for self calib
                 fprintf("----step 1: rx: channel %d----\n", ch);
                 d = obj.calRxDelay(ch);
@@ -910,12 +924,12 @@ classdef FullyDigital < matlab.System
 
                 if(is_debug)
                     taps = zeros(1,51);
-                    taps(1) = 1;
+                    taps(1) = 0;
                 end
 
                 % Convert to Q1.15 and pack: reverse tap order, 8 hex chars/coeff
                 q15 = int16(round(max(min(taps, 0.999969482421875), -1) * 2^15));
-                
+
                 blob = '';
                 for idx = obj.ntaps_fir0-1:-1:0
                     word = uint32(typecast(q15(idx+1), 'uint16'));
@@ -926,6 +940,7 @@ classdef FullyDigital < matlab.System
                 write(obj.socket, sprintf("FIRCOEFF %d %s\n", fir_index, blob));
                 pause(0.1);
             end
+            % End: Fractional Timing Offsets: RX Config
 
             %% gain correction firs
             for ch = 2:obj.nch % ch1 is used for self calib
@@ -943,7 +958,7 @@ classdef FullyDigital < matlab.System
                 end
                 % Convert to Q1.15
                 q15 = int16(round(max(min(gain_coeffs, 0.999969482421875), -1) * 2^15));
-                
+
                 % only write unique coefficients (center..0)
                 % TODO: everything is written for odd ntaps
                 n_unique = n1 + 1; % 26 for 51 taps, 11 for 21 taps
@@ -957,10 +972,12 @@ classdef FullyDigital < matlab.System
                 write(obj.socket, sprintf("FIRCOEFF %d %s\n", fir_index, blob));
                 pause(0.1);
             end
+
+            
             for ch = 2:obj.nch % ch1 is used for self calib
                 fprintf("----step 2: rx: channel %d----\n", ch);
                 n1 = (obj.ntaps_fir1-1)/2;
-                
+
                 gain_coeffs = zeros(1, obj.ntaps_fir1);
                 if(is_debug)
                     gain_coeffs = zeros(1,obj.ntaps_fir1);
@@ -972,7 +989,7 @@ classdef FullyDigital < matlab.System
                 end
                 % Convert to Q1.15
                 q15 = int16(round(max(min(gain_coeffs, 0.999969482421875), -1) * 2^15));
-                
+
                 % only write unique coefficients (center..0)
                 % TODO: everything is written for odd ntaps
                 n_unique = n1 + 1; % 26 for 51 taps                
@@ -991,27 +1008,28 @@ classdef FullyDigital < matlab.System
             for ch = 2:obj.nch
                 fprintf("----step 3: tx: channel %d----\n", ch);
                 ph = obj.calTxPhase(ch);
-                
+
                 re = cos(ph);
                 im = sin(ph);
-                
-                % if(is_debug)
-                %     re = 0;
-                %     im = 1;
-                % end
-                
+
+                if(is_debug)
+                    re = 1;
+                    im = 0;
+                end
+
                 % todo: sfi is more reliable in matlab
                 re_q15 = int16(round(max(min(re, 0.999969482421875), -1) * 2^15));
                 im_q15 = int16(round(max(min(im, 0.999969482421875), -1) * 2^15));
-                
+
                 re_hex = upper(dec2hex(typecast(re_q15,'uint16'),4));
                 im_hex = upper(dec2hex(typecast(im_q15,'uint16'),4));
-                                
+
                 % 4:4:28
                 addr = 4*(ch - 2) + 4;
                 write(obj.socket, sprintf("RTCTRL %s %s%s\n", dec2hex(addr), im_hex, re_hex));
                 pause(0.1);
             end
+
 
             for ch = 2:obj.nch
                 fprintf("----step 3: rx: channel %d----\n", ch);
