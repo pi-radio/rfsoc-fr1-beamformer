@@ -1,4 +1,5 @@
 %% Add the folder containing +piradio to the MATLAB path.
+clear;
 addpath('../../');
 
 % Parameters
@@ -11,10 +12,10 @@ sdr0 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, ...
 
 % Configure the RFSoC. Use the file corresponding to the desired frequency
 % sdr0.fpga.configure('../../config/rfsoc_test.cfg');
-sdr0.fpga.configure('../../config/rfsoc_nyquist.cfg');
+sdr0.fpga.configure('../../config/rfsoc_siggen.cfg');
 
 
- %% Simple TX and RX test with a single channel
+%% Simple TX and RX test with a single channel
 
  % txChId = 1 refers to the TX channel that's used to self-cal the RX array
  % txChId = 2..8 refer to the regular TX channels
@@ -22,13 +23,13 @@ sdr0.fpga.configure('../../config/rfsoc_nyquist.cfg');
  % rxChId = 2..8 refer to the regular RX channels
 
 
-txChId = 6;
+txChId = 1;
 
 clc;
 nFFT = 1024;	% number of FFT points
-txPower = 10000; % Do not exceed 30000
-scMin = 100;
-scMax = 100;
+txPower = 30000; % Do not exceed 30000
+scMin = -416;
+scMax = 416;
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
 txtd = zeros(nFFT, sdr0.nch);       
@@ -36,7 +37,7 @@ txfd = zeros(nFFT, sdr0.nch);
 
 for scIndex = scMin:scMax
     if scIndex == 0
-        continue;
+        %continue;
     end
     txfd(nFFT/2 + 1 + scIndex, txChId) = constellation(randi(4));
 end
