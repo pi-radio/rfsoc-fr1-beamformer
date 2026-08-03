@@ -17,14 +17,10 @@ end
 txfd = fftshift(txfd);
 txtd = ifft(txfd);
 m = max(abs(txtd));
-txtd = txtd / m * 25000;
+txtd = txtd / m * 10000;
 
-freq = 3.25e9;
-c = physconst('LightSpeed');
-lam = c/freq;
 nch = 7;
 pos = (0:nch-1)*0.5;
-%%
 
 % Direction of the desired Beam, in degrees
 thetad = 25;

@@ -25,6 +25,7 @@ classdef FullyDigital < matlab.System
         figNum;         % Figure number to plot waveforms for this SDR (Start Number)
         fc = 3.25e9;     % carrier frequency of the SDR in Hz
         name;           % Unique name for this transceiver board
+        w;              % Beamforming Vector to apply in real-time mode
 
         % Cal Factors
         calTxDelay;
@@ -80,20 +81,156 @@ classdef FullyDigital < matlab.System
             obj.disconnect();
         end
 
-        function set_switches(obj, switch_string)
-            if switch_string == "gnb"
-                write(obj.socket, "e0000001");
-            elseif switch_string == "cal"
-                write(obj.socket, "e0000000");
-            else
-                fprintf("Error. Unrecognized switch_string\n");
+        function demo_nrt_tx_beamforming(obj, varargin)
+            obj.disable_realtime();
+            nFFT = 1024;
+            txfd = zeros(nFFT, 1);
+            constellation = [1+1j 1-1j -1+1j -1-1j];
+
+            scMin = 10; scMax = 10;
+
+            for scIndex = scMin:scMax
+                txfd(nFFT/2 + 1 + scIndex) = constellation(randi(4));
             end
+            txfd = fftshift(txfd);
+            txtd = ifft(txfd);
+            m = max(abs(txtd));
+            txtd = txtd / m; % Scale it later
+
+            % Assume antennas are lambda/2 apart at the center freq
+            pos = (0:obj.nch-2)*0.5 * (obj.fc / 3.25e9);
+
+            if (length(varargin) == 1)
+                % Error
+                fprintf('Needs 2 or 3 parameters. BEAM, OPTIONAL_NULL, POWER');
+                return;
+            elseif (length(varargin) == 2)
+                % We are given beamforming direction and power
+                thetad = varargin{1};
+                txpower = varargin{2};
+                bf_vec = steervec(pos, thetad);
+            elseif (length(varargin) == 3)
+                % We are given beamforming direction, nullforming direction, and power
+                thetad = varargin{1};
+                thetan = varargin{2};
+                txpower = varargin{3};
+
+                wd = steervec(pos, thetad);
+                wn = steervec(pos, thetan);
+                rn = wn'*wd/(wn'*wn);
+                bf_vec = wd-wn*rn;
+            else
+                sprintf('Needs 2 or 3 parameters. BEAM, OPTIONAL_NULL, POWER')
+                return;
+            end
+            
+            bf_vec = [0; bf_vec];
+            %bf_vec = bf_vec / norm(abs(bf_vec));
+            txtdMod = txtd * bf_vec' * txpower;
+            txtdMod = obj.applyCalTxArray(txtdMod);
+            obj.send(txtdMod);
+        end
+
+        function demo_nrt_rx_beamforming(obj)
+            obj.disable_realtime();
+            nread = 1024;
+            nFFT = nread;
+            nskip = nread * 3;
+            ntimes = 10;
+            scMin = -10;
+            scMax = 10;
+
+            rxtd = obj.recv(nread, nskip, ntimes, 1);
+            rxtd = obj.applyCalRxArray(rxtd);
+
+            naoa = 201;
+            aoas = linspace(-1, 1, naoa);
+            pArray = zeros(1, naoa);
+
+            for iaoa = 1:naoa
+                p = 0;
+                aoa = aoas(iaoa);
+                for itimes = 1:ntimes
+                    tdbf = zeros(nFFT, 1);
+                    for rxIndex=1:obj.nch
+                        td = rxtd(:,itimes,rxIndex);
+                        tdbf = tdbf + td * exp(1j*rxIndex*pi*sin(aoa)); % Apply BF Vec
+                    end % rxIndex
+                    fd = fftshift(fft(tdbf));
+                    p = p + sum(abs(fd( nFFT/2 + 1 + scMin : nFFT/2 + 1 + scMax)));
+                end %itimes
+                pArray(iaoa) = p;
+            end % iaoa
+
+            % Plot
+            figure(3);
+            plot(rad2deg(aoas), mag2db(pArray), 'LineWidth', 5); hold on;
+            xlabel('Angle of Arrival (Deg)');
+            ylabel('Power (dB)');
+            set(gca, 'FontSize', 30);
+            grid on; grid minor;
+            %ylim([-15 0])
+
+            [a, b] = max(pArray);
+            sprintf('Maxima at %2.2f deg. Pow %2.2f dB', rad2deg(aoas(b)), mag2db(a))
+        
+        end % function demo_nrt_rx_beamforming
+
+        function set_mode(obj, switch_string)
+            if switch_string == "cal_tx"
+                % TX0 off, TX1-7 on, RX0 on, RX1-7 off, switches = 0
+                % GPIO bits 4-0: 0 _ (1001)' = 0 _ 0110 (0x06)
+                write(obj.socket, "G06");
+            elseif switch_string == "cal_rx"
+                % TX0 on, TX1-7 off, RX0 off, RX1-7 on, switches = 0
+                % GPIO bits 4-0: 0 _ (0110)' = 0 _ 1001 (0x09)
+                write(obj.socket, "G09");
+            elseif switch_string == "gnb"
+                % TX0 on, TX1-7 on, RX0 on, RX1-7 on, switches = 1
+                % GPIO bits 4-0: 1 _ (1111)' = 1 _ 0000 (0x10)
+                write(obj.socket, "G10");
+            elseif switch_string == "gnb_tx"
+                % RX0 on, RX1-7 off, TX0 off, TX1-7 on, switches = 1
+                % GPIO bits 4-0: 1 _ (1001)' = 1 _ 0110 (0x16)
+                write(obj.socket, "G16");
+            elseif switch_string == "gnb_rx"
+                % RX0 off, RX1-7 on, TX0 on, TX1-7 off, switches = 1
+                % GPIO bits 4-0: 1 _ (0110)' = 1 _ 1001 (0x19)
+                write(obj.socket, "G19");
+            else
+                fprintf('Bullshit mode\n');
+            end
+        end
+
+        function calc_w(obj, varargin)
+            pos = (0:obj.nch-2)*0.5 * (obj.fc / 3.25e9);
+
+            if (length(varargin) == 1)
+                % No NULL angle specified
+                thetad = varargin{1};
+                obj.w = steervec(pos, thetad);
+            elseif (length(varargin) == 2)
+                % NULL angle has been specified
+                thetad = varargin{1};
+                thetan = varargin{2};
+                wd = steervec(pos, thetad);
+                wn = steervec(pos, thetan);
+                rn = wn'*wd/(wn'*wn);
+                obj.w = wd-wn*rn;
+            else
+                % We have received bullshit
+                sprintf('INCORRECT PARAMETERS. Supply beam, null angles in degrees.')
+            end
+
+            obj.w = [0; obj.w];
+            obj.w = obj.w ./ norm(abs(obj.w)); % DISCUSS 
         end
 
         function calRxArray(obj)
             % Pick a reference TX channel
 
-            txPower = 20000;
+            obj.set_mode('cal_rx');
+            txPower = 30000;
 
             nFFT = 1024;
             nread = nFFT;
@@ -146,9 +283,7 @@ classdef FullyDigital < matlab.System
                     txtd = zeros(nFFT, obj.nch);
                     
                     for scIndex = scMin:scMax
-                        if scIndex ~= 0
-                            txfd(nFFT/2 + 1 + scIndex, 1) = constellation(randi(4));
-                        end
+                            txfd(nFFT/2 + 1 + scIndex, 1) = constellation(randi(4));                        
                     end
             
                     txfd(:,1) = fftshift(txfd(:,1));
@@ -172,11 +307,11 @@ classdef FullyDigital < matlab.System
                             fprintf('.');
                             for itimes=1:ntimes
                                 if (expType == 1)
-                                    rxtdShifted = fracDelay(rxtd(:,itimes,rxIndex), to, nFFT);
+                                    rxtdShifted = obj.fracDelay(rxtd(:,itimes,rxIndex), to, nFFT);
                                 elseif (expType == 2)
-                                    rxtdShifted = fracDelay(rxtd(:,itimes,rxIndex), to + obj.calRxDelay(rxIndex), nFFT);
+                                    rxtdShifted = obj.fracDelay(rxtd(:,itimes,rxIndex), to + obj.calRxDelay(rxIndex), nFFT);
                                 elseif (expType == 3)
-                                    rxtdShifted = fracDelay(rxtd(:,itimes,rxIndex), to + obj.calRxDelay(rxIndex), nFFT);
+                                    rxtdShifted = obj.fracDelay(rxtd(:,itimes,rxIndex), to + obj.calRxDelay(rxIndex), nFFT);
                                     rxtdShifted = rxtdShifted * exp(1i*obj.calRxPhase(rxIndex));
                                 end
                                 rxfd = fft(rxtdShifted);
@@ -305,9 +440,6 @@ classdef FullyDigital < matlab.System
             txfd_single = zeros(nFFT, 1);
             
             for scIndex = scMin:scMax
-                if scIndex == 0
-                    continue;
-                end
                 txfd_single(nFFT/2 + 1 + scIndex) = constellation(randi(4));
             end
             txfd_single = fftshift(txfd_single); % In MATLAB order
@@ -359,12 +491,12 @@ classdef FullyDigital < matlab.System
                     if expType == 4
                         subplot(8,7,42+rxChId - 1);
                         plot(mag2db(abs(h))); hold on;
-                        ylim([125 175]); grid on;
+                        ylim([125 150]); grid on;
                         title('Pre Cal: Gain Curve');
                     else
                         subplot(8,7,49+rxChId - 1);
                         plot(mag2db(abs(h))); hold on;
-                        ylim([125 175]); grid on;
+                        ylim([125 150]); grid on;
                         title('Post Cal: Gain Curve');
                     end
 
@@ -399,6 +531,8 @@ classdef FullyDigital < matlab.System
             % Calibrate of the TX array
             % This script calibrates the TX-side timing and phase offsets. The TX under
             % calibration is obj, and the reference RX is obj.
+
+            obj.set_mode('cal_tx');
             
             % Configure the RX number of samples, etc
             nFFT = 1024;
@@ -410,7 +544,7 @@ classdef FullyDigital < matlab.System
             scMax = 100;
             niter =  1;
             constellation = [1+1j 1-1j -1+1j -1-1j];
-            txPower = 15000; % As long as RX_ref doesn't saturate, it doesn't matter if the other RX channels saturate.
+            txPower = 30000; % As long as RX_ref doesn't saturate, it doesn't matter if the other RX channels saturate.
             
             % expType = 1: Make initial measurements of the fractional timing offset
             %
@@ -436,9 +570,9 @@ classdef FullyDigital < matlab.System
             txtd = zeros(nFFT, obj.nch);
             
             for scIndex = scMin:scMax
-                if (scIndex == 0)
-                    continue;
-                end
+                % if (scIndex == 0)
+                %     continue;
+                % end
                 txfd(scIndex + nFFT/2 + 1) = constellation(randi(4)); % Human order
             end
             txfd = fftshift(txfd); % Machine order
@@ -477,9 +611,9 @@ classdef FullyDigital < matlab.System
                     txtd(:, txIndex) = txtdSingle;
             
                     if ((expType == 1) || (expType == 2))
-                        txtd(:,txIndex) = fracDelay(txtdSingle, obj.calTxDelay(txIndex), nFFT);
+                        txtd(:,txIndex) = obj.fracDelay(txtdSingle, obj.calTxDelay(txIndex), nFFT);
                     elseif (expType == 3)
-                        txtd(:,txIndex) = exp(1j*obj.calTxPhase(txIndex)) * fracDelay(txtdSingle, obj.calTxDelay(txIndex), nFFT);
+                        txtd(:,txIndex) = exp(1j*obj.calTxPhase(txIndex)) * obj.fracDelay(txtdSingle, obj.calTxDelay(txIndex), nFFT);
                     end
             
                     obj.send(txtd);
@@ -490,7 +624,7 @@ classdef FullyDigital < matlab.System
                         fprintf('.');
                         for ito = 1:nto
                             to = tos(ito);
-                            rxtdShifted = fracDelay(rxtd(:,itimes,refRxIndex), to, nFFT);
+                            rxtdShifted = obj.fracDelay(rxtd(:,itimes,refRxIndex), to, nFFT);
             
                             rxfd = fft(rxtdShifted);
                             corrfd = zeros(nFFT, obj.nch);
@@ -619,7 +753,7 @@ classdef FullyDigital < matlab.System
             scMin = -100;
             scMax = 100;
             constellation = [1+1j 1-1j -1+1j -1-1j];
-            txPower = 2000; % Do not use a large number. After correction, this waveform can be scaled to become quite large.
+            txPower = 15000; % Do not use a large number. After correction, this waveform can be scaled to become quite large.
             obj.calNFFT = nFFT;
             obj.calSCMin = scMin;
             obj.calSCMax = scMax;
@@ -627,9 +761,6 @@ classdef FullyDigital < matlab.System
             txfd_original = zeros(nFFT, 1);
             
             for scIndex = scMin:scMax
-                if scIndex == 0
-                    continue;
-                end
                 txfd_original(nFFT/2 + 1 + scIndex) = constellation(randi(4));
             end
             
@@ -675,22 +806,19 @@ classdef FullyDigital < matlab.System
                         subplot(8,7, 42+txChId-1)
                         plot(mag2db(abs(h(nFFT/2 + 1 + scMin : nFFT/2 + 1 + scMax)))); hold on;
                         title('Pre-Cal: TX Gain Curve');
-                        ylim([120 190]);
+                        ylim([125 175]);
                         grid on;
                     else
                         subplot(8,7, 49+txChId-1)
                         plot(mag2db(abs(h(nFFT/2 + 1 + scMin : nFFT/2 + 1 + scMax)))); hold on;
                         title('Post-Cal: TX Gain Curve');
-                        ylim([120 190]);
+                        ylim([125 175]);
                         grid on;
                     end
             
                     if (expType == 4)
                         m = 0;
                         for scIndex = scMin:scMax
-                            if scIndex == 0
-                                continue;
-                            end
                             % h is still in Human order
                             m = max(m, abs(h(nFFT/2 + 1 + scIndex)));
                             obj.calTxGains(txChId, nFFT/2 + 1 + scIndex) = 1/abs(h(nFFT/2 + 1 + scIndex));
@@ -731,11 +859,11 @@ classdef FullyDigital < matlab.System
             data = reshape(data, nread, nbatch, obj.nch);
             
              % Remove DC Offsets
-            for ich = 1:obj.nch
-                for ibatch = 1:nbatch
-                    data(:,ibatch,ich) = data(:,ibatch,ich) - mean(data(:,ibatch,ich));
-                end
-            end
+            % for ich = 1:obj.nch
+            %     for ibatch = 1:nbatch
+            %         data(:,ibatch,ich) = data(:,ibatch,ich) - mean(data(:,ibatch,ich));
+            %     end
+            % end
             
             if (toPlot == 1)
                 % Plot the RX waveform for the first batch
@@ -797,10 +925,6 @@ classdef FullyDigital < matlab.System
                 title(s);
             end
         end
-        
-        function set_leds(obj, led_string)
-            write(obj.socket, sprintf("f00000%s", led_string));
-        end
 
         function opBlob = fracDelay(obj, ipBlob,fracDelayVal,N)
             taps = zeros(0,0);
@@ -820,7 +944,7 @@ classdef FullyDigital < matlab.System
             for rxIndex=1:obj.nch
                 for itimes=1:size(rxtd, 2)
                     td = rxtd(:, itimes, rxIndex);
-                    %td = obj.fracDelay(td, obj.calRxDelay(rxIndex), size(td, 1));
+                    td = obj.fracDelay(td, obj.calRxDelay(rxIndex), size(td, 1));
                     td = td * exp(1j * obj.calRxPhase(rxIndex));
                     blob(:, itimes, rxIndex) = td;
                 end % itimes
@@ -846,7 +970,6 @@ classdef FullyDigital < matlab.System
         function status = disable_realtime(obj)
             % Disable realtime correction filters
             write(obj.socket, "RTCTRL 0 00000000"); % calibration mode
-            obj.set_switches('cal');
         end
     
         function status = configure_realtime(obj, is_debug)
@@ -856,16 +979,21 @@ classdef FullyDigital < matlab.System
             % - FIR 1 (51 taps, linear-phase): gain equalization from cal{Rx,Tx}Gains
             % - Complex phase multiply from cal{Rx,Tx}Phase
 
-            obj.set_switches('gnb');
+            obj.set_mode('gnb');
             status = -1;
 
             % this is written for odd number of taps for now
             
-            % Fractional Timing Offsets: TX Config
+            %% Fractional Timing Offsets: TX Config
             figure(1); clf;
+            colors = 'rrgbcmyk';
             for ch = 2:obj.nch % ch1 is used for self calib
                 fprintf("----step 1: tx: channel %d----\n", ch);
-                d = obj.calTxDelay(ch);
+                if (is_debug)
+                    d = 0;
+                else
+                    d = obj.calTxDelay(ch);
+                end
 
                 % fracDelay()
                 taps = zeros(0,0);
@@ -876,17 +1004,12 @@ classdef FullyDigital < matlab.System
                 end
 
                 % normalize
-                acc = sum(taps);
+                acc = sum(abs(taps));
                 if acc ~= 0
                     taps = taps / (1*acc);
                 end
 
-                if(is_debug)
-                    taps = zeros(1,51);
-                    taps(1) = 1;
-                end
-
-                figure(1); plot(taps, '*-'); hold on; grid on;
+                %figure(1); plot(taps, '*-', 'color', colors(ch)); hold on; grid on;
 
                 % Convert to Q1.15 and pack: reverse tap order, 8 hex chars/coeff
                 q15 = int16(round(max(min(taps, 0.999969482421875), -1) * 2^15));
@@ -924,8 +1047,10 @@ classdef FullyDigital < matlab.System
 
                 if(is_debug)
                     taps = zeros(1,51);
-                    taps(1) = 0;
+                    taps(1) = 1;
                 end
+
+                %figure(2); plot(taps, '*-'); hold on; grid on;
 
                 % Convert to Q1.15 and pack: reverse tap order, 8 hex chars/coeff
                 q15 = int16(round(max(min(taps, 0.999969482421875), -1) * 2^15));
@@ -951,11 +1076,20 @@ classdef FullyDigital < matlab.System
                 if(is_debug)
                     gain_coeffs = zeros(1,obj.ntaps_fir1);
                     % set center coeff to 1
-                    gain_coeffs((obj.ntaps_fir1 + 1)/2) = 1;                    
+                    gain_coeffs(1) = 1;                    
                 else
                     % TODO: construct a filter from gain curve
-                    gain = squeeze(obj.calTxGains(ch, :));
+                    % For now, the bandwidth we're operating over is small,
+                    % so we can assume the channel is flat within that
+                    % bandwidth. Let's use the subcarrier +1 ot get the
+                    % value.
+                    a = fftshift(abs(obj.calTxGains(ch, :)));
+                    a = a(obj.calNFFT/2 + 1 + 1);
+                    gain_coeffs(1) = a / 2
                 end
+
+                %figure(1); plot(gain_coeffs, '*-'); hold on; grid on;
+
                 % Convert to Q1.15
                 q15 = int16(round(max(min(gain_coeffs, 0.999969482421875), -1) * 2^15));
 
@@ -973,7 +1107,8 @@ classdef FullyDigital < matlab.System
                 pause(0.1);
             end
 
-            
+            fprintf('\n\n\n\n\n\n');
+
             for ch = 2:obj.nch % ch1 is used for self calib
                 fprintf("----step 2: rx: channel %d----\n", ch);
                 n1 = (obj.ntaps_fir1-1)/2;
@@ -985,8 +1120,17 @@ classdef FullyDigital < matlab.System
                     gain_coeffs((obj.ntaps_fir1 + 1)/2) = 1;                    
                 else 
                     % TODO: construct a filter from gain curve
-                    gain = squeeze(obj.calRxGains(ch, :));
+                    % For now, the bandwidth we're operating over is small,
+                    % so we can assume the channel is flat within that
+                    % bandwidth. Let's use the subcarrier +1 ot get the
+                    % value.
+                    a = fftshift(abs(obj.calRxGains(ch, :)));
+                    a = a(obj.calNFFT/2 + 1 + 1);
+                    gain_coeffs(1) = a/2
                 end
+
+                %figure(1); plot(gain_coeffs, '*-'); hold on; grid on;
+
                 % Convert to Q1.15
                 q15 = int16(round(max(min(gain_coeffs, 0.999969482421875), -1) * 2^15));
 
@@ -1011,10 +1155,15 @@ classdef FullyDigital < matlab.System
 
                 re = cos(ph);
                 im = sin(ph);
+                a = re + 1j*(im);
+                a = a * obj.w(ch);
+                re = real(a);
+                im = imag(a);
 
                 if(is_debug)
-                    re = 1;
-                    im = 0;
+                    ph = deg2rad(0);
+                    re = cos(ph);
+                    im = sin(ph);
                 end
 
                 % todo: sfi is more reliable in matlab
@@ -1034,27 +1183,34 @@ classdef FullyDigital < matlab.System
             for ch = 2:obj.nch
                 fprintf("----step 3: rx: channel %d----\n", ch);
                 ph = obj.calRxPhase(ch);
-                
+
                 re = cos(ph);
                 im = sin(ph);
+                a = re + 1j*(im);
+                a = a * obj.w(ch);
+                re = real(a);
+                im = imag(a);
 
                 if(is_debug)
-                    re = 1;
-                    im = 0;
+                    ph = deg2rad(0);
+                    re = real(ph);
+                    im = imag(ph);
                 end
-        
+
                 % todo: sfi is more reliable in matlab
                 re_q15 = int16(round(max(min(re, 0.999969482421875), -1) * 2^15));
                 im_q15 = int16(round(max(min(im, 0.999969482421875), -1) * 2^15));
-                
+
                 re_hex = upper(dec2hex(typecast(re_q15,'uint16'),4));
                 im_hex = upper(dec2hex(typecast(im_q15,'uint16'),4));
-                                
+
                 % 32:4:56
                 addr = 4*(ch - 2) + 32;
                 write(obj.socket, sprintf("RTCTRL %s %s%s\n", dec2hex(addr), im_hex, re_hex));
                 pause(0.1);
             end
+
+            %% Finally, apply it all.
 
             ctrl_word = "01000001"; % fir reload + correction mode
             % reload fir and set mode (TX/RX + correction enable)
@@ -1062,8 +1218,8 @@ classdef FullyDigital < matlab.System
             
             % TODO: should probably check for response code from fpga. fpga responds 'Ok' on success.
             status = 0;
-        end
-    end
+        end % configure_realtime
+    end % methods
     
     methods (Access = 'protected')
         function connect(obj)
@@ -1084,4 +1240,5 @@ classdef FullyDigital < matlab.System
         end
     end
 end
+
 

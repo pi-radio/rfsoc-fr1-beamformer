@@ -138,13 +138,13 @@ if (mode == 1)      % Mode 1: Beamform at AoA, Nullform 20 degrees away
     w = wd-wn*rn;
 
     figure(4);
-    pattern(w);
+    %pattern(w);
 elseif (mode == 2)  % Mode 2: Beamform at AoA, no control of NULL
     thetad = detected_aoa;
     wd = steervec(pos, thetad);
     w = wd;
 elseif (mode == 3)  % Mode 3: Beamform at AoA + 20, Nullform at AoA
-    thetad = detected_aoa - 20;
+    thetad = detected_aoa + 20;
     thetan = detected_aoa;
     wd = steervec(pos, thetad);
     wn = steervec(pos, thetan);
@@ -166,7 +166,7 @@ txtdMod = sdr1.applyCalTxArray(txtdMod);
 sdr1.send(txtdMod);
 clearvars -except sdr1 sdr2 scMin scMax nFFT detected_aoa txtd_single mode;
 
-% 4.B. Now, let the helper measure the received power.
+%% 4.B. Now, let the helper measure the received power.
 
 %   p1) Run this block of code. The helper (sdr2) will measure received
 %       power.
@@ -206,9 +206,9 @@ clearvars -except sdr1 sdr2 nFFT scMin scMax detected_aoa txtd_single mode;
 
 txtd = zeros(nFFT, sdr1.nch);
 sdr1.send(txtd);
-sdr2.send(txtd);
+%sdr2.send(txtd);
 pause(0.2);
 sdr1.recv(nFFT, nFFT*3, 10, 1);
-sdr2.recv(nFFT, nFFT*3, 10, 1);
+%sdr2.recv(nFFT, nFFT*3, 10, 1);
 
 clearvars -except sdr1 sdr2
