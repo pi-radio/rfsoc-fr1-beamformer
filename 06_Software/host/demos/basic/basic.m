@@ -2,10 +2,10 @@
 clear;
 addpath('../../');
 
-ip = "192.168.137.43";	% IP Address
-isDebug = false;		% print debug messages
-sdr1 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, 'figNum', 100, 'name', 'navy-001', 'fc', 3.56988e9);
-sdr1.fpga.configure('../../config/rfsoc_n48.cfg');
+% ip = "192.168.137.43";	% IP Address
+% isDebug = false;		% print debug messages
+% sdr1 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, 'figNum', 100, 'name', 'navy-001', 'fc', 3.56988e9);
+% sdr1.fpga.configure('../../config/rfsoc_n48.cfg');
 
 ip = "192.168.137.44";	% IP Address
 isDebug = false;		% print debug messages
