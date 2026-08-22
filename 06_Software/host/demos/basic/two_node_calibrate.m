@@ -25,7 +25,7 @@ sdr2.recv(1024, 2048, 10, 1);
 sdr1.calRxArray();
 sdr1.calTxArray();
 sdr1.set_mode('gnb');
-
+%%
 sdr2.calRxArray();
 sdr2.calTxArray();
 sdr2.set_mode('gnb');

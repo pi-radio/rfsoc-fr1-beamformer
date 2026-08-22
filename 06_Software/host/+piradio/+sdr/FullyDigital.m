@@ -383,7 +383,7 @@ classdef FullyDigital < matlab.System
                         hold on;
                         ylim([-10 10]); grid on;
                         medianIndex = length(l) / 2;
-                        obj.calRxDelay(rxIndex) = obj.calRxDelay(rxIndex) + l(medianIndex);
+                        obj.calRxDelay(rxIndex) = obj.calRxDelay(rxIndex) - l(medianIndex);
                     elseif (expType == 3)
                         figure(obj.figNum+1);
                         subplot(8,7,21+rxIndex-1);
@@ -749,7 +749,7 @@ classdef FullyDigital < matlab.System
             % Flatten the per-channel TX Gain Curves
             nFFT = 1024;
             nskip = 1024*3;	% skip ADC data
-            nbatch = 4000;	% num of batches
+            nbatch = 1000;	% num of batches
             scMin = -100;
             scMax = 100;
             constellation = [1+1j 1-1j -1+1j -1-1j];

@@ -7,10 +7,10 @@ addpath('../../');
 % sdr1 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, 'figNum', 100, 'name', 'navy-001', 'fc', 3.56988e9);
 % sdr1.fpga.configure('../../config/rfsoc_n48.cfg');
 
-ip = "192.168.137.44";	% IP Address
+ip = "192.168.137.43";	% IP Address
 isDebug = false;		% print debug messages
-sdr2 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, 'figNum', 200, 'name', 'navy-002', 'fc', 3.56988e9);
-sdr2.fpga.configure('../../config/rfsoc_n48.cfg');
+sdr2 = piradio.sdr.FullyDigital('ip', ip, 'isDebug', isDebug, 'figNum', 200, 'name', 'navy-002', 'fc', 3.29755e9);
+sdr2.fpga.configure('../../config/rfsoc_3p29755.cfg');
 
 
 %% Simple TX and RX test with a single channel
@@ -21,13 +21,13 @@ sdr2.fpga.configure('../../config/rfsoc_n48.cfg');
  % rxChId = 2..8 refer to the regular RX channels
 
 sdr2.set_mode('gnb');
-txChId = 1;
+txChId = 4;
 
 clc;
 nFFT = 1024;	% number of FFT points
-txPower = 0000; % Do not exceed 30000
-scMin = 1;
-scMax = 1;
+txPower = 00000; % Do not exceed 30000
+scMin = 20;
+scMax = 20;
 constellation = [1+1j 1-1j -1+1j -1-1j];
 
 txtd = zeros(nFFT, sdr2.nch);       
@@ -49,5 +49,5 @@ sdr2.send(txtd);
 nskip = 1024*3;	% skip ADC data
 nbatch = 10;	% num of batches
 for i=1:1
-    rxtd = sdr1.recv(nFFT, nskip, nbatch, 1);
+    rxtd = sdr2.recv(nFFT, nskip, nbatch, 1);
 end

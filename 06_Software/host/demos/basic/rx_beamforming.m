@@ -10,8 +10,8 @@ nread = 1024;
 nFFT = nread;
 nskip = nread * 3;
 ntimes = 10;
-scMin = -20;
-scMax = 20;
+scMin = 62;
+scMax = 62;
 
 
 for iter = 1:1
@@ -48,6 +48,9 @@ set(gca, 'FontSize', 30);
 grid on; grid minor;
 %ylim([-15 0])
 end
+
+[a, b] = max(mag2db(abs(pArray)));
+rad2deg(aoas(b))
 
 % Clear workspace variables
 clear aoa aoas fd iaoa naoa p pArray refTxIndex td tdbf txtdMod;
